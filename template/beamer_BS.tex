@@ -1,0 +1,162 @@
+% !TEX program = lualatex
+\documentclass[aspectratio=169, 
+handout,
+]{beamer}
+
+
+\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[ngerman]{babel} % Schweizer Rechtschreibung
+
+\usepackage{polyglossia}
+\setdefaultlanguage[variant = swiss]{german}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+
+\usepackage{amsmath}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,
+  inter-unit-product = \ensuremath{{\cdot}},
+  detect-mode,             % Use the surrounding text font mode
+  detect-family,           % Use the surrounding text font family
+  detect-weight,           % Use the surrounding text font weight
+  mode = text,             % Ensure that numbers and units are typeset in text mode
+  %negative-powers = false, % Avoid using negative powers
+  per-mode = symbol        % Use the division symbol for per units
+}
+
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{amsmath}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+\usepackage[dvipsnames]{xcolor}
+
+%\usepackage[scaled]{helvet} % Arial-ähnliche Schriftart (Helvetica)
+%\renewcommand\familydefault{\sfdefault} % Setzt die Standard-Schriftart auf sans-serif
+
+
+\usetheme{Madrid} % This theme is visually appealing
+%\usecolortheme{whale} % A color theme with blue tones
+\usecolortheme{dolphin} % A color theme with blue tones
+
+
+\newcommand{\mylogo}{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east, yshift=-2mm, fill=white, inner sep=2pt] at (current page.north east) % Verschiebe das Logo um 5mm nach unten
+            {\includegraphics[height=0.4cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}; % Grösse nach Bedarf anpassen
+    \end{tikzpicture}
+}
+
+\logo{\mylogo}
+
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[wd=\textwidth,ht=0.5ex,dp=1ex]{upper separation line head}
+  \end{beamercolorbox}
+}
+
+\setbeamercolor{upper separation line head}{bg=blau_bauschule}
+
+
+% Anpassen des Frametitels, um ihn fett zu machen
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip%
+    \begin{beamercolorbox}[sep=0.3cm,left,wd=\paperwidth]{frametitle}%
+        \usebeamerfont{frametitle}\bfseries\insertframetitle%
+    \end{beamercolorbox}%
+}
+
+%\usebackgroundtemplate{
+%    \includegraphics[width=\paperwidth,height=\paperheight]{my_pdf_copy_of_empty_ppt_template}
+%}
+
+% Setzen Sie hier den Namen des Fachs
+\newcommand{\fachname}{Baustoffe}
+\newcommand{\FinRes}[1]{\underline{\underline{#1}}}
+
+% Anpassen der Fusszeile für Abstände zum Rand
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,left,leftskip=1em]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\fachname % Hier wird der Fachname anstelle des Titels angezeigt
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,right,rightskip=1em]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+\newtcolorbox{Merke}{
+enhanced,
+boxrule=0pt,frame hidden,
+borderline west={4pt}{0pt}{red!75!black},
+colback=white,
+sharp corners,
+before upper={\textbf{Merke:}\quad},
+}
+
+\newtcolorbox{Anwendungen}{
+enhanced,
+boxrule=0pt,frame hidden,
+borderline west={4pt}{0pt}{brown!75!black},
+colback=white,
+sharp corners
+}
+
+
+
+
+% Colors
+\definecolor{blau_bauschule}{RGB}{22,65,148}
+\setbeamercolor{frametitle}{fg=blau_bauschule}
+\setbeamertemplate{navigation symbols}{} % Remove navigation symbols
+
+
+\newtcolorbox{Definition_BS}[1]{
+enhanced,boxrule=1pt,
+colback=green!5!white,
+colframe=green!75!black,fonttitle=\bfseries, title = #1,
+%after title={\hfill\colorbox{black}{Definition}}
+}
+
+
+
+\newtcolorbox{Masseinheit}[1]{
+enhanced,
+boxrule=1pt,colframe=blue,
+colback=white,
+sharp corners, 
+colframe=blue!75!black,
+title = #1, 
+after title={\hfill\colorbox{blue}{Masseinheit}}
+}
+
+
+\newtcolorbox{myLösung}{
+  enhanced,
+  boxrule=1pt,
+  colframe=gray!75!black, % Definiert die Farbe des Rahmens als dunkelgrau
+  colback=gray!20, % Definiert die Hintergrundfarbe der Box als hellgrau
+  %sharp corners, % Macht die Ecken der Box scharf (nicht abgerundet)
+  title = {Lösung}, % Fest eingestellter Titel der Box
+  after title={}, % Fügt das Label "Masseinheit" nach dem Titel hinzu
+  coltitle=white, % Farbe des Titeltexts
+  fonttitle=\bfseries % Schriftart des Titels
+}
+

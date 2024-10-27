@@ -1,0 +1,153 @@
+
+\documentclass[
+11pt,
+captions=tableheading,
+%smallheadings,
+headings=big,
+headsepline,
+footsepline, 
+%chapterprefix=false			% weiss nicht was passiert
+captions=tableheading,
+parskip=half-,
+%BCOR=10mm,
+%twocolumn, 
+%draft
+]{scrartcl}
+
+%\usepackage[babelshorthands]{polyglossia}
+\usepackage{polyglossia}
+
+\setdefaultlanguage[variant = swiss]{german}
+%\usepackage[ngerman]{babel} 
+\usepackage[]{ scrlayer-scrpage }
+\usepackage[ a4paper,
+ total={165mm,244mm},
+ left=25mm,
+ top=25mm,
+ headsep=10mm
+ %footsep=12mm
+ %,showframe
+  ]{geometry}
+ \usepackage{fontspec}
+\setmainfont{Arial} % Bauschule CI Manual
+\setsansfont{Arial} % Bauschule CI Manual
+
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[
+version=3,
+arrows=pgf-filled,
+]{mhchem} % für chemische Formeln
+%\usepackage{microtype}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{luacode}
+%\pgfplotset{compact= 1.17}
+%\usepackage{structuralanalysis}
+
+\usepackage{siunitx}
+\usepackage{smartdiagram}
+\usepackage{amsfonts}
+\usepackage{amssymb,amsmath}
+
+ \usepackage{titletoc}
+
+% order of hyperref, cleverref is important
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+
+\usepackage{graphicx}
+
+% Colors
+\definecolor{blau_bauschule}{RGB}{22,65,148}
+
+
+% Titel mit Bauschule blau gemäss CI manual
+\addtokomafont{section}{\color{blau_bauschule}\Huge}
+\addtokomafont{subsection}{\color{blau_bauschule}\huge}
+\addtokomafont{subsubsection}{\color{blau_bauschule}\Large}
+\addtokomafont{paragraph}{\normalsize}
+\addtokomafont{subparagraph}{\small}
+% Pagestyle
+\pagestyle{scrheadings}
+\ihead{\fontsize{9pt}{2pt}\selectfont \klasse}
+\ohead{\fontsize{9pt}{2pt}\selectfont \fach}
+\chead{\fontsize{9pt}{2pt}\selectfont \headmark}
+\ifoot{\fontsize{9pt}{2pt}\selectfont Bauschule Aarau} 
+\ofoot{\fontsize{9pt}{2pt}\selectfont \thepage} %Seitennummer
+\cfoot{\fontsize{9pt}{2pt}\selectfont }
+\setkomafont{pagehead}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+\setkomafont{pagehead}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+
+
+% Bild- und Tabellenunterschriften
+\renewcommand*{\figurename}{Abbildung}
+\renewcommand*{\tablename}{Tabelle}
+
+\newcommand{\fach}{Baustoffe\xspace}
+\newcommand{\klasse}{HTf-26\xspace}
+
+
+% Define a shortcut for red text
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+
+% Titel
+\title{\fach}
+%\author{Patrick Pfändler}
+\date{2024}
+
+
+
+\begin{document}
+
+\section*{Programm Baustoffe}
+
+Klasse: \klasse
+
+Zeit: 08:00 bis 10:00 Uhr (120 Minuten) %im Raum 214
+
+
+
+Stand: \today
+
+\vspace{1cm}
+
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llp{8cm}p{4cm}}
+    \toprule
+    Datum & KW  & Inhalt & Bemerkung \\
+    \midrule
+        22.10.2024 & 43 & Dauerhaftigkeit, Einstieg nach Ferien & {} \\
+        28.10.2024 & 44 & Quiz Metall, Holz- und Holzwerkstoffe& {} \\
+        04.11.2024 & 45 & Holz- und Holzwerkstoffe & {} \\
+        11.11.2024 & 46 & \red{Prüfung: Physik, Chemie und Bindemittel} und Holz- und Holzwerkstoffe & {} \\
+        18.11.2024 & 47 & Natursteine& {} \\
+        25.11.2024 & 48 & Innovation im Bauwesen & {} \\
+        02.12.2024 & 49 & Betoninstandsetzung& {} \\
+        09.12.2024 & 50 & Reserve & {} \\
+        16.12.2024 & 51 & Zusammenfassung und Feedback & {} \\
+        23.12.2024 & 52 & \textcolor{blue}{Ferien} & Letzte Stunde im Januar? \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+\end{document}

@@ -1,0 +1,137 @@
+% !TEX program = lualatex
+\documentclass[
+    %answers,
+    a4paper,ngerman,11pt, addpoints]{exam}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[ngerman]{babel}
+
+
+\usepackage{polyglossia}
+\setdefaultlanguage[variant = swiss]{german}
+\usepackage{fontspec}
+\setmainfont{Arial} % Bauschule CI Manual
+\setsansfont{Arial} % Bauschule CI Manual
+
+
+\usepackage[ a4paper,
+ total={165mm,250mm},
+ left=25mm,
+ top=25mm,
+ headsep=10mm
+ %footsep=12mm
+ %,showframe
+  ]{geometry}
+
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{booktabs} % schöne Tabellen
+\usepackage{float}
+\floatplacement{figure}{H}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{mdframed} % Boxen
+\usepackage{amsmath,amssymb}
+\usepackage{tcolorbox}
+\usepackage{lastpage} % For the total number of pages
+
+\usepackage{multicol}
+\usepackage[
+    version=3,
+    arrows=pgf-filled,
+]{mhchem} % für chemische Formeln
+%\usepackage{microtype}
+\usepackage{subfigure}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+% Colors
+\definecolor{blau_bauschule}{RGB}{22,65,148}
+\CorrectChoiceEmphasis{\color{blau_bauschule}}
+\SolutionEmphasis{\color{blau_bauschule}}
+
+\setlength{\parindent}{0em} % Verhindert einrücken
+\setlength\linefillheight{0.3in}
+
+
+%% COMMMANDS
+\author{Patrick Pfändler}
+\newcommand{\dozent}{Patrick Pfändler}
+\newcommand{\fach}{Baustoffe}
+
+
+\newcommand{\punkte}[1]{%
+    \begin{infobox}%
+        #1
+    \end{infobox}}%
+\newcommand{\FinRes}[1]{\underline{\underline{#1}}}
+
+\newmdenv[linecolor=black,backgroundcolor=gray!15,frametitle={Punktverteilung},leftmargin=1cm,rightmargin=1cm]{infobox}
+
+\newcommand{\pagebreaksol}{
+    \ifprintanswers
+        \clearpage
+    \else
+        {}
+    \fi
+}
+
+\newcommand{\pagebreakexam}{
+    \ifprintanswers
+        {}
+    \else
+        \clearpage
+    \fi
+}
+
+\SolutionEmphasis{\color{blau_bauschule}}
+\makeatletter%
+\newcommand{\solutiontable}[1]{\ifprintanswers\begingroup\Solution@Emphasis#1\if@shadedsolutions%
+            {\cellcolor{SolutionColor}}%
+        \else%
+        \fi\endgroup\else\phantom{#1}\fi}%
+\makeatother%
+
+\newcommand{\myNmm}[1]
+{
+    \sisetup{per-mode=symbol}
+    \SI{#1}{\newton\per\mm\squared}
+}
+
+\renewcommand{\thequestion}{\fontsize{13pt}{2pt} \selectfont  \bfseries \arabic{question}}
+\sisetup{per-mode=symbol}
+
+%% Translation
+
+\pointpoints{Punkt}{Punkte}
+\bonuspointpoints{Bonuspunkt}{Bonuspunkte}
+\renewcommand{\solutiontitle}{\noindent\textbf{Lösung:}\enspace}
+\chqword{Frage}
+\chpgword{Seite}
+\chpword{Punkte}
+\chbpword{Bonus Punkte}
+\chsword{Erreicht}
+\chtword{Gesamt}
+\hpword{Punkte:}
+\hsword{Ergebnis:}
+\hqword{Aufgabe:}
+\htword{Summe:}
+
+
+
+
+
+%% header and footer
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+
+% Adjust the font size for the header
+\firstpageheader{\fontsize{9}{11}\selectfont\fach}{}{\fontsize{9}{11}\selectfont\dozent \\ \blattname}
+\runningheader{\fontsize{9}{11}\selectfont\fach}{}{\fontsize{9}{11}\selectfont\dozent \\ \blattname}
+
+% Adjust the font size for the footer
+\firstpagefooter{\includegraphics[width=2.5cm]{bauschule-logo-5cm.png}}{}{\fontsize{9}{11}\selectfont\thepage\,/\,\pageref{LastPage}}
+\runningfooter{\includegraphics[width=2.5cm]{bauschule-logo-5cm.png}}{}{\fontsize{9}{11}\selectfont\thepage\,/\,\pageref{LastPage}}
