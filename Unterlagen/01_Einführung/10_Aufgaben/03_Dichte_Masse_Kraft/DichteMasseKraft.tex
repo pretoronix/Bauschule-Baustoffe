@@ -1,0 +1,94 @@
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/01_Einführung/10_Aufgaben/03_Dichte_Masse_Kraft/DichteMasseKraft.tex
+
+\input{/Users/patricpf/Library/CloudStorage/OneDrive-SchweizerischeBauschuleAarauAG/Einführung Baustoffe/Vorlagen/texheader/BauschuleBS.tex}
+
+\newcommand{\blattname}{Physik: Dichte, Masse, Kraft}
+
+%% header and footer
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+
+
+%\printanswers
+
+\begin{document}
+
+{\fontsize{22pt}{2pt}\selectfont \textbf{\blattname}}
+\vspace{0.3cm}
+
+\renewcommand{\questionshook}{%
+  %\setlength{\leftmargin}{0pt}% removes the indentation from the left
+  \setlength{\labelwidth}{1.25cm}% adjusts label width
+  \setlength{\itemindent}{0cm}% aligns the start of the item with the above
+  \setlength{\labelsep}{0.25cm}% space between the label and the item text
+}
+
+\begin{questions}
+
+\question Berechnen Sie die Masse eines Betonblocks mit den Abmessungen \SI{2}{\meter} x \SI{3}{\meter} x \SI{0.5}{\meter} und einer Dichte von \SI{2400}{\kilogram\per\cubic\meter}.
+\begin{solution}
+    Volumen des Blocks = \(2 \times 3 \times 0.5 = \SI{3}{\cubic\meter}\). \\
+    Masse = Volumen x Dichte = \(3 \times 2400 = \SI{7200}{\kilogram}\).
+\end{solution}
+
+\question Ein Stahlträger mit einer Masse von \SI{1200}{\kilogram} wird gleichmässig von zwei Seilen gehalten. Welche Kraft wirkt auf jedes Seil?
+\begin{solution}
+    Gewichtskraft = Masse x Erdbeschleunigung (g = \SI{9.81}{\meter\per\square\second}). \\
+    Gesamtkraft = \(1200 \times 9.81 = \SI{11772}{\newton}\). \\
+    Kraft pro Seil = \(11772 / 2 = \SI{5886}{\newton}\).
+\end{solution}
+
+\question Ein Holzbalken mit einer Dichte von \SI{600}{\kilogram\per\cubic\meter} hat ein Volumen von \SI{0.8}{\cubic\meter}. Bestimmen Sie seine Masse.
+\begin{solution}
+    Masse = Dichte x Volumen = \(600 \times 0.8 = \SI{480}{\kilogram}\).
+\end{solution}
+
+\question Ein Bauarbeiter zieht einen \SI{25}{\kilogram} schweren Ziegelstein an einem Seil mit einer konstanten Geschwindigkeit nach oben. Welche Kraft muss er aufwenden, um den Stein zu heben (ohne Berücksichtigung der Reibung)?
+\begin{solution}
+    Die aufzuwendende Kraft entspricht der Gewichtskraft des Steins: \\
+    Gewichtskraft = Masse x g = \(25 \times 9.81 = \SI{245.25}{\newton}\).
+\end{solution}
+
+\question Ein Betonpfeiler hat ein Volumen von \SI{1.5}{\cubic\meter} und eine Masse von \SI{3600}{\kilogram}. Berechnen Sie die Dichte des Betons.
+\begin{solution}
+    Dichte = Masse / Volumen = \(3600 / 1.5 = \SI{2400}{\kilogram\per\cubic\meter}\).
+\end{solution}
+
+\question Ein Kran hebt eine Last von \SI{1500}{\kilogram} mit einer Beschleunigung von \SI{0.5}{\meter\per\square\second}. Berechnen Sie die Kraft, die der Kran ausübt.
+\begin{solution}
+    Gesamtkraft = Masse x (g + Beschleunigung) = \(1500 \times (9.81 + 0.5) = \SI{15465}{\newton}\).
+\end{solution}
+
+\question Ein Zylinder aus Aluminium (Dichte = \SI{2700}{\kilogram\per\cubic\meter}) hat einen Radius von \SI{0.1}{\meter} und eine Höhe von \SI{0.5}{\meter}. Ermitteln Sie seine Masse.
+\begin{solution}
+    Volumen des Zylinders = \(\pi \times r^2 \times h = \pi \times 0.1^2 \times 0.5 \approx \SI{0.0157}{\cubic\meter}\). \\
+    Masse = Dichte x Volumen = \(2700 \times 0.0157 \approx \SI{42.39}{\kilogram}\).
+\end{solution}
+
+\question Berechnen Sie die Gewichtskraft einer Granitplatte (Dichte = \SI{2750}{\kilogram\per\cubic\meter}) mit den Massen \SI{2}{\meter} x \SI{1}{\meter} x \SI{0.05}{\meter}.
+\begin{solution}
+    Volumen der Platte = \(2 \times 1 \times 0.05 = \SI{0.1}{\cubic\meter}\). \\
+    Masse = Dichte x Volumen = \(2750 \times 0.1 = \SI{275}{\kilogram}\). \\
+    Gewichtskraft = Masse x g = \(275 \times 9.81 = \SI{2697.75}{\newton}\).
+\end{solution}
+
+\question Eine Ziegelmauer hat ein Volumen von \SI{2}{\cubic\meter} und eine Masse von \SI{4000}{\kilogram}. Bestimmen Sie die Dichte der Ziegel.
+\begin{solution}
+    Dichte = Masse / Volumen = \(4000 / 2 = \SI{2000}{\kilogram\per\cubic\meter}\).
+\end{solution}
+
+\question Ein Stahlseil soll eine Last von \SI{2000}{\kilogram} tragen. Wenn die maximale Zugkraft des Seils \SI{5000}{\newton} beträgt, ist das Seil für diese Aufgabe geeignet? Begründen Sie Ihre Antwort.
+\begin{solution}
+    Gewichtskraft der Last = Masse x g = \(2000 \times 9.81 = \SI{19620}{\newton}\). \\
+    Da \SI{19620}{\newton} > \SI{5000}{\newton}, ist das Seil nicht geeignet.
+\end{solution}
+
+\end{questions}
+\end{document}
+

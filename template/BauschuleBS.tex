@@ -36,7 +36,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{tcolorbox}
 \usepackage{lastpage} % For the total number of pages
-
+\usepackage{gensymb}
 \usepackage{multicol}
 \usepackage[
     version=3,
@@ -46,6 +46,16 @@
 \usepackage{subfigure}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
+\usepackage{luacode}
+\usepackage{amsmath}
+\usepackage{textcomp}
+
+
+\sisetup{
+  locale = DE,
+  inter-unit-product = \ensuremath{{\cdot}},
+  detect-all,
+}
 
 % Colors
 \definecolor{blau_bauschule}{RGB}{22,65,148}
@@ -100,8 +110,10 @@
     \SI{#1}{\newton\per\mm\squared}
 }
 
-\renewcommand{\thequestion}{\fontsize{13pt}{2pt} \selectfont  \bfseries \arabic{question}}
+\renewcommand{\thequestion}{\fontsize{12pt}{2pt} \selectfont  \bfseries \arabic{question}}
 \sisetup{per-mode=symbol}
+
+
 
 %% Translation
 
@@ -119,6 +131,13 @@
 \hqword{Aufgabe:}
 \htword{Summe:}
 
+
+\renewcommand{\questionshook}{%
+  %\setlength{\leftmargin}{0pt}% removes the indentation from the left
+  \setlength{\labelwidth}{1.25cm}% adjusts label width
+  \setlength{\itemindent}{0cm}% aligns the start of the item with the above
+  \setlength{\labelsep}{0.25cm}% space between the label and the item text
+}
 
 
 

@@ -1,28 +1,21 @@
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/01_Einführung/10_Aufgaben/01_Waremeausdehnung/Waermeausdehnung.tex
 \input{../../../../template/BauschuleBS.tex}
 
 
 \newcommand{\blattname}{Physik: Wärmeausdehnung von Baustoffen}
 
-\usepackage{amsmath}
-\usepackage{geometry}
-%% header and footer
 
+%% header and footer
 \pagestyle{headandfoot}
 \firstpageheadrule
 \runningheadrule
-\firstpageheader{\fach}{}{\dozent \\ \blattname}
-\runningheader{\fach}{}{\dozent \\ \blattname}
-\firstpagefooter{}{}{\thepage\,/\,\numpages}
-\runningfooter{}{}{\thepage\,/\,\numpages}
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
 
-%\printanswers
+\printanswers
 
-\usepackage{siunitx}
-
-\sisetup{
-  locale = DE,
-  inter-unit-product = \ensuremath{{\cdot}},
-}
 
 
 \begin{document}
@@ -33,7 +26,8 @@
 
 
 \section*{Theoretische Grundlagen}
-Die Wärmeausdehnung beschreibt die Änderung der Abmessungen (Länge, Volumen) eines Körpers bei Temperaturänderung. Die lineare Ausdehnung kann mit der folgenden Formel beschrieben werden:
+Die Wärmeausdehnung beschreibt die Änderung der Abmessungen (Länge, Volumen) eines Körpers bei Temperaturänderung. 
+Die lineare Ausdehnung kann mit der folgenden Formel beschrieben werden:
 \[
 \Delta L = \alpha \cdot L_0 \cdot \Delta T
 \]
@@ -48,9 +42,10 @@ wobei:
 \section*{Ausdehnungskoeffizienten verschiedener Baustoffe}
 In der folgenden Tabelle sind die linearen Ausdehnungskoeffizienten einiger gängiger Baustoffe aufgeführt:
 
-\begin{table}[h]
-\centering
-\begin{tabular}{@{}lc@{}}
+\begin{table}[h]\centering
+    \caption{Ausdehnungskoeffizienten verschiedener Baustoffe.}
+    \label{tab:ausdehnungskoeffizienten}
+    \begin{tabular}{@{}lc@{}}
 \toprule
 \textbf{Baustoff} & \textbf{Linearer Ausdehnungskoeffizient [\si{mm/(m\cdot K)}]} \\ 
 \midrule
@@ -68,15 +63,15 @@ Kunststoff (angenommen) & \num{0.080} \\
 %Glas & \num{9e-6} \\
 \bottomrule
 \end{tabular}
-\caption{Ausdehnungskoeffizienten verschiedener Baustoffe.}
-\label{tab:ausdehnungskoeffizienten}
+
 \end{table}
 
-\newpage 
+\clearpage 
 \section*{Aufgaben}
-Löse die untenstehenden Aufgaben. Runde das Ergebnis auf eine sinnvolle Anzahl von Dezimalstellen. Für die Bearbeitung der Aufgaben kannst du die obenstehende Tabelle (\cref{tab:ausdehnungskoeffizienten}) verwenden.
+Löse die untenstehenden Aufgaben. Runde das Ergebnis auf eine sinnvolle Anzahl von Dezimalstellen.
+Für die Bearbeitung der Aufgaben kannst du die obenstehende Tabelle (\cref{tab:ausdehnungskoeffizienten}) verwenden.
 
-Für die Bearbeitung sollten \SI{20}{\min} ausreichen.
+%Für die Bearbeitung sollten $\text{\SI{20}{\min}}$ ausreichen.
 
 \begin{questions}
 \question Berechnen Sie die Längenänderung eines 10 Meter langen Stahlträgers, wenn er sich von 20°C auf 35°C erwärmt. Der lineare Ausdehnungskoeffizient von Stahl beträgt \num{0.013} \si{mm/(m\cdot K)}.
@@ -121,6 +116,13 @@ Für die Bearbeitung sollten \SI{20}{\min} ausreichen.
     \[ \Delta L_{\text{Stahl}} = \num{0.013} \cdot 30 \cdot (40 - 10) = \num{11.7} \, \si{mm} \]
     \[ \Delta L_{\text{Beton}} = \num{0.012} \cdot 30 \cdot (40 - 10) = \num{10.8} \, \si{mm} \]
     \[ \text{Unterschied} = \Delta L_{\text{Stahl}} - \Delta L_{\text{Beton}} = \num{11.7} \, \si{mm} - \num{10.8} \, \si{mm} = \num{0.9} \, \si{mm} \]
+\end{solution}
+
+\question Eine Glasfassade hat bei einer Temperatur von 10°C eine Fläche von 50 Quadratmetern. Wie gross ist die Fläche der Fassade bei einer Temperatur von 40°C? Der lineare Ausdehnungskoeffizient von Glas beträgt \num{0.009} \si{mm/(m\cdot K)}. Nehmen Sie an, dass die Ausdehnung in beiden Dimensionen gleich ist.
+\begin{solution}
+    \[ \Delta L = \alpha \cdot L_0 \cdot \Delta T = \num{0.009} \cdot \sqrt{50} \cdot (40 - 10) = \num{0.0135} \, \si{m} \]
+    \[ \Delta B = \alpha \cdot B_0 \cdot \Delta T = \num{0.009} \cdot \sqrt{50} \cdot (40 - 10) = \num{0.0135} \, \si{m} \]
+    \[ Neue Flaeche = (\sqrt{50} + 0.0135) \times (\sqrt{50} + 0.0135) \approx \num{50.54} \, \si{m^2} \]
 \end{solution}
 
 \end{questions}

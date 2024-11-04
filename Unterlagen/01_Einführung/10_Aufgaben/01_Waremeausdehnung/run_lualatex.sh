@@ -12,10 +12,11 @@ for texfile in *.tex; do
     # Uncomment or add \printanswers before \begin{document}
     sed -i '' 's/%\\printanswers/\\printanswers/' "$texfile"
     if ! grep -q '\\printanswers' "$texfile"; then
-        sed -i '' '/\\begin{document}/i \\\printanswers' "$texfile"
+        # Insert \printanswers before \begin{document} using macOS-compatible syntax
+        sed -i '' '/\\begin{document}/i\
+\\printanswers' "$texfile"
     fi
 
-    lualatex -jobname="${basename}_Sol" "$texfile"
     lualatex -jobname="${basename}_Sol" "$texfile"
     lualatex -jobname="${basename}_Sol" "$texfile"
 
@@ -23,7 +24,6 @@ for texfile in *.tex; do
     mv "${texfile}.bak" "$texfile"
 
     # Compile without solutions (NOSOL version)
-    lualatex -jobname="${basename}_Stud" "$texfile"
     lualatex -jobname="${basename}_Stud" "$texfile"
     lualatex -jobname="${basename}_Stud" "$texfile"
 done

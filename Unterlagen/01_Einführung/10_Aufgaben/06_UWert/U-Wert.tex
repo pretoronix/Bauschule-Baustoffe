@@ -1,0 +1,182 @@
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/01_Einführung/10_Aufgaben/06_UWert/U-Wert.tex
+\input{../../../../template/BauschuleBS.tex}
+
+\newcommand{\mytitle}{U-Wert Berechnungen von alten Prüfungen}
+\newcommand{\blattname}{\mytitle}
+
+%% header and footer
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+
+%\printanswers
+
+
+
+
+\begin{document}
+\section*{\textbf{\mytitle}}
+
+\subsection*{Formel}
+
+\begin{equation}
+    U = \dfrac{1}{R_{\text{Innen}} + \sum\dfrac{d_i}{\lambda_i} + R_{\text{Aussen}}}
+\end{equation}
+
+\vspace{2cm}
+
+
+\section{HTa-24 (2021)}
+\begin{questions}
+    \question
+    \begin{parts}
+        \part[2\half]
+        
+        
+        \newcommand{\UWertZiel}{0.20}
+        \newcommand{\mydicke}{25}
+        Leider fehlt in den Plänen die Angabe über den $\lambda$-Wert des Dämmmaterials. 
+		Sie erkennen jedoch, dass der U-Wert \SI{\UWertZiel}{\W\per\m^2\K} sein sollte und dass, die Dämmstärke \SI{\mydicke}{\cm} beträgt. Sie können mit $R_{\text{Aussen}} = 0.04$ und $R_{\text{Innen}} = 0.130$ rechnen.
+        Bestimmen Sie den $\lambda$-Wert des Dämmstoffes.
+        
+        \begin{solutionorbox}[7cm]
+        Wir setzen wieder in Gleichung (1) ein. 
+            \begin{equation*}
+                \UWertZiel = \dfrac{1}{0.130 + \dfrac{\SI{\mydicke}{\cm}}{\lambda} + 0.040}
+            \end{equation*}
+            
+            Wir formen die Gleichung um: 
+            
+            \begin{equation*}
+                \dfrac{ \SI{\mydicke}{\cm} }{\lambda} = ( \dfrac{1}{\UWertZiel} - 0.040 - 0.130)
+            \end{equation*}
+            
+            und weiter zu: 
+            
+            \newcommand{\resA}{\directlua{tex.sprint((\mydicke/100)/(1/\UWertZiel-0.040-0.130))}}
+            
+            
+            \begin{eqnarray*}
+                \lambda =& \dfrac{\SI{\mydicke}{\cm}}{ \dfrac{1}{\UWertZiel} - 0.040 - 0.130} \\ 
+                %=& \dfrac{\SI{\mydicke}{\cm}}{\dfrac{1}{\UWertZiel} - 0.040 - 0.130} \\
+                =& \FinRes{\SI{ \resA}{\W\per\m\per\K}} \\
+                %\approx& \FinRes{\SI{ 0.0705}{\W\per\m\per\K}}
+            \end{eqnarray*}
+            \end{solutionorbox}
+            
+            \part[1]
+            \label{q:Uwertaufgabe}
+            \renewcommand{\UWertZiel}{0.15}
+            \newcommand{\myLambda}{0.039}
+            
+            Sie haben EPS mit einem $\lambda$-Wert von \SI{\myLambda}{\W\per\m\per\K}. 
+			Was ist der U-Wert bei einer Dämmstärke von \SI{25}{\cm}? 
+            Sie können mit $R_{\text{Aussen}} = 0.04$ und $R_{\text{Innen}} = 0.130$ rechnen.
+            \begin{solutionorbox}[3cm]
+                Wir nehmen Gleichung 1 und setzen die Werte ein.
+                \newcommand{\resB}{\directlua{tex.sprint(1/(0.130+(\mydicke/100)/(\myLambda)+0.04))}}
+                \begin{equation*}
+                    U = \dfrac{1}{0.130 + \dfrac{\SI{\mydicke}{\cm}}{\SI{\myLambda}{\W\per\m\K}} + 0.04}
+                   %= \resB
+                  = \FinRes{\SI{\resB}{\W\per\m^2\K}} 
+                %\approx \FinRes{\SI{0.156}{\W\per\m^2\K}}
+                \end{equation*}
+            \end{solutionorbox}
+            
+			\clearpage
+            \part[1]
+            Leider wurde nur \SI{75}{\percent} der Dämmung verwendet, d.h. es wurde \SI{75}{\percent} von \SI{25}{\cm} gedämmt. Was ist der wirkliche U-Wert der Wand? Sie können mit $R_{\text{Aussen}} = 0.04$ und $R_{\text{Innen}} = 0.130$ rechnen und verwenden Sie den $\lambda$-Wert von Aufgabe (\ref{q:Uwertaufgabe}).
+            
+            \renewcommand{\mydicke}{18.75}
+            
+            \begin{solutionorbox}[3cm]
+                Wir nehmen Gleichung 1 und setzen die Werte ein.
+                \newcommand{\resC}{\directlua{tex.sprint(1/(0.130+(\mydicke/100)/(\myLambda)+0.04))}}
+                \begin{equation*}
+                    U = \dfrac{1}{0.130 + \dfrac{\SI{\mydicke}{\cm}}{\SI{\myLambda}{\W\per\m\K}} + 0.04}
+                   %= \resB
+                  = \FinRes{\SI{\resC}{\W\per\m^2\K}} 
+                %\approx \FinRes{\SI{0.156}{\W\per\m^2\K}}
+                \end{equation*}
+            \end{solutionorbox}
+\end{parts}
+\end{questions}
+
+
+
+
+\section{HTb-24 (2021)}
+\begin{questions}
+    \question
+    \begin{parts}
+        \part[2\half]
+        
+        
+        \newcommand{\UWertZiel}{0.20}
+        \newcommand{\mydicke}{22}
+        Leider fehlt in den Plänen die Angabe über den $\lambda$-Wert des Dämmmaterials.
+		Sie erkennen jedoch, dass der U-Wert \SI{\UWertZiel}{\W\per\m^2\K} sein sollte und dass, die Dämmstärke \SI{\mydicke}{\cm} beträgt. Sie können mit $R_{\text{Aussen}} = 0.04$ und $R_{\text{Innen}} = 0.130$ rechnen.
+        Bestimmen Sie den $\lambda$-Wert des Dämmstoffes.
+        
+        \begin{solutionorbox}[7cm]
+        Wir setzen wieder in Gleichung (1) ein. 
+            \begin{equation*}
+                \UWertZiel = \dfrac{1}{0.130 + \dfrac{\SI{\mydicke}{\cm}}{\lambda} + 0.040}
+            \end{equation*}
+            
+            Wir formen die Gleichung um: 
+            
+            \begin{equation*}
+                \dfrac{ \SI{\mydicke}{\cm} }{\lambda} = ( \dfrac{1}{\UWertZiel} - 0.040 - 0.130)
+            \end{equation*}
+            
+            und weiter zu: 
+            
+            \newcommand{\resA}{\directlua{tex.sprint((\mydicke/100)/(1/\UWertZiel-0.040-0.130))}}
+            
+            
+            \begin{eqnarray*}
+                \lambda =& \dfrac{\SI{\mydicke}{\cm}}{ \dfrac{1}{\UWertZiel} - 0.040 - 0.130} \\ 
+                %=& \dfrac{\SI{\mydicke}{\cm}}{\dfrac{1}{\UWertZiel} - 0.040 - 0.130} \\
+                =& \FinRes{\SI{ \resA}{\W\per\m\per\K}} \\
+                %\approx& \FinRes{\SI{ 0.0705}{\W\per\m\per\K}}
+            \end{eqnarray*}
+            \end{solutionorbox}
+            
+            \part[2]
+            \renewcommand{\UWertZiel}{0.15}
+            Sie wollen nun einen Dämmwert von \SI{\UWertZiel}{\W\per\m^2\K} erreichen. Welchen $\lambda$-Wert muss das Material haben?
+            
+            
+                    \begin{solutionorbox}[4cm]
+            Wir setzen wieder in Gleichung (1) ein. 
+            \begin{equation*}
+                \UWertZiel = \dfrac{1}{0.130 + \dfrac{\SI{\mydicke}{\cm}}{\lambda} + 0.040}
+            \end{equation*}
+            
+            Wir formen die Gleichung um: 
+            
+            \begin{equation*}
+                \dfrac{ \SI{\mydicke}{\cm} }{\lambda} = ( \dfrac{1}{\UWertZiel} - 0.040 - 0.130)
+            \end{equation*}
+            
+            und weiter zu: 
+            
+            \newcommand{\resA}{\directlua{tex.sprint((\mydicke/100)/(1/\UWertZiel-0.040-0.130))}}
+            
+            
+            \begin{eqnarray*}
+                \lambda =& \dfrac{\SI{\mydicke}{\cm}}{ \dfrac{1}{\UWertZiel} - 0.040 - 0.130} \\ 
+                %=& \dfrac{\SI{\mydicke}{\cm}}{\dfrac{1}{\UWertZiel} - 0.040 - 0.130} \\
+                =& \FinRes{\SI{ \resA}{\W\per\m\per\K}} \\
+                %\approx& \FinRes{\SI{ 0.0705}{\W\per\m\per\K}}
+            \end{eqnarray*}
+            \end{solutionorbox}
+\end{parts}
+\end{questions}
+\end{document}

@@ -1,0 +1,108 @@
+
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/01_Einführung/10_Aufgaben/05_Dichteanamolie/Dichteanamolie.tex
+\input{../../../../template/BauschuleBS.tex}
+
+
+
+
+\newcommand{\blattname}{Dichteanomalie des Wassers}
+
+%% header and footer
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+
+
+
+
+
+\begin{document}
+
+{\fontsize{22pt}{2pt}\selectfont \textbf{\blattname}}
+\vspace{0.3cm}
+
+
+\textit{Hinweis: }Diese Aufgaben lassen sich nur teilweise mit Skript oder den Folien lösen. Gewisse Aufgaben oder Teilaufgaben müssen im Selbststudium erarbeitet werden. Sie dürfen mit rund \SI{1000}{\hecto\Pa} Atmospährendruck rechnen.
+
+
+\begin{questions}
+    \question
+    Was ist die Dichte-Anomalie von Wasser resp. wie unterscheidet sich die Dichte von Wasser in Abhängigkeit von der Temperatur im Vergleich zu anderen Stoffen.
+
+
+    \begin{solution}
+        Bei praktisch allen Stoffen ist die Dichte im festen Aggregatszustand höher als im flüssigen; zudem nimmt die Dichte einer Flüssigkeit normalerweise mit steigender Temperatur ab.
+        Beides trifft auf Wasser nicht zu.
+        (Annahme: Druckverhältnisse ändern sich nicht).
+    \end{solution}
+
+
+    \question
+    Beschreiben Sie die Auswirkungen dieser Anomalie für Gewässer im Winter  kurz.
+
+    \begin{solution}
+        Eis schwimmt auf Wasser, d.h. Eis hat eine geringere Dichte als Wasser im flüssigen Zustand.
+        Wasserorganismen können nahe des Grundes des Gewässers den Winter überleben.
+    \end{solution}
+
+    \question
+    Gefrierendes Wasser kann Steine zum Platzen bringen. Erklären Sie diese Sprengwirkung.
+
+    \begin{solution}
+        Beim Gefrieren wird flüssiges Wasser zu Eis . Da Eis ein grösseres Volumen beansprucht als flüssiges Wasser, werden Kräfte auf das Gestein ausgeübt. Diese Kräfte können teilweise kleinere Felsbrocken "wegsprengen".
+    \end{solution}
+
+
+    \question
+    Welches Volumen hat 10 kg Eis und ein 10 kg flüssiges Wasser bei 0°C.
+
+    ($\rho_{\text{Eis,} 0\degree C}=0.9170 g/cm^3$ und $\rho_{\text{Wasser,} 0\degree C}= \SI{0.9998}{\g\per\cm^3}$)
+
+
+
+    \begin{solution}
+        \begin{equation}
+            \rho = \dfrac{m}{V}
+        \end{equation}
+
+        Diese Gleichung wird aufgelöst nach dem Volumen $V$.
+
+        \begin{equation*}
+            V = \dfrac{m}{\rho}
+        \end{equation*}
+
+        Für Eis bei 0°C gilt somit:
+        \begin{equation*}
+            V = \dfrac{m}{\rho} = \dfrac{10'000\, g}{0.9170\,g/cm^3} = 10'905\,cm^3 = \FinRes{10.905\,dm^3}
+        \end{equation*}
+
+        Für Wasser bei 0°C gilt somit:
+        \begin{equation*}
+            V = \dfrac{m}{\rho} = \dfrac{10'000\,g}{0.9998\, g/cm^3} = 10'002\,cm^3 = \FinRes{10.002\,dm^3}
+        \end{equation*}
+    \end{solution}
+
+    \question
+    Zeichnen eines Diagramms mit den folgenden Achsen: x-Achse Temperatur und y-Achse: Dichte von Wasser, jeweils unter Angabe der korrekten Einheit der Achse und einer Kurve. Die Kurve sollte einen Bereich von mindestens \SI{0}{\degreeCelsius} bis mindestesns \SI{10}{\degreeCelsius} abdecken
+
+    \begin{solution}
+        \begin{figure}[H]
+            \includegraphics[width=0.75\textwidth]{Dichte_Wasser_Diagramm}
+        \end{figure}
+    \end{solution}
+
+    \question
+    Bei welcher Temperatur in der Einheit Kelvin  hat Wasser die höchste Dichte?
+
+    \begin{solution}
+        \SI{4}{\degreeCelsius} = \FinRes{\SI{277.15}{\K}}
+    \end{solution}
+
+
+\end{questions}
+\end{document}
