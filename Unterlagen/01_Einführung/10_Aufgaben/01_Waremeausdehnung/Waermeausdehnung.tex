@@ -14,7 +14,7 @@
 \firstpagefooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
 \runningfooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
 
-\printanswers
+%\printanswers
 
 
 
@@ -26,7 +26,7 @@
 
 
 \section*{Theoretische Grundlagen}
-Die Wärmeausdehnung beschreibt die Änderung der Abmessungen (Länge, Volumen) eines Körpers bei Temperaturänderung. 
+Die Wärmeausdehnung beschreibt die Änderung der Abmessungen (Länge,Fläche, Volumen) eines Körpers bei Temperaturänderung. 
 Die lineare Ausdehnung kann mit der folgenden Formel beschrieben werden:
 \[
 \Delta L = \alpha \cdot L_0 \cdot \Delta T
@@ -40,7 +40,7 @@ wobei:
 \end{itemize}
 
 \section*{Ausdehnungskoeffizienten verschiedener Baustoffe}
-In der folgenden Tabelle sind die linearen Ausdehnungskoeffizienten einiger gängiger Baustoffe aufgeführt:
+In \Cref{tab:ausdehnungskoeffizienten} sind die linearen Ausdehnungskoeffizienten einiger gängiger Baustoffe aufgeführt:
 
 \begin{table}[h]\centering
     \caption{Ausdehnungskoeffizienten verschiedener Baustoffe.}
@@ -70,13 +70,14 @@ Kunststoff (angenommen) & \num{0.080} \\
 \section*{Aufgaben}
 Löse die untenstehenden Aufgaben. Runde das Ergebnis auf eine sinnvolle Anzahl von Dezimalstellen.
 Für die Bearbeitung der Aufgaben kannst du die obenstehende Tabelle (\cref{tab:ausdehnungskoeffizienten}) verwenden.
+Für die Bearbeitung sollten \SI{20}{\minute} ausreichen.
 
 %Für die Bearbeitung sollten $\text{\SI{20}{\min}}$ ausreichen.
 
 \begin{questions}
 \question Berechnen Sie die Längenänderung eines 10 Meter langen Stahlträgers, wenn er sich von 20°C auf 35°C erwärmt. Der lineare Ausdehnungskoeffizient von Stahl beträgt \num{0.013} \si{mm/(m\cdot K)}.
 \begin{solution}
-    \[ \Delta L = \alpha \cdot L_0 \cdot \Delta T = \num{0.013} \cdot 10 \cdot 15 = \num{1.95} \, \si{mm} \]
+    \[ \Delta L = \alpha \cdot L_0 \cdot \Delta T = \num{0.013} \cdot 10 \cdot 15 = \FinRes{\num{1.95} \, \si{mm}} \]
 \end{solution}
 
 \question Ein Betonweg ist ursprünglich 50 Meter lang. Bei extremen Temperaturschwankungen zwischen Winter und Sommer kann sich die Temperatur um bis zu 30°C ändern. Berechnen Sie die maximale Längenänderung des Weges, wenn der Ausdehnungskoeffizient von Beton \num{0.012} \si{mm/(m\cdot K)} ist.
@@ -97,6 +98,7 @@ Für die Bearbeitung der Aufgaben kannst du die obenstehende Tabelle (\cref{tab:
     \[ \Delta L = \alpha \cdot L_0 \cdot \Delta T = \num{0.023} \cdot 30 \cdot (40 - (-10)) = \num{34.5} \, \si{mm} \]
 \end{solution}
 
+\pagebreaksol
 \question Ein Glasfenster misst im Winter bei -5°C 2m x 3m. Wie gross ist seine Fläche im Sommer bei 35°C? Der lineare Ausdehnungskoeffizient von Glas beträgt \num{0.009} \si{mm/(m\cdot K)}. Nehmen Sie an, dass die Ausdehnung in beiden Dimensionen gleich ist.
 \begin{solution}
     \[ \Delta L = \alpha \cdot L_0 \cdot \Delta T = \num{0.009} \cdot 2 \cdot (35 - (-5)) = \num{0.72} \, \si{mm} \]
@@ -107,6 +109,7 @@ Für die Bearbeitung der Aufgaben kannst du die obenstehende Tabelle (\cref{tab:
 \question Ein Kunststoffrohr hat eine ursprüngliche Länge von 15 Metern bei 25°C. Wie lang ist das Rohr bei einer Temperatur von -20°C? Der Ausdehnungskoeffizient von Kunststoff (angenommen) beträgt \num{0.080} \si{mm/(m\cdot K)}.
 \begin{solution}
     \[ \Delta L = \alpha \cdot L_0 \cdot \Delta T = \num{0.080} \cdot 15 \cdot (-20 - 25) = \num{-54} \, \si{mm} \]
+    \[ Neue Laenge = 15 \, \text{m} - 54 \, \text{mm} = \FinRes{\num{14.946} \, \si{m}} \]
 \end{solution}
 
 
@@ -115,14 +118,26 @@ Für die Bearbeitung der Aufgaben kannst du die obenstehende Tabelle (\cref{tab:
 \begin{solution}
     \[ \Delta L_{\text{Stahl}} = \num{0.013} \cdot 30 \cdot (40 - 10) = \num{11.7} \, \si{mm} \]
     \[ \Delta L_{\text{Beton}} = \num{0.012} \cdot 30 \cdot (40 - 10) = \num{10.8} \, \si{mm} \]
-    \[ \text{Unterschied} = \Delta L_{\text{Stahl}} - \Delta L_{\text{Beton}} = \num{11.7} \, \si{mm} - \num{10.8} \, \si{mm} = \num{0.9} \, \si{mm} \]
+    \[ \text{Unterschied} = \Delta L_{\text{Stahl}} - \Delta L_{\text{Beton}} = \num{11.7} \, \si{mm} - \num{10.8} \, \si{mm} = \FinRes{\num{0.9} \, \si{mm}} \]
 \end{solution}
 
 \question Eine Glasfassade hat bei einer Temperatur von 10°C eine Fläche von 50 Quadratmetern. Wie gross ist die Fläche der Fassade bei einer Temperatur von 40°C? Der lineare Ausdehnungskoeffizient von Glas beträgt \num{0.009} \si{mm/(m\cdot K)}. Nehmen Sie an, dass die Ausdehnung in beiden Dimensionen gleich ist.
 \begin{solution}
-    \[ \Delta L = \alpha \cdot L_0 \cdot \Delta T = \num{0.009} \cdot \sqrt{50} \cdot (40 - 10) = \num{0.0135} \, \si{m} \]
-    \[ \Delta B = \alpha \cdot B_0 \cdot \Delta T = \num{0.009} \cdot \sqrt{50} \cdot (40 - 10) = \num{0.0135} \, \si{m} \]
-    \[ Neue Flaeche = (\sqrt{50} + 0.0135) \times (\sqrt{50} + 0.0135) \approx \num{50.54} \, \si{m^2} \]
+    Berechnung der Längenänderung:
+    \[
+    \Delta L = \alpha \cdot L_0 \cdot \Delta T = 0.009 \cdot \sqrt{50} \cdot (40 - 10) = 0.0135 \, \si{m}
+    \]
+    \[
+    \Delta B = \alpha \cdot B_0 \cdot \Delta T = 0.009 \cdot \sqrt{50} \cdot (40 - 10) = 0.0135 \, \si{m}
+    \]
+    
+    Berechnung der neuen Fläche:
+    \[
+    \text{Neue Länge} = \sqrt{50} + 0.0135 \approx 7.0846
+    \]
+    \[
+    \text{Neue Fläche} = (7.0846) \times (7.0846) \approx \FinRes{50.20 \, \si{m^2}}
+    \]
 \end{solution}
 
 \end{questions}
