@@ -1,0 +1,206 @@
+% !TEX program = lualatex
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/01_Einführung/10_Aufgaben/10_pHWert/pHWert.tex
+
+
+
+\input{../../../../template/BauschuleBS.tex}
+
+
+\newcommand{\blattname}{Aufgaben zum pH-Wert}
+
+%% header and footer
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{../../../../template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+
+
+\printanswers
+
+
+
+
+
+\renewcommand{\thequestion}{\fontsize{15pt}{2pt} \selectfont  \bfseries \arabic{question}}
+
+
+
+
+
+\newcommand{\pHeinfachLUA}[1]{%
+\question[1]
+Berechnen Sie den pH-Wert der Lösung mit einer Konzentration von \num{#1} an Hydroniumionen.
+
+
+    \begin{solutionorbox}[3cm]
+Der pH-Wert der Lösung beträgt
+\directlua{calcpH(#1)}
+.%
+    \end{solutionorbox}
+
+
+}
+
+\begin{luacode}
+function calcpH(zahl)
+	    tex.print{string.format("%0.2f",-math.log(zahl,10))}
+end
+\end{luacode}
+
+
+
+\begin{document}
+{\fontsize{22pt}{2pt}\selectfont \textbf{\blattname}}
+\vspace{0.3cm}
+
+\section*{Theorie}
+
+Der pH-Wert wird vereinfacht berechnet mit der Formel:
+
+\begin{equation}
+    pH = -log_{10}([H_3O^+])
+\end{equation}
+
+
+
+\section*{Aufgaben}
+
+
+Lösen Sie die folgenden Aufgaben. Der Zeitbedarf ist ungefähr 20 Minuten.
+%\maketitle
+%\punkte{Runden Sie die Resultate sinnvoll.}
+
+\begin{questions}
+%\section{Sehr einfache Aufgaben}
+
+\pHeinfachLUA{0.000000001}
+\pHeinfachLUA{0.001}
+\pHeinfachLUA{0.00001}
+
+
+%\section{Einfache Aufgaben}
+
+\pHeinfachLUA{0.000000005}
+
+\ifprintanswers
+{}
+\else
+\clearpage
+\fi
+
+
+
+\pHeinfachLUA{0.0008987}
+\pHeinfachLUA{0.01271}
+
+%\section{Mittlere Aufgaben}
+\question[6]
+Berechnen Sie die pH-Werte falls die Konzentrationen jeweils halbiert werden. 
+Nehmen Sie dabei 6 Konzentrationen aus den vorherigen Aufgaben.
+
+   \ifprintanswers
+   {
+    \begin{solution}
+        
+        \begin{enumerate}
+            \item \directlua{calcpH(0.000000001*0.5)}
+            \item \directlua{calcpH(0.001*0.5)}
+            \item \directlua{calcpH(0.00001*0.5)}
+            \item \directlua{calcpH(0.000000005*0.5)}
+            \item \directlua{calcpH(0.0008987*0.5)}
+            \item \directlua{calcpH(0.01271*0.5)}
+        \end{enumerate}
+    \end{solution}
+}
+    \else
+        \makeemptybox{3cm}
+        \makeemptybox{3cm}
+        \makeemptybox{3cm}
+        \makeemptybox{3cm}
+        \makeemptybox{3cm}
+        \makeemptybox{3cm}
+    \fi
+
+
+
+%\section{Weitere Aufgaben}
+
+\question[1]
+Welche Konzentration von Hydroniumionen hat Wasser?
+
+\begin{solutionorbox}[3cm]
+$10^{-7}$
+\end{solutionorbox}
+
+\question[1]
+Berechnen Sie die Konzentration von \ce{H3O+} von  Beton. Sie dürfen den pH-Wert des Betons abschätzen.
+\begin{solutionorbox}[3cm]
+\begin{equation*}
+    -log(x) = 13
+\end{equation*}
+\begin{equation*}
+    x = 10^{-13}
+\end{equation*}
+\end{solutionorbox}
+
+\question[1]
+
+Berechnen Sie die Konzentration von \ce{H3O+} von karbonatisiertem Beton. Sie müssen den pH-Wert von karbonatisiertem Beton abschätzen.
+
+\begin{solutionorbox}[3cm]
+\begin{equation*}
+    -log(x) = 10
+\end{equation*}
+\begin{equation*}
+    x = 10^{-10}
+\end{equation*}
+\end{solutionorbox}
+
+\ifprintanswers
+{}
+\else
+\clearpage
+\fi
+
+\question[1]
+Wie können Sie die Karbonatisierungstiefe bestimmen?
+\begin{solutionorbox}[3cm]
+Bohrkern entnehmen und Phenolphthalein (Indikator) besprühen
+\end{solutionorbox}
+
+\question[1]
+Sie haben eine Lösung mit einem pH-Wert von 10 vor sich. Sie wollen einen pH-Wert von 9 erreichen. 
+Wie stark müssen Sie die Lösung verdünnen?
+\begin{solutionorbox}[3cm]
+10-mal.
+\end{solutionorbox}
+
+
+%\section{Fachabschluss}
+%
+%\begin{solution}
+%
+%\begin{enumerate}
+%	\item \directlua{calcpH(0.000000005)}
+%	\item \directlua{calcpH(0.000000005*1/2)}
+%	\item \directlua{calcpH(0.000000005*1/10)}
+%
+%\end{enumerate}
+%\end{solution}
+
+
+
+
+
+\end{questions}
+\end{document}
+
+
+
+	
+	
+\end{document}
