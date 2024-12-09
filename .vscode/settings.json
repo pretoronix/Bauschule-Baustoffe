@@ -1,43 +1,39 @@
-// LuaLaTeX + BibTeX
-/*{
-    "latex-workshop.latex.tools": [
-        {
-            "name": "lualatex",
-            "command": "lualatex",
-            "args": [
-                "--synctex=1",
-                "--interaction=nonstopmode",
-                "--shell-escape",
-                "%DOC%"
-            ]
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ]
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "lualatex -> bibtex -> lualatex*2",
-            "tools": [
-                "lualatex",
-                "bibtex",
-                "lualatex",
-                "lualatex"
-            ]
-        }
-    ],
-    "latex-workshop.latex.recipe.default": "lualatex -> bibtex -> lualatex*2"
-}
+// // LuaLaTeX + BibTeX
+// {
+//     "latex-workshop.latex.tools": [
+//         {
+//             "name": "lualatex",
+//             "command": "lualatex",
+//             "args": [
+//                 "--synctex=1",
+//                 "--interaction=nonstopmode",
+//                 "--shell-escape",
+//                 "%DOC%"
+//             ]
+//         },
+//         {
+//             "name": "bibtex",
+//             "command": "bibtex",
+//             "args": [
+//                 "%DOCFILE%"
+//             ]
+//         }
+//     ],
+//     "latex-workshop.latex.recipes": [
+//         {
+//             "name": "lualatex -> bibtex -> lualatex*2",
+//             "tools": [
+//                 "lualatex",
+//                 "bibtex",
+//                 "lualatex",
+//                 "lualatex"
+//             ]
+//         }
+//     ],
+//     "latex-workshop.latex.recipe.default": "lualatex -> bibtex -> lualatex*2"
+// }
 
-*/
-
-// Only lualatex
 {
-    // Only lualatex configuration
     "latex-workshop.latex.tools": [
         {
             "name": "lualatex",
@@ -52,32 +48,12 @@
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "lualatex-only",
+            "name": "lualatex",
             "tools": [
-                "lualatex",
                 "lualatex"
             ]
         }
     ],
-    "latex-workshop.latex.recipe.default": "lualatex-only",
+    "latex-workshop.latex.recipe.default": "lualatex"
+}
 
-    // File exclusions for LaTeX auxiliary files
-    "files.exclude": {
-        "**/*.aux": true,
-        "**/*.log": true,
-        "**/*.synctex.gz": true,
-        "**/*.toc": true,
-        "**/*.out": true,
-        "**/*.bbl": true,
-        "**/*.blg": true,
-        "**/*.fdb_latexmk": true,
-        "**/*.fls": true,
-        "**/*.nav": true, 
-        "**/*.snm": true,
-    }
-    "[latex]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
-}
-}
-    

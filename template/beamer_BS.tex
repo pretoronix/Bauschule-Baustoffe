@@ -1,7 +1,9 @@
 % !TEX program = lualatex
-\documentclass[aspectratio=169, 
-handout,
-]{beamer}
+\ifdefined\customoptions
+    \documentclass[\customoptions]{beamer}
+\else
+    \documentclass[aspectratio=169,handout]{beamer}
+\fi
 
 
 \PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
@@ -36,6 +38,8 @@ handout,
 \usepackage{calc}
 \usepackage{multicol}
 \usepackage{amsmath}
+\usepackage{fontawesome}
+
 
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
@@ -49,7 +53,7 @@ handout,
 \usetheme{Madrid} % This theme is visually appealing
 %\usecolortheme{whale} % A color theme with blue tones
 \usecolortheme{dolphin} % A color theme with blue tones
-
+\setbeamerfont{frametitle}{size=\Large}
 
 \newcommand{\mylogo}{
     \begin{tikzpicture}[remember picture,overlay]
@@ -100,6 +104,9 @@ handout,
   \end{beamercolorbox}}%
   \vskip0pt%
 }
+
+%\setbeamertemplate{footline}{%
+%  \hspace*{0.5cm}\textbf{\fachname}\hfill \insertframenumber / \inserttotalframenumber\hspace*{0.5cm}}
 
 
 
@@ -187,6 +194,14 @@ after title={\hfill\colorbox{blue}{Masseinheit}}
         \item[\textbullet] Bitte Namen eintragen:  \textit{Nachname Vorname}
         \item[\textbullet] Zeit: #2 Minuten
         \item[\textbullet] \href{#3}{\textcolor{blue}{Link zur Prüfung}}
+    \end{itemize}
+\end{frame}
+}
+
+\newcommand{\Lernziele}[1]{%
+\begin{frame}{Lernziele}
+    \begin{itemize}
+        #1
     \end{itemize}
 \end{frame}
 }

@@ -1,0 +1,860 @@
+% !TEX program = lualatex
+
+\documentclass[
+11pt,
+captions=tableheading,
+smallheadings,
+%headings=big,
+headsepline,
+footsepline, 
+%chapterprefix=false			% weiss nicht was passiert
+captions=tableheading,
+parskip=half-,
+%BCOR=10mm,
+%twocolumn, 
+%draft
+]{scrartcl}
+
+%\usepackage[babelshorthands]{polyglossia}
+\usepackage{polyglossia}
+%\setdefaultlanguage[variant = swiss]{german}
+\setdefaultlanguage{german}
+
+%\usepackage[ngerman]{babel} 
+\usepackage[]{ scrlayer-scrpage }
+\usepackage[ a4paper,
+ total={160mm,244mm},
+ left=25mm,
+ top=25mm,
+ headsep=10mm
+ %footsep=12mm
+ %,showframe
+  ]{geometry}
+ \usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{forest}
+\usepackage[most]{tcolorbox}
+\usepackage[
+version=3,
+arrows=pgf-filled,
+]{mhchem} % für chemische Formeln
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{fontawesome5}
+\usepackage{pdfpages}
+\usepackage{pgfgantt}
+
+\usepackage{pdflscape} % Für Querformat-Seiten
+
+
+\usepackage{siunitx}
+\usepackage{amsfonts}
+\usepackage{tabularx}
+
+%Quellen 
+\usepackage[
+    backend=bibtex, 
+    natbib=true,
+    style=numeric,
+    sorting=none
+]{biblatex}
+\addbibresource{../Quellen.bib}
+
+\usepackage[section]{placeins} % avoids images in the wrong section
+
+
+\usetikzlibrary{shapes.symbols, positioning, decorations.pathreplacing}
+
+% order of hyperref, cleverref is important
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+
+
+\frenchspacing
+
+
+
+\floatplacement{figure}{H}
+
+% Labeling of elements
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
+
+% Colors
+\definecolor{blau_bauschule}{RGB}{22,65,148}
+
+% Titel mit Bauschule blau gemäss CI manual
+\addtokomafont{section}{\color{blau_bauschule}\Huge}
+\addtokomafont{subsection}{\color{blau_bauschule}\huge}
+\addtokomafont{subsubsection}{\color{blau_bauschule}\Large}
+\addtokomafont{paragraph}{\normalsize}
+\addtokomafont{subparagraph}{\small}
+% Pagestyle
+\pagestyle{scrheadings}
+\ihead{\fontsize{9pt}{2pt}\selectfont }
+\ohead{\fontsize{9pt}{2pt}\selectfont Baustoffe}
+\chead{\fontsize{9pt}{2pt}\selectfont \headmark}
+\ifoot{\fontsize{9pt}{2pt}\selectfont Bauschule Aarau} 
+\ofoot{\fontsize{9pt}{2pt}\selectfont \thepage} %Seitennummer
+\cfoot{\fontsize{9pt}{2pt}\selectfont }
+\setkomafont{pagehead}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+\setkomafont{pagehead}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+\setcounter{topnumber}{1}
+\setcounter{bottomnumber}{1}
+\automark[section]{subsection}
+
+
+% Bild- und Tabellenunterschriften
+\renewcommand*{\figurename}{Abbildung}
+\renewcommand*{\tablename}{Tabelle}
+
+
+% Titel
+\title{Baustoffe}
+%\author{Patrick Pfändler}
+\date{2021}
+
+% https://tex.stackexchange.com/questions/501018/how-to-write-a-minitoc-with-plain-koma-script
+
+%https://www.mrunix.de/forums/archive/index.php/t-74962.html
+
+
+
+%TODO % Studierende haben häufig eine Familie (noch integrieren) 
+
+
+\makeatletter
+\newcommand\reaction@[1]{\begin{equation}\ce{#1}\end{equation}}
+\newcommand\reaction@nonumber[1]%
+{\begin{equation*}\ce{#1}\end{equation*}}
+\newcommand\reaction{\@ifstar{\reaction@nonumber}{ \reaction@}}
+\makeatother
+%renewtagform{reaction}[R ]{(}{)}
+
+%% Custom icons 
+\newcommand{\Lernziel}{\faBullseye}
+\newcommand{\Diskussion}{\faComments}
+\newcommand{\TR}{\faCalculator}
+\newcommand{\Fragen}{\faQuestionCircle}
+\newcommand{\LeherTafel}{\faChalkboardTeacher}
+
+\forestset{
+    folder/.style={
+        for tree={
+            grow=east,
+            rectangle,
+            draw,
+            rounded corners,
+            align=center,
+            fill=blue!20,
+            text width=4.5cm, % Breitere Blöcke
+            minimum height=1cm,
+            font=\footnotesize % Kleinere Schriftgröße
+        }
+    },
+    document/.style={
+        for tree={
+            grow=east,
+            rectangle,
+            draw,
+            rounded corners,
+            align=center,
+            fill=gray!20,
+            text width=4cm, % Breitere Dokumentenblöcke
+            minimum height=0.8cm,
+            font=\scriptsize % Kleinere Schriftgröße
+        }
+    }
+}
+
+
+
+
+
+
+
+\begin{document}
+
+
+\pagestyle{scrheadings}
+
+% Commands
+\newcommand{\myNmm}[1]
+{
+\sisetup{per-mode=symbol}
+\SI{#1}{\newton\per\mm\squared}
+}
+
+
+\newcommand{\kommzerielleProdukte}[1]
+{
+    \textcolor{Brown}{Kommerzielle Produkte:}  #1
+}
+
+
+
+
+%\renewcommand{\familydefault}{\sfdefault}
+%\setkomafont{captionlabel}{\itshape \fontsize{10pt}{2pt}}
+%\setkomafont{caption}{\sffamily} 
+
+\newtcolorbox{Definition}[1]{
+colback=green!5!white,
+colframe=green!75!black,fonttitle=\bfseries,
+title=#1}
+
+
+\newtcolorbox{Merke}{
+enhanced,
+boxrule=0pt,frame hidden,
+borderline west={4pt}{0pt}{red!75!black},
+colback=white,
+sharp corners
+}
+
+\newtcolorbox{Masseinheit}[1]{
+enhanced,
+boxrule=1pt,colframe=blue,
+colback=white,
+sharp corners, 
+colframe=blue!75!black,
+title = #1, 
+after title={\hfill\colorbox{ NavyBlue}{Masseinheit}}
+}
+
+\newtcbox{\ExampleSimple}[1][gray]{on line,
+arc=0pt,outer arc=0pt,colback=#1!10!white,%colframe=#1!50!black,
+frame hidden,
+boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,
+boxrule=0pt,bottomrule=1pt,toprule=1pt}
+
+%\maketitle
+{\color{blau_bauschule}\fontsize{40pt}{21pt}\selectfont \textbf{Lehrkonzept: Einsatz von neuen Baustoffen und Technologien}}
+
+\clearpage
+\vspace*{2cm}
+\setcounter{tocdepth}{3} % Tiefe des Inhaltverzeichnisses steuern
+\tableofcontents%
+\clearpage
+
+\subsection*{Abkürzungsverzeichnis}
+\begin{table}[H]
+    \centering
+    \label{tab:abkuerzungen}
+    \begin{tabularx}{\textwidth}{@{}ll@{}}
+    \toprule
+    %\midrule
+    Bsp. & Beispiel \\
+    LP & Lehrperson \\
+    SF & Sozialform \\
+    FK & Fachkompetenz \\
+    ÜK & Überfachliche Kompetenz \\
+    \bottomrule
+    \end{tabularx}
+    \end{table}
+
+
+
+\clearpage
+
+
+
+
+
+\section{Rahmenbedingungen}
+
+%\subsection{Vorgaben}
+
+Das Lehrkonzept im Fach \textbf{Baustoffe} orientiert sich an den institutionellen und berufsspezifischen Anforderungen für die Ausbildung von Bauführern (vgl. Kompetenzprofil für Bauführer \cite{Kompetenzprofil_Baufuehrer}). Die folgenden Vorgaben bilden die Grundlage für die Gestaltung der Unterrichtseinheiten:
+
+\subsection{Institutionelle Vorgaben}
+Gemäss den Richtlinien der weiterführenden Schule ist der Unterricht so zu gestalten, dass die Schülerinnen und Schüler die Kompetenzen erwerben, die für eine verantwortungsvolle Tätigkeit als Bauführer erforderlich sind. Dies umfasst die Vermittlung grundlegender und spezialisierter Kenntnisse in Materialkunde, Materialprüfung sowie ökologischen und wirtschaftlichen Aspekten der Baustoffwahl. 
+Für detaillierte Angaben liegt ein berufspädagogisches Konzept seitens der Bauschule Aarau vor.
+
+
+Diese lassen sich ableiten aus dem Kompetenzprofil für Bauführer \cite{Kompetenzprofil_Baufuehrer}.
+
+Im Kompetenzprofil ist beschrieben, dass 
+\begin{itemize}
+    \item Bauführer veranlassen und koordinieren den
+    Einsatz neuer Methoden, Technologien und
+    Baustoffe. Sie sorgen dafür, dass neue Methoden, Technologien und Baustoffe auf Baustellen fachgerecht, zum richtigen Zeitpunkt und wirtschaftlich eingesetzt werden.
+    \item Sie kontrollieren und
+    überprüfen die Qualität der Baustoffe regelmässig entsprechend der Vorgaben.
+\end{itemize}
+
+Dabei werden als kritische Erfolgsfaktoren die folgenden Punkte genannt:
+
+\begin{itemize}
+    \item Gute Kenntnisse hinsichtlich multifunktio-
+    naler und intelligenter Baustoffe (einschliesslich Einsatz im Baubereich)
+    \item Interesse an neuen Methoden, Technolo-
+    gien und Baustoffen (multifunktionale und intelligente Baustoffe (einschliesslich Einsatz im Baubereich) usw.)
+    \item Instruieren und anleiten können
+\end{itemize}
+
+Neben diesen Fachkompetenzen (FK) sind auch die überfachlichen Kompetenzen (ÜK) von Bedeutung.
+
+
+
+% Die Kompetenzdimension für Bauführer und Bauführerinnen umfasst die folgenden Punkte:
+
+% \begin{itemize}
+%     \item leiten den fachgerechten und vorschriftsmässigen Einsatz neuer Methoden, Technologien und Baustoffe.
+%     \item kontrollieren die Qualität der Baustoffe.
+%     \item verfügen über fundierte Kenntnisse über
+%     multifunktionale und intelligente Baustoffe
+%     und deren Einsatz in Bauvorhaben.
+%     \item verfügen über fundierte Kenntnisse im Projektmanagement.
+%     \item verfügen über fundierte Kenntnisse im Instruieren und Anleiten von Mitarbeitenden.
+%     \item zeigen Interesse an neuen Methoden und
+%     Technologien und dem Einsatz von multifunktionalen und intelligenten Baustoffen in
+%     ihrem Arbeitsbereich.
+%     \item achten stets auf eine fachgerechte, zeitnahe und wirtschaftliche Ausführung der Arbeiten.
+%     \item prüfen regelmässig die Qualität der Baustoffe und leiten bei Bedarf entsprechende
+%     Massnahmen ein.
+%     \item schätzen den Einsatz von neuen Methoden,
+%     Technologien und Baustoffen hinsichtlich
+%     Wirtschaftlichkeit und Zweckmässigkeit ein
+%     und ziehen Schlussfolgerungen für zukünftige Aufträge.
+% \end{itemize}
+
+
+
+
+% \subsubsection{Kompetenzbereiche}
+% Auf Basis der institutionellen und beruflichen Vorgaben wurden folgende übergeordnete Kompetenzbereiche definiert:
+% \begin{itemize}
+%     \item Die physikalischen, chemischen und mechanischen Eigenschaften von Baustoffen erklären und auf Bauprojekte anwenden können.
+%     \item Baustoffe nach ihren Einsatzmöglichkeiten klassifizieren und geeignete Materialien für spezifische Bauvorhaben auswählen können.
+%     \item Materialprüfungen durchführen und Ergebnisse bewerten können.
+%     \item Nachhaltigkeitsaspekte und Lebenszykluskosten bei der Materialwahl berücksichtigen können.
+%     \item Wirtschaftliche Entscheidungen im Rahmen der Baustoffauswahl treffen können.
+%     \item Neue und innovative Baustoffe erkennen und deren Potenzial einschätzen können.
+% \end{itemize}
+
+
+
+% \subsubsection{Vorgaben für den Unterrichtsaufbau}
+% Der Unterricht umfasst theoretische und praktische Inhalte, die gemäss den vorgegebenen Kompetenzzielen zu einem ganzheitlichen Verständnis der Baustoffe führen. Die Unterrichtseinheiten sind so zu gestalten, dass sie:
+% \begin{itemize}
+%     \item die Verbindung von Theorie und Praxis fördern,
+%     \item auf vorhandene Vorkenntnisse aufbauen und
+%     \item die Anwendung des Gelernten auf reale berufliche Situationen ermöglichen.
+% \end{itemize}
+
+
+
+\subsection{Berufspädaogisches Konzept}
+Dieser Teil zeigt Auszugsweise das berufspädagogische Konzept der Bauschule Aarau auf \cite{BerufspädagogischesKonzept_BauschuleAarau}.
+
+Lernen verstehen wir als einen aktiven, sozial kooperativen, individuellen Prozess, welcher durch variable Situationen angeregt und gefördert wird. Lernen im handlungskompetenzorientierten Unterricht:
+\begin{itemize}
+    \item wird begünstigt durch die vielfältigen und heterogenen Lerngemeinschaften und Umgebungen, aus denen unsere Studierenden kommen;
+    \item legt Wert auf vielfältige Sozialformen;
+    \item beinhaltet Üben und Festigen;
+    \item bedeutet Sammeln, Dokumentieren, Verstehen, Analysieren, Zusammenführen, Anwenden, Diskutieren;
+    \item reflektiert verschiedene Lerninhalte während der Ausbildung.
+\end{itemize}
+
+
+
+Lernen verstehen wir als einen aktiven, sozial kooperativen, individuellen Prozess, welcher durch variable Situationen angeregt und gefördert wird. Lernen im handlungskompetenzorientierten Unterricht:
+\begin{itemize}
+    \item wird begünstigt durch die vielfältigen und heterogenen Lerngemeinschaften und Umgebungen, aus denen unsere Studierenden kommen;
+    \item legt Wert auf vielfältige Sozialformen;
+    \item beinhaltet Üben und Festigen;
+    \item bedeutet Sammeln, Dokumentieren, Verstehen, Analysieren, Zusammenführen, Anwenden, Diskutieren;
+    \item reflektiert verschiedene Lerninhalte während der Ausbildung.
+\end{itemize}
+
+Lehren verstehen wir ebenfalls als einen aktiven, sozial kooperativen, individuellen Prozess, welcher aber im Gegensatz zum Lernen dieses in verschiedenen Situationen ermöglicht (z.~B. geführter Unterricht), begleitet (z.~B. gecoachte Anwendungsübungen im Unterricht) und steuert (z.~B. Definition vernetzter Problemstellungen in einer umfangreichen Projektarbeit). Lehren im handlungskompetenzorientierten Unterricht:
+\begin{itemize}
+    \item berücksichtigt das Potential aller Studierenden;
+    \item vermittelt nicht nur Inhalte, sondern entwickelt auch Werte und Erwartungen;
+    \item fördert und gestaltet Lernbeziehungen aktiv;
+    \item anerkennt die Studierenden als Personen auf gleicher Augenhöhe.
+\end{itemize}
+
+\subsubsection{Didaktische Prinzipen}
+Die Bauschule richtet ihr gesamtes Handeln an folgenden vier Prinzipien aus:
+\begin{enumerate}
+    \item Bildet Fachkräfte \textbf{für die Praxis} aus.
+    \item untersützt und entwickelt  \text{Persönlichkeiten} für die Baubranche. 
+    \item macht \textbf{Lernerlebniisse} erlebbar.
+    \item realisiert \textbf{handlungsorientiertes Lernen}.
+\end{enumerate}
+
+
+\subsubsection{Kognitive Taxonomiestufen nach Bloom}
+
+\begin{table}[H]
+    \centering
+    \label{tab:Bloom}
+    \caption{Kognitive Taxonomiestufen nach Bloom \cite{bloom1956taxonomy}, adaptiert von \cite{BerufspädagogischesKonzept_BauschuleAarau}.}
+    \begin{longtable}{@{}llp{12cm}@{}}
+        \toprule
+        \textbf{Stufen} & \textbf{Begriff} & \textbf{Beschreibung} \\ 
+        \midrule
+        K1 & Wissen & Sie geben gelerntes Wissen wieder und rufen es in gleichartiger Situation ab. \\ 
+        K2 & Verstehen & Sie erklären oder beschreiben gelerntes Wissen in eigenen Worten. \\ 
+        K3 & Anwenden & Sie wenden gelernte Technologien/Fertigkeiten in unterschiedlichen Situationen an. \\ 
+        K4 & Analyse & Sie analysieren eine komplexe Situation, d.h. sie gliedern Sachverhalte in Einzelelemente, decken Beziehungen zwischen Elementen auf und finden Strukturmerkmale heraus. \\ 
+        K5 & Synthese & Sie kombinieren einzelne Elemente eines Sachverhalts und fügen sie zu einem Ganzen zusammen. \\ 
+        K6 & Beurteilen & Sie beurteilen einen mehr oder weniger komplexen Sachverhalt aufgrund von bestimmten Kriterien. \\ 
+        \bottomrule
+    \end{longtable}
+\end{table}
+
+
+
+
+\subsubsection{RITA-Modell}
+Die Lektion wird nach dem RITA-Modell durchgeführt. 
+Die Studierenden werden mit konkreten Aufgaben aus der Praxis konfrontiert und ihr Vorwissen, Erfahrungen, Haltungen zum Thema oder gar erste Problemlösungen werden aktiviert.
+Diese Rythmisierte Unterrichtsablauf wird in der Tabelle \cref{tab:RITA_Modell} dargestellt und ist Teil des berufspädagogischen Konzepts der Bauschule Aarau \cite{BerufspädagogischesKonzept_BauschuleAarau}
+
+
+\subsubsection{Mikroebene}
+Eignung zum erfolgreichen und verantwortungsvollen beruflichen Handeln in bestimmten konkreten und für den Beruf typischen Handlungssituationen \cite{BerufspädagogischesKonzept_BauschuleAarau}.
+
+
+\begin{table}[H]
+    \centering
+    \label{tab:RITA_Modell}
+    \caption{RITA-Modell, adaptiert von \cite{BerufspädagogischesKonzept_BauschuleAarau}.}
+    \begin{tabularx}{\textwidth}{@{}llp{9.5cm}@{}}
+    \toprule
+    \textbf{Phase} & \textbf{Beschreibung} & \textbf{Umschreibung} \\
+    \midrule
+    R:  & Ressourcen aktivieren & Studierende werden mit konkreten Aufgaben aus der Praxis konfrontiert; Vorwissen, Erfahrungen, Haltungen zum Thema oder gar erste Problemlösungen werden aktiviert. \\
+    I: & Informationen verarbeiten & {} \\
+    T: & Transfer anbahnen & {} \\
+    A: & Auswerten & {} \\
+    \bottomrule
+    \end{tabularx}
+    \end{table}
+
+\subsubsection{Gruppengrösse}
+Die Klassengrösse beträgt ca. 14 bis 20 Studierende.
+Je nach Modell in Vollzeitstudium und Teilzeitstudium.
+Die meisten Klassen haben nur Männer, es gibt jedoch auch gemischte Klassen mit wenigen Frauen pro Klasse. Erfahrungsbedingt sind meinstens nur eine bis zwei Frauen pro Klasse vorhanden.
+
+
+\subsection{Räumliche Ressourcen}
+Der Unterricht findet in einem Klassenzimmer mit Beamer und Flipchart statt. 
+Die Studierenden haben fixe Sitzplätze, die in der Regel während des gesamten Unterrichts beibehalten werden.
+Für praktische Übungen und Demonstrationen stehen Flächen zur Verfügung im Gebäude zur Verfügung. Die Schülerinnen und Schüler haben Zugang zu einer Bibliothek und digitalen Lernmaterialien (inkl. Normen).
+Die Studierenden haben im Beisein der Lehrperson Zugang zur Materialsammlung der Bauschule Aarau.
+Zudem befinden sich in den Schaukästen im Gebäude der Bauschule Aarau diverse Sammlungen von Baustoffen, wie beispielweise zu den Natursteinen.
+
+\subsection{Zeitliche Ressourcen}
+Das Fach Baustoffe umfasst insgesamt etwa 100 Unterrichtsstunden, die über ein Schuljahr verteilt sind. Der Unterricht wird in Blöcken von 90 bis 120 Minuten durchgeführt und erstreckt sich über rund 34 Schulwochen. 
+Die Einheiten finden in der Regel am Montag oder Dienstag statt.
+
+Der Unterricht selbst ist in der Regel Kontaktunterricht, wobei auch Phasen des selbständigen Arbeitens (z.B. Diplomarbeit) und der Gruppenarbeit vorgesehen sind.
+
+Das Fach Baustoffe findet im Studienplan während des ersten Semesters  und zweiten Semesters statt.
+Die Ferien der Studierenden sind in der Regel mit den Schulferien des Kantons Aargau synchronisiert. Ein Jahr besteht aus 34 Schulwochen inklusive einer Woche mit besonderem Unterricht.
+
+\subsection{Weitere Ressourcen}
+Die Schülerinnen und Schüler haben Zugang zu MS Teams. In diesem Tool können die Lehrunterlagen, Übungen geteilt werden. Zudem können die Schülerinnen und Schüler Fragen stellen und sich untereinander austauschen. MS Teams wird für die Dozenten vorbereitet mit dem Fachnamen als Channelname.
+
+Das Studium an der Bauschule Aarau ist kostenpflichtig. Die Studierenden müssen für die Ausbildung Gebühren entrichten.
+
+
+
+
+\subsection{Übergeordnetes Konzept im Fach Baustoffe}
+Das Fachbaustoffe soll die Lerninhalte aus der Lehre vertiefen.
+Das Fach Baustoffe findet zeitlich  nach der Vertiefung von Mathematik, Deutsch und Informatik, des sogenannten Grundlagenkurses, statt.
+Im Kontext der Ausbildung an der Bauschule ist das Fach Baustoffe ein wichtiger Bestandteil der Ausbildung zum Bauführer. 
+Die Studierenden benötigten das Fachwissen der unterschiedlichen Baustoffen in zahlreichen Situationen im Berufsalltag und in weiteren Unterrichtsfächern wie Tiefbau, Hochbau, Baustatik, Kalkulation oder Baustelleninstallation.
+
+
+
+\subsubsection{Kompetenznachweise}
+
+Im Fach Baustoffe werden die Kompetenzen in Form von schriftlichen Prüfungen erbracht (formativ). 
+Überlicherweise werden die Prüfungen mit einem geeigneten Online-Tool durchgeführt.
+Die Prüfungen umfassen u.a Multiple-Choice-Fragen, offene Fragen, Berechnungen und Anwendungsbeispiele.
+Die Prüfungen werden in der Regel am Ende eines Themenblocks durchgeführt, mit einem zweiwöchigen Vorlauf zur individuellen Vorbereitung der Studierenden. 
+Die Prüfungen sind so konzipiert, dass die Studierenden die Kompetenzen der Kognitiven Taxonomiestufen K2 bis K6 nach Bloom erbringen müssen.
+Über das Jahr ergeben sich somit vier bis fünf Prüfungen, die die Studierenden absolvieren müssen.
+Die finale Ausgestaltung der Kompetenznachweise ist der Lehrperson überlassen.
+
+Während des Unterrichtes werden situationsgerecht summative Leistungsnachweise durchgeführt.
+
+\subsection{Gesetzliche Grundlagen}
+Die gesetzlichen Grundlagen sind der das Kompentenzprofil für Bauführer und Bauführerinnen \cite{Kompetenzprofil_Baufuehrer} und der Lernfeldkatalog für Bauführer und Bauführerinnen \cite{Lernfeldkatalog_Baufuehrer}.
+
+
+\section{Zielgruppenanalyse}
+\label{sec:Zielgruppenanalyse}
+Die Zielgruppen sind angehende Bauführer und Bauführerinnen. Die Studierenden sind zwischen 20 und 30 Jahre alt und haben meistens eine abgeschlossene Berufslehre als Maurer, teilweise eine abgeschlossene Weiterbildung zum Polier oder Vorarbeiter (inkl. Berufsbildnerkurs). 
+Teilweise gibt es ältere Studierende, welche aufgrund eines gesundheitlichen Leidens von der IV an die Bauschule Aarau überwiesen wurden um dort die Ausbildung zum Bauführer zu absolvieren.
+Aus diesen Gründen kann die Motivation sowohl instrinsisch als auch extrinsisch sein.
+Sie verfügen über praktische Erfahrung im Baugewerbe und haben bereits erste Erfahrungen in der Bauführung in den Unternehmen gesammelt.
+
+Schlussendlich soll der Unterricht eine Vorbereitung auf die eigenössische Prüfung zum Bauführer sein. 
+Vor der eigenössischen Prüfungen findet nochmals ein Repetitionsblock statt. 
+
+Die Vorkenntnisse können aufgrund vorhandener oder nicht vorhandener Weiterbildungen sehr unterschiedlich sein. 
+Ebenfalls besteht eine grosse Heterogenität in den Lernvoraussetzungen, da die Studierenden aus unterschiedlichen Berufsfeldern (Quereinsteiger) kommen können.
+
+Die Arbeit auf Baustellen setzt voraus, dass sich die Studierenden Teamfähigkeiten aneignen und sich in einem Team integrieren können. 
+
+Die Studierenden sind sich besonders anfangs nicht mehr gewöhnt den ganzen Tag zu sitzen und im Schulzimmer zu verbringen. 
+Die Kenntnisse in der Anwendung von digitalen, kollaborativen Tools sind unterschiedlich ausgeprägt.
+Die Selbstorganisation der Studierenden ist unterschiedlich ausgeprägt, je nach Ausbildungsstand. 
+Die Meisten müssen sich in der Selbstorganisation erst wieder zurechtfinden.
+
+\section*{Fazit}
+Die Rahmenbedingungen und Zielgruppenanalyse zeigen eine Vielzahl von Besonderheiten und Herausforderungen, die bei der didaktischen Planung des Lehrkonzepts zu berücksichtigen sind.
+
+Die Studierenden bringen unterschiedliche Vorkenntnisse und Erfahrungen mit, da sie aus verschiedenen beruflichen Hintergründen stammen (z. B. Maurer, Poliere, Quereinsteiger). 
+Die Studierenden haben oft umfangreiche praktische Erfahrungen, jedoch unterschiedliche theoretische Grundlagen. Der Unterricht muss daher Theorie und Praxis eng verknüpfen, um die Brücke zwischen Baustelle und Schulzimmer zu schlagen.
+Die Motivation ist sowohl intrinsisch als auch extrinsisch geprägt. Zusätzlich sind viele Studierende nicht mehr gewohnt, längere Zeit in einem schulischen Umfeld zu arbeiten. Dies macht es notwendig, den Unterricht abwechslungsreich und praxisnah zu gestalten und gleichzeitig die Selbstorganisation der Studierenden zu fördern.
+Der Unterricht bereitet auf die eidgenössische Prüfung zum Bauführer vor. Eine klare Ausrichtung auf die Kompetenzziele ist daher unerlässlich. 
+
+
+%\clearpage
+
+\section{Sachanalyse: Neue Baustoffe und Technologien}
+\label{sec:Sachanalyse}
+
+Die Sachanalyse zum Thema \textbf{Neue Baustoffe und Technologien} im Fach Baustoffe umfasst die folgenden zentralen Aspekte, die im Unterricht behandelt werden könnten:
+
+\subsection{Definition und Bedeutung neuer Baustoffe}
+\begin{itemize}
+    \item Definition neuer Baustoffe:
+    \begin{itemize}
+        \item Materialien mit verbesserten Eigenschaften (langlebiger, schneller befahrbar) oder neuen Anwendungsmöglichkeiten im Hoch- oder Tiefbau.
+        \item Kombination von traditionellen und innovativen Materialien (z.B. Bei der Sanierung)
+    \end{itemize}
+    \item Bedeutung für die Bauindustrie:
+    \begin{itemize}
+        \item Beitrag zur Nachhaltigkeit und Energieeffizienz.
+        \item Anpassung an neue Bauweisen und technologische Anforderungen.
+        \item Erfüllung von Kundenanforderungen und aktuellen Trends (z.B. ökologische Bauweise)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Eigenschaften und Kategorien neuer Baustoffe}
+\begin{itemize}
+    \item \textbf{Verbesserte Eigenschaften:}
+    \begin{itemize}
+        \item Höhere Festigkeit und Stabilität durch unterschiedliche strukturen auf unterschiedlichen Grössenskalen.
+        \item Geringeres Gewicht bei gleicher Tragfähigkeit.
+        \item Verbesserte Isolations- und Dämmeigenschaften.
+    \end{itemize}
+    \item \textbf{Kategorien:}
+    \begin{itemize}
+        \item Hochleistungsbeton (z. B. UHPC - Ultra High Performance Concrete).
+        \item Selbstheilender Beton.
+        \item Nanomaterialien (z. B. Nanobeschichtungen, Nanopartikel in Beton).
+        \item Recycling-Baustoffe (z. B. Sekundärrohstoffe aus Abbruchmaterialien).
+        \item Neuartige Baustoffe (z. B. Carbonbeton, usw.).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Technologien zur Herstellung und Verarbeitung}
+\begin{itemize}
+    \item Additive Fertigung:
+    \begin{itemize}
+        \item 3D-Druck von Beton und anderen Baustoffen.
+    \end{itemize}
+    \item Digitalisierung im Bauwesen:
+    \begin{itemize}
+        \item Building Information Modeling (BIM) zur Optimierung der Materialauswahl.
+        \item Einsatz von Drohnen zur Baustoffüberwachung oder des Baufortschrittes
+        \item Softwarelösungen zur Materialplanung und -kontrolle.
+    \end{itemize}
+    \item Modulares Bauen:
+    \begin{itemize}
+        \item Baustoffe für vorgefertigte Bauelemente.
+        \item Effizienzsteigerung durch modulare Konstruktion.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Nachhaltigkeit und Umweltverträglichkeit}
+\begin{itemize}
+    \item Reduktion des ökologischen Fussabdrucks:
+    \begin{itemize}
+        \item Nutzung von Recyclingmaterialien in Projekten.
+        \item Energieeffiziente Produktionsverfahren oder Baumaschinen.
+    \end{itemize}
+    \item Lebenszyklusanalyse:
+    \begin{itemize}
+        \item Bewertung der Umweltbelastung über die gesamte Lebensdauer.
+    \end{itemize}
+    \item Kreislaufwirtschaft im Bauwesen:
+    \begin{itemize}
+        \item Wiederverwendbare und recycelbare Baustoffe.
+        \item Reduktion von Abfall durch geschlossene Materialkreisläufe.
+    \end{itemize}
+    \item Nachhaltigkeitszertifikate:
+    \begin{itemize}
+        \item Green Building Labels (z. B. LEED, Minergie).
+        \item Bewertung durch Ökobilanzen (z. B. graue Energie, CO2-Fussabdruck).
+        \item Einhaltung von Umweltstandards und -richtlinien.
+        \item Minergie, Minergie-P, Minergie-A, Minergie-Eco, Minergie-Modul, Minergie-ECO-P, Minergie-ECO-A, Minergie-ECO-Modul, Minergie-ECO-Modul-P, Minergie-ECO-Modul-A Standards
+    \end{itemize}
+\end{itemize}
+
+\subsection{Herausforderungen und Potenziale}
+\begin{itemize}
+    \item Herausforderungen:
+    \begin{itemize}
+        \item Hohe Kosten und aufwendige Produktionsverfahren.
+        \item Akzeptanz bei Bauunternehmen und Bauherren.
+        \item Anforderungen an die Lagerung und Logistik (z. B. Feuchtigkeitsschutz).
+    \end{itemize}
+    \item Potenziale:
+    \begin{itemize}
+        \item Verbesserung der Bauqualität und -geschwindigkeit.
+        \item Beitrag zu nachhaltigem und energieeffizientem Bauen.
+        \item Langlebigkeit und Wartungsfreundlichkeit der Baustoffe resp. der Bauwerke
+    \end{itemize}
+\end{itemize}
+
+\subsection{Schadensfälle im Bauwesen und deren Vermeidung}
+\begin{itemize}
+    \item Häufige Schadensfälle durch ungeeignete oder fehlerhafte Baustoffe:
+    \begin{itemize}
+        \item Korrosion von Stahl  (chlorid- oder carbonatisierungbedingt) in Beton.
+        \item Frostschäden bei Beton.
+    \end{itemize}
+    \item Massnahmen zur Vermeidung:
+    \begin{itemize}
+        \item Auswahl geeigneter Baustoffe für spezifische Umweltbedingungen.
+        \item Regelmässige Materialprüfungen und Qualitätskontrollen.
+        \item Schulung von Mitarbeitenden im Umgang mit neuen Materialien.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Anwendungsbeispiele}
+\begin{itemize}
+    \item Selbstheilender Beton in Infrastrukturbauten (z. B. Brücken, Tunnel).
+    \item 3D-gedruckte Gebäude zur Reduktion von Bauzeit und -kosten.
+    \item Einsatz von Recyclingbeton in Neubauten und Renovierungsprojekten.
+    \item Einsatz von Nanomaterialien zur Verbesserung der Oberflächeneigenschaften von Fassaden.
+    \item Verwendung von Carbonbeton für leichtere und langlebigere Bauwerke.
+    \item Integration von Photovoltaik in Baumaterialien zur Energiegewinnung.
+    \item Verwendung von recyceltem Kunststoff in Asphaltmischungen für Strassenbau.
+    \item Anwendung von Hochleistungsbeton in Hochhäusern und Brücken.
+    \item Nutzung von 3D-gedruckten Bauteilen für schnelle und kosteneffiziente Bauprojekte.
+    \item Einsatz von intelligenten Baustoffen mit Sensoren zur Überwachung der Bauwerksintegrität.
+\end{itemize}
+
+
+
+
+\clearpage
+\section{Grobplanung}
+Das Lehrkonzept umfasst die neue Technologien und Baustoffe und umfasst rund 8 Lektionen.
+
+
+\subsection{Übergeordnete Lernziele}
+Die übergeordnete Lernziele für diese Unterrichtseinheit sind: 
+\begin{itemize}
+    \item Bauführer und Bauführerinnen informieren sich über neue Methoden und Technologien und den Einsatz von
+    multifunktionalen und intelligenten Baustoffen in ihrem Arbeitsbereich.
+    \begin{itemize}
+        \item Sie informieren sich aus Fachpresse und Messen über Innovationen. (K2)
+        \item Sie betreiben ein firmeninternes Wissensmanagement zukunftsorientiert. (K4)
+        \item Sie erarbeiten Dokumentationen zur Einführung von kreislauffähigen Materialien und Baumethoden
+        in ihrem Bereich. (K4)
+    \end{itemize}
+    \item Bauführer und Bauführerinnen leiten den fachgerechten und vorschriftsmässigen Einsatz neuer Methoden,
+    Technologien und Baustoffe.
+    \begin{itemize}
+        \item Sie wenden neue Methoden, Technologien und Baustoffe bei Bauarbeiten an. (K3)
+        \item Sie instruieren die Mitarbeitenden in neuen Bauabläufen. (K3)
+        \item Sie führen Evaluationen zum Einsatz von neuen Baustoffen durch. (K4)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Inhalt}
+Die 8 Lektionen teilen sich auf in 4 Blöcke zu je 2 Lektionen auf. 
+Diese Doppellektionen werden über das Jahr verteilt.
+Um den unterschiedlichen Vorkenntnissen der Studierenden gerecht zu werden, muss nicht sämtliche Inhalte in der Tiefe behandelt werden (vgl. \Cref{sec:Zielgruppenanalyse}).
+
+
+Pro Doppellektion soll ein Schwerpunkt vorhanden sein. 
+Mögliche Schwerpunkte sind:
+\begin{itemize}
+    \item Digitalsierung im Bauwesen
+    \item Kreislaufwirtschaft im Bauwesen
+    \item Neuartige Baustoffe
+    \item Schadensfälle im Bauwesen und deren Vermeidung
+\end{itemize}
+
+Diese Schwerpunkte haben sich aus der Sachanalyse (siehe \Cref{sec:Sachanalyse}) ergeben und decken die wichtigsten Aspekte der neuen Baustoffe und Technologien ab.
+
+
+
+\subsection{Didaktische Analyse}
+Die didaktische Analyse umfasst die Suche nach geeigneten Texte für Bauführer und Bauführerinnen, die sich über neue Methoden und Technologien informieren möchten.
+Die Texte sollen aus Fachpresse, Zeitungsartikeln und Messen stammen und idealerweise in PDF-Format vorliegen, alternativ auch in Form von Videos oder Audioaufnahmen.
+
+Der Prozess der Informationsbeschaffung für Fachartikel ist aufgeteilt in mehrere Schritte.
+
+
+
+
+
+\begin{enumerate}
+    \item Recherche in der Bibliothek mit Zugang zu Fachartikeln mit unterschiedlichen Suchwörtern zu den einzelnen Schwerpunkten
+    \item Sammeln der Fachartikel im PDF-Format, gegliedert nach Schwerpunkt
+    \item Erstellen einer Übersicht der Fachartikel pro Schwerpunkt anhand folgender Kriterien: Länge des Artikels, Schwierigkeitsgrad, Aktualität, Relevanz für die Bauführer und Bauführerinnen
+    \item Selektieren von 4 bis 6 Fachartikeln pro Schwerpunkt zur Bearbeitung durch die Studierende 
+\end{enumerate}
+
+Je nach Schwerpunkt kann ergänzend zu den Fachartikeln ebenfalls Radio- oder Fernsehbeiträge, Podcasts oder Videos gesucht werden. 
+Die Videos können auf der Plattform MS Teams geteilt werden.
+Diese Informationsquellen werden ebenfalls nach den Schwerpunkt sortiertet und anhand ähnlicher Kriterien wie die Fachartikel bewertet und struktuiert.
+
+Die Leistungsüberprüfung findet in Form einer Online-Prüfung statt.
+Die Prüfung umfasst Multiple-Choice-Fragen, offene Fragen und Anwendungsbeispiele zu den Schwerpunkten.
+Die Studierenden sollen mit der Onlineprüfung ihre Kompetenzen am Computer unter Beweis stellen.  
+Die Prüfung wird in der Regel am Ende eines Themenblocks durchgeführt, mit einem zweiwöchigen Vorlauf zur individuellen Vorbereitung der Studierenden.
+Die Prüfung ist so konzipiert, dass die Studierenden die Kompetenzen der Kognitiven Taxonomiestufen K2 bis K6 nach Bloom erbringen müssen \cite{bloom1956taxonomy}.
+Fragen der Taxonomiestufe K2 können durch Multiple-Choice-Fragen abgefragt oder Zuordnungsfragen werden, während Fragen der Taxonomiestufen K3 bis K6 offene Fragen und Anwendungsbeispiele erfordern.
+
+\subsection{Methodische Umsetzung}
+Die Methode des RITA-Modells wird angewendet \cite{BerufspädagogischesKonzept_BauschuleAarau}.
+Die Studierenden werden mit konkreten Aufgaben aus der Praxis konfrontiert und ihr Vorwissen, Erfahrungen, Haltungen zum Thema oder gar erste Problemlösungen werden aktiviert.
+
+Die Studierenden sollen die Möglichkeit haben nach Bedarf die Dokumente auf dem Laptop oder Tablet zu lesen resp. diese nach Bedarf auszudrucken. 
+Videos können ebenfalls über diese Geräte, vorzugsweise mit Kopfhörern, angeschaut werden.
+Das Teilen der Lerninhalte erfolgt nur digital über den entsprechenden Teams-Kanals der Bauschule Aarau.
+
+Für jeden Text werden situativ passende Aufgabenstellungen formuliert, die die Studierenden zur Auseinandersetzung mit dem Text anregen und das Verständnis vertiefen. 
+Als Aufgabenstellungen kommen beispielsweise folgende in Frage (siehe auch \cite{unikoelnMethodenpool}):
+\begin{itemize}
+    \item Erstellen einer Mindmap zu den wichtigsten Inhalten des Textes.
+    \item Beantworten von Verständnisfragen zum Text.
+    \item Diskussion im Plenum zu den Inhalten des Textes.
+    \item Erstellen einer Präsentation zu einem ausgewählten Thema des Textes.
+    \item Möglichkeiten zur Integration im eigenen Betrieb erarbeiten. 
+\end{itemize}
+Je nach Aufgabenstellung sind die summativen Nachweise als erfüllt oder nicht erfüllt ausgestaltet.
+Die Aufgaben werden über sogenannte Teams-Aufgaben eingefordert und erlaubt das Überwachen des Lernfortschritts der Studierenden. 
+Dies soll auch helfen um in Zukunft die Länge der Lektionen besser zu planen resp. zu optimieren.
+
+
+\subsection{Organisatorische Umsetzung}
+Gemäss der Zielgruppenanalyse (siehe \Cref{sec:Zielgruppenanalyse}) und den Rahmenbedingungen der Bauschule werden die Lerninhalte per Teams geteilt.
+
+Die Prüfungen werden über das Online-Tool Classtime durchgeführt.
+
+Die Dokumente werden struktuiert in Teams abgelegt (siehe \Cref{fig:Gliederung}).
+
+\begin{figure}[htb]
+
+    \begin{forest}
+        folder
+        [Baustoffe
+            [Digitalisierung im Bauwesen
+                [Dokument 1, document]
+                [Dokument 2, document]
+                [Auftrag.pdf, document]
+            ]
+            [Kreislaufwirtschaft im Bauwesen
+                [Dokument 1, document]
+                [Dokument 2, document]
+                [Auftrag.pdf, document]
+            ]
+            [Neuartige Baustoffe
+                [Dokument 1, document]
+                [Dokument 2, document]
+                [Film, document]
+                [Auftrag.pdf, document]
+            ]
+            [Schadensfälle im Bauwesen  \\ und deren Vermeidung
+                [Dokument 1, document]
+                [Dokument 2, document]
+                [Audioaufnahme, document]
+                [Auftrag.pdf, document]
+            ]
+        ]
+        \end{forest}
+        \caption{Gliederung der Dokumente für die Studierenden.}
+        \label{fig:Gliederung}
+\end{figure}
+
+\subsection{Zeitliche Umsetzung}
+Die Dokumente werden jeweils vor der Lektion zur Verfügung gestellt.
+Nach der Einführung des Auftrages als Powerpoint-Präsentation können die Studierendne die Aufgabenstellungen selbstständig bearbeiten.
+
+\FloatBarrier
+\section{Feinplanung}
+Die Feinplanung umfasst die detaillierte Aufteilung der Lektionen und die Festlegung der operationalisierten Lernziele, Methoden und Medien für jede Doppellektion.
+Exemplarisch wird die Feinplanung für die erste Lektion im Detail vorgestellt. Die weiteren drei Doppellektionen werden analog geplant, durchgefüht und evaluiert.
+
+\subsection{Lektion 1 und 2: Digitalsierung im Bauwesen}
+\subsubsection{Lernziele}
+\subsubsection{Methodische Umsetzung}
+
+
+
+
+
+\subsection{Lektion 3 und 4: Kreislaufwirtschaft im Bauwesen}
+\subsubsection{Lernziele}
+\subsubsection{Methodische Umsetzung}
+\subsubsection{Leistungsnachweise}
+
+
+
+
+\subsection{Lektion 5 und 6: Neuartige Baustoffe}
+\subsubsection{Lernziele}
+\subsubsection{Methodische Umsetzung}
+\subsubsection{Leistungsnachweise}
+
+
+
+
+\subsection{Lektion 7 und 8: Schadensfälle im Bauwesen und deren Vermeidung}
+\subsubsection{Lernziele}
+\subsubsection{Methodische Umsetzung}
+\subsubsection{Leistungsnachweise}
+
+
+
+
+
+\clearpage
+\addcontentsline{toc}{section}{Quellenangaben}
+
+\printbibliography
+
+\clearpage
+\appendix
+
+\section{Anhang}
+%\subsection{Lernziele}
+%\input{../../Unterlagen/50_Lernziele/06_Beton_T1.tex}
+
+
+
+
+
+
+
+\end{document}

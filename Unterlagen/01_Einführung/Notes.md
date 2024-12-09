@@ -11,3 +11,8 @@
 ## Dauer der Durchführung
 
 - ca. 1,5 bis 2 Stunden
+
+
+## Chemie 
+
+2x Quiz auf Teams vorhanden.
