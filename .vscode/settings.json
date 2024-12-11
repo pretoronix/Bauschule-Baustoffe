@@ -55,5 +55,19 @@
         }
     ],
     "latex-workshop.latex.recipe.default": "lualatex"
+
+    "files.exclude": {
+        "**/*.aux": true,
+        "**/*.log": true,
+        "**/*.fls": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.synctex.gz": true,
+        "**/*.toc": true,
+        "**/*.out": true,
+        "**/*.bbl": true,
+        "**/*.snm": true,
+        "**/*.nav": true,
+    }
 }
+
 

@@ -39,6 +39,7 @@
 \usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{fontawesome}
+\usepackage{colortbl}
 
 
 \usepackage{tcolorbox}
@@ -54,6 +55,7 @@
 %\usecolortheme{whale} % A color theme with blue tones
 \usecolortheme{dolphin} % A color theme with blue tones
 \setbeamerfont{frametitle}{size=\Large}
+\setbeamercolor{frametitle}{fg=blau_bauschule}
 
 \newcommand{\mylogo}{
     \begin{tikzpicture}[remember picture,overlay]
@@ -167,6 +169,36 @@ after title={\hfill\colorbox{blue}{Masseinheit}}
   after title={}, % Fügt das Label "Masseinheit" nach dem Titel hinzu
   coltitle=white, % Farbe des Titeltexts
   fonttitle=\bfseries % Schriftart des Titels
+}
+
+
+\newtcolorbox{myLernziele}{
+  enhanced,
+  colframe=cyan!75!black, % Rahmenfarbe (Türkis)
+  colback=cyan!10, % Hintergrundfarbe (Helles Türkis)
+  coltitle=black, % Titeltextfarbe (Schwarz)
+  boxrule=1pt, % Rahmenstärke
+  title={Lernziele}, % Fester Titel
+  fonttitle=\bfseries, % Schriftart des Titels (Fett)
+  left=2mm, % Innenabstand links
+  right=2mm, % Innenabstand rechts
+  top=1mm, % Innenabstand oben
+  bottom=1mm % Innenabstand unten
+}
+
+
+\newtcolorbox{Fragenblock}{
+  enhanced,
+  colframe=orange!75!black, % Rahmenfarbe (Orange)
+  colback=orange!10, % Hintergrundfarbe (Helles Orange)
+  coltitle=black, % Titeltextfarbe
+  boxrule=1pt, % Rahmenstärke
+  title={Frage}, % Fester Titel
+  fonttitle=\bfseries, % Schriftart des Titels (Fett)
+  left=2mm, % Innenabstand links
+  right=2mm, % Innenabstand rechts
+  top=1mm, % Innenabstand oben
+  bottom=1mm % Innenabstand unten
 }
 
 \newcommand{\folieFragen}{%
