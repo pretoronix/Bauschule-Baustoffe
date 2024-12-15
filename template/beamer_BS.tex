@@ -82,6 +82,19 @@
     \end{beamercolorbox}%
 }
 
+
+\newcommand{\BlueSectionSlide}{
+    {
+    \setbeamercolor{background canvas}{bg=blau_bauschule} % Temporarily set the background color
+    \begin{frame}[plain] % Plain frame without navigation
+        \begin{center}
+            {\Huge \color{white} \textbf{\insertsection}} % Section title in the center
+        \end{center}
+    \end{frame}
+    \setbeamercolor{background canvas}{bg=} % Reset background color
+    }
+}
+
 %\usebackgroundtemplate{
 %    \includegraphics[width=\paperwidth,height=\paperheight]{my_pdf_copy_of_empty_ppt_template}
 %}
@@ -202,6 +215,7 @@ after title={\hfill\colorbox{blue}{Masseinheit}}
 }
 
 \newcommand{\folieFragen}{%
+\subsection{Fragen zur letzten Lektion}
 \begin{frame}{Fragen zur letzten Lektion}
     \begin{itemize}
         \item Haben Sie Fragen zur letzten Lektion?
@@ -211,7 +225,7 @@ after title={\hfill\colorbox{blue}{Masseinheit}}
 }
 
 \newcommand{\naechstePruefung}[2]{%
-\section{Nächste Prüfung}
+\subsection{Nächste Prüfung}
 \begin{frame}{Nächste Prüfung}
 	\begin{itemize}
 		\item[\textbullet] {\textbf{#1:}\hspace{5pt}}\textcolor{red}{\textbf{Prüfung:} #2}
