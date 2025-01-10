@@ -21,14 +21,14 @@
 \usepackage{amsmath}
 \usepackage{siunitx}
 \sisetup{
-  locale = DE,
-  inter-unit-product = \ensuremath{{\cdot}},
-  detect-mode,             % Use the surrounding text font mode
-  detect-family,           % Use the surrounding text font family
-  detect-weight,           % Use the surrounding text font weight
-  mode = text,             % Ensure that numbers and units are typeset in text mode
-  %negative-powers = false, % Avoid using negative powers
-  per-mode = symbol        % Use the division symbol for per units
+    locale = DE,
+    inter-unit-product = \ensuremath{{\cdot}},
+    detect-mode,             % Use the surrounding text font mode
+    detect-family,           % Use the surrounding text font family
+    detect-weight,           % Use the surrounding text font weight
+    mode = text,             % Ensure that numbers and units are typeset in text mode
+    %negative-powers = false, % Avoid using negative powers
+    per-mode = symbol        % Use the division symbol for per units
 }
 
 \usepackage{tikz}
@@ -56,19 +56,22 @@
 \usecolortheme{dolphin} % A color theme with blue tones
 \setbeamerfont{frametitle}{size=\Large}
 \setbeamercolor{frametitle}{fg=blau_bauschule}
+\setbeamercolor{toc}{fg=blau_bauschule}
+\setbeamercolor{section in toc}{fg=blau_bauschule}
+\setbeamercolor{subsection in toc}{fg=blau_bauschule}
 
 \newcommand{\mylogo}{
     \begin{tikzpicture}[remember picture,overlay]
         \node[anchor=north east, yshift=-2mm, fill=white, inner sep=2pt] at (current page.north east) % Verschiebe das Logo um 5mm nach unten
-            {\includegraphics[height=0.4cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}; % Grösse nach Bedarf anpassen
+        {\includegraphics[height=0.4cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}; % Grösse nach Bedarf anpassen
     \end{tikzpicture}
 }
 
 \logo{\mylogo}
 
 \setbeamertemplate{headline}{%
-  \begin{beamercolorbox}[wd=\textwidth,ht=0.5ex,dp=1ex]{upper separation line head}
-  \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=\textwidth,ht=0.5ex,dp=1ex]{upper separation line head}
+    \end{beamercolorbox}
 }
 
 \setbeamercolor{upper separation line head}{bg=blau_bauschule}
@@ -82,17 +85,19 @@
     \end{beamercolorbox}%
 }
 
+\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{subsection in toc}[square]
 
 \newcommand{\BlueSectionSlide}{
     {
-    \setbeamercolor{background canvas}{bg=blau_bauschule} % Temporarily set the background color
-    \begin{frame}[plain] % Plain frame without navigation
-        \begin{center}
-            {\Huge \color{white} \textbf{\insertsection}} % Section title in the center
-        \end{center}
-    \end{frame}
-    \setbeamercolor{background canvas}{bg=} % Reset background color
-    }
+            \setbeamercolor{background canvas}{bg=blau_bauschule} % Temporarily set the background color
+            \begin{frame}[plain] % Plain frame without navigation
+                \begin{center}
+                    {\Huge \color{white} \textbf{\insertsection}} % Section title in the center
+                \end{center}
+            \end{frame}
+            \setbeamercolor{background canvas}{bg=} % Reset background color
+        }
 }
 
 %\usebackgroundtemplate{
@@ -103,44 +108,45 @@
 \newcommand{\fachname}{Baustoffe}
 \newcommand{\FinRes}[1]{\underline{\underline{#1}}}
 
-% Anpassen der Fusszeile für Abstände zum Rand
-\setbeamertemplate{footline}
-{
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,left,leftskip=1em]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\fachname % Hier wird der Fachname anstelle des Titels angezeigt
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,right,rightskip=1em]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
-  \end{beamercolorbox}}%
-  \vskip0pt%
+\setbeamertemplate{footline}{%
+    \begin{tikzpicture}[remember picture,overlay]
+        % Dünner Farbverlauf
+        \shade[left color=blau_bauschule, right color=blau_bauschule]
+        ([yshift=0cm]current page.south west) rectangle ([yshift=0.5cm]current page.south east);
+        % Autor linksbündig
+        \node[anchor=south west, xshift=0.5cm, yshift=0.15cm] at (current page.south west) {%
+            \textcolor{white}{\insertshortauthor}};
+        % Titel zentriert
+        \node[anchor=south, yshift=0.15cm] at (current page.south) {%
+            \textcolor{white}{\fachname}};
+        % Foliennummer rechtsbündig
+        \node[anchor=south east, xshift=-0.5cm, yshift=0.15cm] at (current page.south east) {%
+            \textcolor{white}{\insertframenumber{} / \inserttotalframenumber}};
+    \end{tikzpicture}
 }
 
 %\setbeamertemplate{footline}{%
 %  \hspace*{0.5cm}\textbf{\fachname}\hfill \insertframenumber / \inserttotalframenumber\hspace*{0.5cm}}
 
-
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries,family=\sffamily}
+%\setbeamerfont{frametitle}{size=\LARGE,series=\bfseries,family=\sffamily}
 
 
 \newtcolorbox{Merke}{
-enhanced,
-boxrule=0pt,frame hidden,
-borderline west={4pt}{0pt}{red!75!black},
-colback=white,
-sharp corners,
-before upper={\textbf{Merke:}\quad},
+    enhanced,
+    boxrule=0pt,frame hidden,
+    borderline west={4pt}{0pt}{red!75!black},
+    colback=white,
+    sharp corners,
+    before upper={\textbf{Merke:}\quad},
 }
 
 \newtcolorbox{Anwendungen}{
-enhanced,
-boxrule=0pt,frame hidden,
-borderline west={4pt}{0pt}{brown!75!black},
-colback=white,
-sharp corners
+    enhanced,
+    boxrule=0pt,frame hidden,
+    borderline west={4pt}{0pt}{brown!75!black},
+    colback=white,
+    sharp corners
 }
 
 
@@ -152,103 +158,133 @@ sharp corners
 \setbeamertemplate{navigation symbols}{} % Remove navigation symbols
 
 
+
+
 \newtcolorbox{Definition_BS}[1]{
-enhanced,boxrule=1pt,
-colback=green!5!white,
-colframe=green!75!black,fonttitle=\bfseries, title = #1,
-%after title={\hfill\colorbox{black}{Definition}}
+    enhanced,boxrule=1pt,
+    colback=green!5!white,
+    colframe=green!75!black,fonttitle=\bfseries, title = #1,
+    %after title={\hfill\colorbox{black}{Definition}}
 }
 
 
 
 \newtcolorbox{Masseinheit}[1]{
-enhanced,
-boxrule=1pt,colframe=blue,
-colback=white,
-sharp corners, 
-colframe=blue!75!black,
-title = #1, 
-after title={\hfill\colorbox{blue}{Masseinheit}}
+    enhanced,
+    boxrule=1pt,colframe=blue,
+    colback=white,
+    sharp corners,
+    colframe=blue!75!black,
+    title = #1,
+    after title={\hfill\colorbox{blue}{Masseinheit}}
 }
 
 
 \newtcolorbox{myLösung}{
-  enhanced,
-  boxrule=1pt,
-  colframe=gray!75!black, % Definiert die Farbe des Rahmens als dunkelgrau
-  colback=gray!20, % Definiert die Hintergrundfarbe der Box als hellgrau
-  %sharp corners, % Macht die Ecken der Box scharf (nicht abgerundet)
-  title = {Lösung}, % Fest eingestellter Titel der Box
-  after title={}, % Fügt das Label "Masseinheit" nach dem Titel hinzu
-  coltitle=white, % Farbe des Titeltexts
-  fonttitle=\bfseries % Schriftart des Titels
+    enhanced,
+    boxrule=1pt,
+    colframe=gray!75!black, % Definiert die Farbe des Rahmens als dunkelgrau
+    colback=gray!20, % Definiert die Hintergrundfarbe der Box als hellgrau
+    %sharp corners, % Macht die Ecken der Box scharf (nicht abgerundet)
+    title = {Lösung}, % Fest eingestellter Titel der Box
+    after title={}, % Fügt das Label "Masseinheit" nach dem Titel hinzu
+    coltitle=white, % Farbe des Titeltexts
+    fonttitle=\bfseries % Schriftart des Titels
 }
 
 
 \newtcolorbox{myLernziele}{
-  enhanced,
-  colframe=cyan!75!black, % Rahmenfarbe (Türkis)
-  colback=cyan!10, % Hintergrundfarbe (Helles Türkis)
-  coltitle=black, % Titeltextfarbe (Schwarz)
-  boxrule=1pt, % Rahmenstärke
-  title={Lernziele}, % Fester Titel
-  fonttitle=\bfseries, % Schriftart des Titels (Fett)
-  left=2mm, % Innenabstand links
-  right=2mm, % Innenabstand rechts
-  top=1mm, % Innenabstand oben
-  bottom=1mm % Innenabstand unten
+    enhanced,
+    colframe=cyan!75!black, % Rahmenfarbe (Türkis)
+    colback=cyan!10, % Hintergrundfarbe (Helles Türkis)
+    coltitle=black, % Titeltextfarbe (Schwarz)
+    boxrule=1pt, % Rahmenstärke
+    title={Lernziele}, % Fester Titel
+    fonttitle=\bfseries, % Schriftart des Titels (Fett)
+    left=2mm, % Innenabstand links
+    right=2mm, % Innenabstand rechts
+    top=1mm, % Innenabstand oben
+    bottom=1mm % Innenabstand unten
 }
 
 
 \newtcolorbox{Fragenblock}{
-  enhanced,
-  colframe=orange!75!black, % Rahmenfarbe (Orange)
-  colback=orange!10, % Hintergrundfarbe (Helles Orange)
-  coltitle=black, % Titeltextfarbe
-  boxrule=1pt, % Rahmenstärke
-  title={Frage}, % Fester Titel
-  fonttitle=\bfseries, % Schriftart des Titels (Fett)
-  left=2mm, % Innenabstand links
-  right=2mm, % Innenabstand rechts
-  top=1mm, % Innenabstand oben
-  bottom=1mm % Innenabstand unten
+    enhanced,
+    colframe=orange!75!black, % Rahmenfarbe (Orange)
+    colback=orange!10, % Hintergrundfarbe (Helles Orange)
+    coltitle=black, % Titeltextfarbe
+    boxrule=1pt, % Rahmenstärke
+    title={Frage}, % Fester Titel
+    fonttitle=\bfseries, % Schriftart des Titels (Fett)
+    left=2mm, % Innenabstand links
+    right=2mm, % Innenabstand rechts
+    top=1mm, % Innenabstand oben
+    bottom=1mm % Innenabstand unten
 }
 
 \newcommand{\folieFragen}{%
-\subsection{Fragen zur letzten Lektion}
-\begin{frame}{Fragen zur letzten Lektion}
-    \begin{itemize}
-        \item Haben Sie Fragen zur letzten Lektion?
-    \end{itemize}
-  
-\end{frame}
+    \subsection{Fragen zur letzten Lektion}
+    \begin{frame}{Fragen zur letzten Lektion}
+        \begin{itemize}
+            \item Haben Sie Fragen zur letzten Lektion?
+        \end{itemize}
+
+    \end{frame}
 }
 
 \newcommand{\naechstePruefung}[2]{%
-\subsection{Nächste Prüfung}
-\begin{frame}{Nächste Prüfung}
-	\begin{itemize}
-		\item[\textbullet] {\textbf{#1:}\hspace{5pt}}\textcolor{red}{\textbf{Prüfung:} #2}
-	\end{itemize}
-\end{frame}
+    \subsection{Nächste Prüfung}
+    \begin{frame}{Nächste Prüfung}
+        \begin{itemize}
+            \item[\textbullet] {\textbf{#1:}\hspace{5pt}}\textcolor{red}{\textbf{Prüfung:} #2}
+        \end{itemize}
+    \end{frame}
 }
 
 \newcommand{\pruefung}[3]{%
-\section{Prüfung}
-\BlueSectionSlide
-\begin{frame}{\textcolor{red}{Prüfung: #1}}
-    \begin{itemize}
-        \item[\textbullet] Bitte Namen eintragen:  \textit{Nachname Vorname}
-        \item[\textbullet] Zeit: #2 Minuten
-        \item[\textbullet] \href{#3}{\textcolor{blue}{Link zur Prüfung}}
-    \end{itemize}
-\end{frame}
+    \section{Prüfung}
+    \BlueSectionSlide
+    \begin{frame}{\textcolor{red}{Prüfung: #1}}
+        \begin{itemize}
+            \item[\textbullet] Bitte Namen eintragen:  \textit{Nachname Vorname}
+            \item[\textbullet] Zeit: #2 Minuten
+            \item[\textbullet] \href{#3}{\textcolor{blue}{Link zur Prüfung}}
+        \end{itemize}
+    \end{frame}
 }
 
 \newcommand{\Lernziele}[1]{%
-\begin{frame}{Lernziele}
-    \begin{itemize}
-        #1
-    \end{itemize}
-\end{frame}
+    \begin{frame}{Lernziele}
+        \begin{itemize}
+            #1
+        \end{itemize}
+    \end{frame}
+}
+
+
+\newcommand{\notenverteilung}[5]{
+    \begin{frame}{Notenverteilung}
+
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{ll}
+                \toprule
+                \textbf{{}}              & \textbf{Note} \\ \midrule
+                Minimum                  & #1            \\
+                Median                   & #2            \\
+                Mittelwert               & #3            \\
+                Maximum                  & #4            \\
+                Standardabweichung (Std) & #5            \\ \bottomrule
+            \end{tabular}
+        \end{table}
+    \end{frame}
+}
+
+\newcommand{\notenformel}[3]{%
+    \begin{frame}{Formel für die Notenberechnung}
+        \begin{itemize}
+            \item[\textbullet] Note 1 mit #1 Punkten
+            \item[\textbullet] Note 6 mit #2 Punkten von maximal #3 Punkten
+        \end{itemize}
+    \end{frame}
 }
