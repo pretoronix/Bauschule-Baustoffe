@@ -1,0 +1,110 @@
+% !TEX TS-program = lualatex
+
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/HTa-26/Programme/KW_03_Programm.tex
+% !TEX TS-program = lualatex
+
+\input{../../template/beamer_BS.tex}
+
+
+
+% Set the title, author, and date
+\title{\textbf{Lektionsprogramm HTa-26}}
+\author{Patrick Pfändler}
+\date{13. Januar 2025}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Inhalt der Lektion}
+	\tableofcontents
+\end{frame}
+
+%\pruefung{Abdichtungen, mit Bindemitteln gefestigte Baustoffe, Kunststoffe}{45}{https://www.classtime.com/code/RAWHBA}
+
+\section{Metalle}
+\BlueSectionSlide
+
+\begin{frame}{Rückblick Zugversuch}
+	\begin{block}{Formeln}
+		\begin{itemize}
+			\item Spannung: $\sigma = \frac{F}{A}$
+			\item Dehnung: $\varepsilon = \frac{\Delta L}{L}$
+			\item Elastizitätsmodul: $E = \frac{\sigma}{\varepsilon}$
+			\item Zugfestigkeit: $f_t = \frac{F_{\text{max}}}{A_0}$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+
+
+\begin{frame}{Zugversuch: Berechnung der  Zugfestigkeit}
+	\centering
+	\includegraphics[height=\textheight]{../../Unterlagen/09_Metalle/Bilder/Zugversuch_Fmax.jpeg}
+\end{frame}
+
+\begin{frame}{Zugversuch: Berechnung der  Zugfestigkeit}
+	Fläche des Stahls:
+	\begin{equation*}
+		A_{\text{Kreis}} = r^2 \cdot \pi = (\SI{8}{\mm})^2 \cdot \pi = \FinRes{\SI{201.062}{\mm^2}}
+	\end{equation*}
+	\pause
+	\vspace{\baselineskip}
+	\vspace{\baselineskip}
+	Herauslesen der Höchstlast und einsetzen in die Formel:
+	\begin{equation*}
+		f_{t}  =
+		\dfrac{\text{Höchstlast}}{\text{A}} = \dfrac{\SI{126.46}{\kN}}{\SI{201.062}{\mm^2}} \approx \FinRes{\myNmm{628.96}}
+	\end{equation*}
+
+\end{frame}
+
+\begin{frame}{Bemessungswert vs charakteristischer Wert}
+	\begin{itemize}
+		\item Bemessungswert: $f_{sd} = \myNmm{435}$
+		\item charakteristischer Wert: $f_{sk} = \myNmm{500}$
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Bewehrungsprodukte}
+	\begin{block}{Übung in Teams}
+		Öffnen von Teams und Tab im Channel Baustoffe
+
+		Zeit: ca. 10 Minuten
+		
+	\end{block}
+
+\end{frame}
+
+\begin{frame}{Weiter mit Metallen}
+
+\end{frame}
+
+
+
+
+
+%\input{../../Unterlagen/30_Innovation_Bauwesen/01_Postenlauf/Postenlauf_Innovation.tex}
+
+
+\section{Organisatorisches}
+\BlueSectionSlide
+
+\subsection{Uploads auf Teams}
+\begin{frame}{Uploads auf Teams}
+	\begin{itemize}
+		\item[\textbullet] keine
+	\end{itemize}
+
+\end{frame}
+
+% \begin{frame}{Fragen zur Prüfung?}
+
+% \end{frame}
+
+\naechstePruefung{17.02.2024 }{Metalle, Wärmedämmstoffe, Innovation im Bauwesen}
+\folieFragen
+\end{document}
