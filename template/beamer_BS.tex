@@ -41,6 +41,10 @@
 \usepackage{fontawesome}
 \usepackage{colortbl}
 
+\usepackage{xcolor}          % Für Farben wie green!70!black
+\usepackage{fontawesome}     % Für Symbole wie \faCheckSquare
+\usepackage{ifthen}          % Für Bedingungen in Makros
+
 
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
@@ -155,6 +159,38 @@
     colback=white,
     sharp corners
 }
+
+
+
+\newcommand{\frageMitZweiFolien}[3]{%
+    % Folie 1: Frage
+    \begin{frame}{#1}
+        \begin{Fragenblock}
+            #2
+            \begin{itemize}
+                \item[\faSquare] Richtig
+                \item[\faSquare] Falsch
+            \end{itemize}
+        \end{Fragenblock}
+    \end{frame}
+
+    % Folie 2: Lösung
+    \begin{frame}{Lösung: #1}
+        \begin{Fragenblock}
+            #2
+            \begin{itemize}
+                \ifthenelse{\equal{#3}{richtig}}{%
+                    \item[\textcolor{green!70!black}{\faCheckSquare}] Richtig
+                    \item[\faSquare] Falsch
+                }{%
+                    \item[\faSquare] Richtig
+                    \item[\textcolor{red!70!black}{\faCheckSquare}] Falsch
+                }
+            \end{itemize}
+        \end{Fragenblock}
+    \end{frame}
+}
+
 
 
 

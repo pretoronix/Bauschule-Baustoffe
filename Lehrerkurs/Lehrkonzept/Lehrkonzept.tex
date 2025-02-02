@@ -194,8 +194,8 @@ arrows=pgf-filled,
 % Commands
 \newcommand{\myNmm}[1]
 {
-\sisetup{per-mode=symbol}
-\SI{#1}{\newton\per\mm\squared}
+    \sisetup{per-mode=symbol}
+    \SI{#1}{\newton\per\mm\squared}
 }
 
 
@@ -212,34 +212,34 @@ arrows=pgf-filled,
 %\setkomafont{caption}{\sffamily} 
 
 \newtcolorbox{Definition}[1]{
-colback=green!5!white,
-colframe=green!75!black,fonttitle=\bfseries,
-title=#1}
+    colback=green!5!white,
+    colframe=green!75!black,fonttitle=\bfseries,
+    title=#1}
 
 
 \newtcolorbox{Merke}{
-enhanced,
-boxrule=0pt,frame hidden,
-borderline west={4pt}{0pt}{red!75!black},
-colback=white,
-sharp corners
+    enhanced,
+    boxrule=0pt,frame hidden,
+    borderline west={4pt}{0pt}{red!75!black},
+    colback=white,
+    sharp corners
 }
 
 \newtcolorbox{Masseinheit}[1]{
-enhanced,
-boxrule=1pt,colframe=blue,
-colback=white,
-sharp corners, 
-colframe=blue!75!black,
-title = #1, 
-after title={\hfill\colorbox{ NavyBlue}{Masseinheit}}
+    enhanced,
+    boxrule=1pt,colframe=blue,
+    colback=white,
+    sharp corners,
+    colframe=blue!75!black,
+    title = #1,
+    after title={\hfill\colorbox{ NavyBlue}{Masseinheit}}
 }
 
 \newtcbox{\ExampleSimple}[1][gray]{on line,
-arc=0pt,outer arc=0pt,colback=#1!10!white,%colframe=#1!50!black,
-frame hidden,
-boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,
-boxrule=0pt,bottomrule=1pt,toprule=1pt}
+    arc=0pt,outer arc=0pt,colback=#1!10!white,%colframe=#1!50!black,
+    frame hidden,
+    boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,
+    boxrule=0pt,bottomrule=1pt,toprule=1pt}
 
 %\maketitle
 {\color{blau_bauschule}\fontsize{40pt}{21pt}\selectfont \textbf{Lehrkonzept: Einsatz von neuen Baustoffen und Technologien}}
@@ -255,16 +255,16 @@ boxrule=0pt,bottomrule=1pt,toprule=1pt}
     \centering
     \label{tab:abkuerzungen}
     \begin{tabularx}{\textwidth}{@{}ll@{}}
-    \toprule
-    %\midrule
-    Bsp. & Beispiel \\
-    LP & Lehrperson \\
-    SF & Sozialform \\
-    FK & Fachkompetenz \\
-    ÜK & Überfachliche Kompetenz \\
-    \bottomrule
+        \toprule
+        %\midrule
+        Bsp. & Beispiel                \\
+        LP   & Lehrperson              \\
+        SF   & Sozialform              \\
+        FK   & Fachkompetenz           \\
+        ÜK   & Überfachliche Kompetenz \\
+        \bottomrule
     \end{tabularx}
-    \end{table}
+\end{table}
 
 
 
@@ -281,28 +281,28 @@ boxrule=0pt,bottomrule=1pt,toprule=1pt}
 Das Lehrkonzept im Fach \textbf{Baustoffe} orientiert sich an den institutionellen und berufsspezifischen Anforderungen für die Ausbildung von Bauführern (vgl. Kompetenzprofil für Bauführer \cite{Kompetenzprofil_Baufuehrer}). Die folgenden Vorgaben bilden die Grundlage für die Gestaltung der Unterrichtseinheiten:
 
 \subsection{Institutionelle Vorgaben}
-Gemäss den Richtlinien der weiterführenden Schule ist der Unterricht so zu gestalten, dass die Schülerinnen und Schüler die Kompetenzen erwerben, die für eine verantwortungsvolle Tätigkeit als Bauführer erforderlich sind. Dies umfasst die Vermittlung grundlegender und spezialisierter Kenntnisse in Materialkunde, Materialprüfung sowie ökologischen und wirtschaftlichen Aspekten der Baustoffwahl. 
+Gemäss den Richtlinien der weiterführenden Schule ist der Unterricht so zu gestalten, dass die Schülerinnen und Schüler die Kompetenzen erwerben, die für eine verantwortungsvolle Tätigkeit als Bauführer erforderlich sind. Dies umfasst die Vermittlung grundlegender und spezialisierter Kenntnisse in Materialkunde, Materialprüfung sowie ökologischen und wirtschaftlichen Aspekten der Baustoffwahl.
 Für detaillierte Angaben liegt ein berufspädagogisches Konzept seitens der Bauschule Aarau vor.
 
 
 Diese lassen sich ableiten aus dem Kompetenzprofil für Bauführer \cite{Kompetenzprofil_Baufuehrer}.
 
-Im Kompetenzprofil ist beschrieben, dass 
+Im Kompetenzprofil ist beschrieben, dass
 \begin{itemize}
     \item Bauführer veranlassen und koordinieren den
-    Einsatz neuer Methoden, Technologien und
-    Baustoffe. Sie sorgen dafür, dass neue Methoden, Technologien und Baustoffe auf Baustellen fachgerecht, zum richtigen Zeitpunkt und wirtschaftlich eingesetzt werden.
+          Einsatz neuer Methoden, Technologien und
+          Baustoffe. Sie sorgen dafür, dass neue Methoden, Technologien und Baustoffe auf Baustellen fachgerecht, zum richtigen Zeitpunkt und wirtschaftlich eingesetzt werden.
     \item Sie kontrollieren und
-    überprüfen die Qualität der Baustoffe regelmässig entsprechend der Vorgaben.
+          überprüfen die Qualität der Baustoffe regelmässig entsprechend der Vorgaben.
 \end{itemize}
 
 Dabei werden als kritische Erfolgsfaktoren die folgenden Punkte genannt:
 
 \begin{itemize}
     \item Gute Kenntnisse hinsichtlich multifunktio-
-    naler und intelligenter Baustoffe (einschliesslich Einsatz im Baubereich)
+          naler und intelligenter Baustoffe (einschliesslich Einsatz im Baubereich)
     \item Interesse an neuen Methoden, Technolo-
-    gien und Baustoffen (multifunktionale und intelligente Baustoffe (einschliesslich Einsatz im Baubereich) usw.)
+          gien und Baustoffen (multifunktionale und intelligente Baustoffe (einschliesslich Einsatz im Baubereich) usw.)
     \item Instruieren und anleiten können
 \end{itemize}
 
@@ -393,8 +393,8 @@ Lehren verstehen wir ebenfalls als einen aktiven, sozial kooperativen, individue
 Die Bauschule richtet ihr gesamtes Handeln an folgenden vier Prinzipien aus:
 \begin{enumerate}
     \item Bildet Fachkräfte \textbf{für die Praxis} aus.
-    \item untersützt und entwickelt  \text{Persönlichkeiten} für die Baubranche. 
-    \item macht \textbf{Lernerlebniisse} erlebbar.
+    \item untersützt und entwickelt  \text{Persönlichkeiten} für die Baubranche.
+    \item macht \textbf{Lernerlebnisse} erlebbar.
     \item realisiert \textbf{handlungsorientiertes Lernen}.
 \end{enumerate}
 
@@ -407,14 +407,14 @@ Die Bauschule richtet ihr gesamtes Handeln an folgenden vier Prinzipien aus:
     \caption{Kognitive Taxonomiestufen nach Bloom \cite{bloom1956taxonomy}, adaptiert von \cite{BerufspädagogischesKonzept_BauschuleAarau}.}
     \begin{longtable}{@{}llp{12cm}@{}}
         \toprule
-        \textbf{Stufen} & \textbf{Begriff} & \textbf{Beschreibung} \\ 
+        \textbf{Stufen} & \textbf{Begriff} & \textbf{Beschreibung}                                                                                                                                                    \\
         \midrule
-        K1 & Wissen & Sie geben gelerntes Wissen wieder und rufen es in gleichartiger Situation ab. \\ 
-        K2 & Verstehen & Sie erklären oder beschreiben gelerntes Wissen in eigenen Worten. \\ 
-        K3 & Anwenden & Sie wenden gelernte Technologien/Fertigkeiten in unterschiedlichen Situationen an. \\ 
-        K4 & Analyse & Sie analysieren eine komplexe Situation, d.h. sie gliedern Sachverhalte in Einzelelemente, decken Beziehungen zwischen Elementen auf und finden Strukturmerkmale heraus. \\ 
-        K5 & Synthese & Sie kombinieren einzelne Elemente eines Sachverhalts und fügen sie zu einem Ganzen zusammen. \\ 
-        K6 & Beurteilen & Sie beurteilen einen mehr oder weniger komplexen Sachverhalt aufgrund von bestimmten Kriterien. \\ 
+        K1              & Wissen           & Sie geben gelerntes Wissen wieder und rufen es in gleichartiger Situation ab.                                                                                            \\
+        K2              & Verstehen        & Sie erklären oder beschreiben gelerntes Wissen in eigenen Worten.                                                                                                        \\
+        K3              & Anwenden         & Sie wenden gelernte Technologien/Fertigkeiten in unterschiedlichen Situationen an.                                                                                       \\
+        K4              & Analyse          & Sie analysieren eine komplexe Situation, d.h. sie gliedern Sachverhalte in Einzelelemente, decken Beziehungen zwischen Elementen auf und finden Strukturmerkmale heraus. \\
+        K5              & Synthese         & Sie kombinieren einzelne Elemente eines Sachverhalts und fügen sie zu einem Ganzen zusammen.                                                                             \\
+        K6              & Beurteilen       & Sie beurteilen einen mehr oder weniger komplexen Sachverhalt aufgrund von bestimmten Kriterien.                                                                          \\
         \bottomrule
     \end{longtable}
 \end{table}
@@ -423,7 +423,7 @@ Die Bauschule richtet ihr gesamtes Handeln an folgenden vier Prinzipien aus:
 
 
 \subsubsection{RITA-Modell}
-Die Lektion wird nach dem RITA-Modell durchgeführt. 
+Die Lektion wird nach dem RITA-Modell durchgeführt.
 Die Studierenden werden mit konkreten Aufgaben aus der Praxis konfrontiert und ihr Vorwissen, Erfahrungen, Haltungen zum Thema oder gar erste Problemlösungen werden aktiviert.
 Diese Rythmisierte Unterrichtsablauf wird in der Tabelle \cref{tab:RITA_Modell} dargestellt und ist Teil des berufspädagogischen Konzepts der Bauschule Aarau \cite{BerufspädagogischesKonzept_BauschuleAarau}
 
@@ -437,16 +437,16 @@ Eignung zum erfolgreichen und verantwortungsvollen beruflichen Handeln in bestim
     \label{tab:RITA_Modell}
     \caption{RITA-Modell, adaptiert von \cite{BerufspädagogischesKonzept_BauschuleAarau}.}
     \begin{tabularx}{\textwidth}{@{}llp{9.5cm}@{}}
-    \toprule
-    \textbf{Phase} & \textbf{Beschreibung} & \textbf{Umschreibung} \\
-    \midrule
-    R:  & Ressourcen aktivieren & Studierende werden mit konkreten Aufgaben aus der Praxis konfrontiert; Vorwissen, Erfahrungen, Haltungen zum Thema oder gar erste Problemlösungen werden aktiviert. \\
-    I: & Informationen verarbeiten & {} \\
-    T: & Transfer anbahnen & {} \\
-    A: & Auswerten & {} \\
-    \bottomrule
+        \toprule
+        \textbf{Phase} & \textbf{Beschreibung}     & \textbf{Umschreibung}                                                                                                                                               \\
+        \midrule
+        R:             & Ressourcen aktivieren     & Studierende werden mit konkreten Aufgaben aus der Praxis konfrontiert; Vorwissen, Erfahrungen, Haltungen zum Thema oder gar erste Problemlösungen werden aktiviert. \\
+        I:             & Informationen verarbeiten & {}                                                                                                                                                                  \\
+        T:             & Transfer anbahnen         & {}                                                                                                                                                                  \\
+        A:             & Auswerten                 & {}                                                                                                                                                                  \\
+        \bottomrule
     \end{tabularx}
-    \end{table}
+\end{table}
 
 \subsubsection{Gruppengrösse}
 Die Klassengrösse beträgt ca. 14 bis 20 Studierende.
@@ -455,14 +455,14 @@ Die meisten Klassen haben nur Männer, es gibt jedoch auch gemischte Klassen mit
 
 
 \subsection{Räumliche Ressourcen}
-Der Unterricht findet in einem Klassenzimmer mit Beamer und Flipchart statt. 
+Der Unterricht findet in einem Klassenzimmer mit Beamer und Flipchart statt.
 Die Studierenden haben fixe Sitzplätze, die in der Regel während des gesamten Unterrichts beibehalten werden.
 Für praktische Übungen und Demonstrationen stehen Flächen zur Verfügung im Gebäude zur Verfügung. Die Schülerinnen und Schüler haben Zugang zu einer Bibliothek und digitalen Lernmaterialien (inkl. Normen).
 Die Studierenden haben im Beisein der Lehrperson Zugang zur Materialsammlung der Bauschule Aarau.
 Zudem befinden sich in den Schaukästen im Gebäude der Bauschule Aarau diverse Sammlungen von Baustoffen, wie beispielweise zu den Natursteinen.
 
 \subsection{Zeitliche Ressourcen}
-Das Fach Baustoffe umfasst insgesamt etwa 100 Unterrichtsstunden, die über ein Schuljahr verteilt sind. Der Unterricht wird in Blöcken von 90 bis 120 Minuten durchgeführt und erstreckt sich über rund 34 Schulwochen. 
+Das Fach Baustoffe umfasst insgesamt etwa 100 Unterrichtsstunden, die über ein Schuljahr verteilt sind. Der Unterricht wird in Blöcken von 90 bis 120 Minuten durchgeführt und erstreckt sich über rund 34 Schulwochen.
 Die Einheiten finden in der Regel am Montag oder Dienstag statt.
 
 Der Unterricht selbst ist in der Regel Kontaktunterricht, wobei auch Phasen des selbständigen Arbeitens (z.B. Diplomarbeit) und der Gruppenarbeit vorgesehen sind.
@@ -481,17 +481,17 @@ Das Studium an der Bauschule Aarau ist kostenpflichtig. Die Studierenden müssen
 \subsection{Übergeordnetes Konzept im Fach Baustoffe}
 Das Fachbaustoffe soll die Lerninhalte aus der Lehre vertiefen.
 Das Fach Baustoffe findet zeitlich  nach der Vertiefung von Mathematik, Deutsch und Informatik, des sogenannten Grundlagenkurses, statt.
-Im Kontext der Ausbildung an der Bauschule ist das Fach Baustoffe ein wichtiger Bestandteil der Ausbildung zum Bauführer. 
+Im Kontext der Ausbildung an der Bauschule ist das Fach Baustoffe ein wichtiger Bestandteil der Ausbildung zum Bauführer.
 Die Studierenden benötigten das Fachwissen der unterschiedlichen Baustoffen in zahlreichen Situationen im Berufsalltag und in weiteren Unterrichtsfächern wie Tiefbau, Hochbau, Baustatik, Kalkulation oder Baustelleninstallation.
 
 
 
 \subsubsection{Kompetenznachweise}
 
-Im Fach Baustoffe werden die Kompetenzen in Form von schriftlichen Prüfungen erbracht (formativ). 
+Im Fach Baustoffe werden die Kompetenzen in Form von schriftlichen Prüfungen erbracht (formativ).
 Überlicherweise werden die Prüfungen mit einem geeigneten Online-Tool durchgeführt.
 Die Prüfungen umfassen u.a Multiple-Choice-Fragen, offene Fragen, Berechnungen und Anwendungsbeispiele.
-Die Prüfungen werden in der Regel am Ende eines Themenblocks durchgeführt, mit einem zweiwöchigen Vorlauf zur individuellen Vorbereitung der Studierenden. 
+Die Prüfungen werden in der Regel am Ende eines Themenblocks durchgeführt, mit einem zweiwöchigen Vorlauf zur individuellen Vorbereitung der Studierenden.
 Die Prüfungen sind so konzipiert, dass die Studierenden die Kompetenzen der Kognitiven Taxonomiestufen K2 bis K6 nach Bloom erbringen müssen.
 Über das Jahr ergeben sich somit vier bis fünf Prüfungen, die die Studierenden absolvieren müssen.
 Die finale Ausgestaltung der Kompetenznachweise ist der Lehrperson überlassen.
@@ -504,31 +504,31 @@ Die gesetzlichen Grundlagen sind der das Kompentenzprofil für Bauführer und Ba
 
 \section{Zielgruppenanalyse}
 \label{sec:Zielgruppenanalyse}
-Die Zielgruppen sind angehende Bauführer und Bauführerinnen. Die Studierenden sind zwischen 20 und 30 Jahre alt und haben meistens eine abgeschlossene Berufslehre als Maurer, teilweise eine abgeschlossene Weiterbildung zum Polier oder Vorarbeiter (inkl. Berufsbildnerkurs). 
+Die Zielgruppen sind angehende Bauführer und Bauführerinnen. Die Studierenden sind zwischen 20 und 30 Jahre alt und haben meistens eine abgeschlossene Berufslehre als Maurer, teilweise eine abgeschlossene Weiterbildung zum Polier oder Vorarbeiter (inkl. Berufsbildnerkurs).
 Teilweise gibt es ältere Studierende, welche aufgrund eines gesundheitlichen Leidens von der IV an die Bauschule Aarau überwiesen wurden um dort die Ausbildung zum Bauführer zu absolvieren.
 Aus diesen Gründen kann die Motivation sowohl instrinsisch als auch extrinsisch sein.
 Sie verfügen über praktische Erfahrung im Baugewerbe und haben bereits erste Erfahrungen in der Bauführung in den Unternehmen gesammelt.
 
-Schlussendlich soll der Unterricht eine Vorbereitung auf die eigenössische Prüfung zum Bauführer sein. 
-Vor der eigenössischen Prüfungen findet nochmals ein Repetitionsblock statt. 
+Schlussendlich soll der Unterricht eine Vorbereitung auf die eigenössische Prüfung zum Bauführer sein.
+Vor der eigenössischen Prüfungen findet nochmals ein Repetitionsblock statt.
 
-Die Vorkenntnisse können aufgrund vorhandener oder nicht vorhandener Weiterbildungen sehr unterschiedlich sein. 
+Die Vorkenntnisse können aufgrund vorhandener oder nicht vorhandener Weiterbildungen sehr unterschiedlich sein.
 Ebenfalls besteht eine grosse Heterogenität in den Lernvoraussetzungen, da die Studierenden aus unterschiedlichen Berufsfeldern (Quereinsteiger) kommen können.
 
-Die Arbeit auf Baustellen setzt voraus, dass sich die Studierenden Teamfähigkeiten aneignen und sich in einem Team integrieren können. 
+Die Arbeit auf Baustellen setzt voraus, dass sich die Studierenden Teamfähigkeiten aneignen und sich in einem Team integrieren können.
 
-Die Studierenden sind sich besonders anfangs nicht mehr gewöhnt den ganzen Tag zu sitzen und im Schulzimmer zu verbringen. 
+Die Studierenden sind sich besonders anfangs nicht mehr gewöhnt den ganzen Tag zu sitzen und im Schulzimmer zu verbringen.
 Die Kenntnisse in der Anwendung von digitalen, kollaborativen Tools sind unterschiedlich ausgeprägt.
-Die Selbstorganisation der Studierenden ist unterschiedlich ausgeprägt, je nach Ausbildungsstand. 
+Die Selbstorganisation der Studierenden ist unterschiedlich ausgeprägt, je nach Ausbildungsstand.
 Die Meisten müssen sich in der Selbstorganisation erst wieder zurechtfinden.
 
 \section*{Fazit}
 Die Rahmenbedingungen und Zielgruppenanalyse zeigen eine Vielzahl von Besonderheiten und Herausforderungen, die bei der didaktischen Planung des Lehrkonzepts zu berücksichtigen sind.
 
-Die Studierenden bringen unterschiedliche Vorkenntnisse und Erfahrungen mit, da sie aus verschiedenen beruflichen Hintergründen stammen (z. B. Maurer, Poliere, Quereinsteiger). 
+Die Studierenden bringen unterschiedliche Vorkenntnisse und Erfahrungen mit, da sie aus verschiedenen beruflichen Hintergründen stammen (z. B. Maurer, Poliere, Quereinsteiger).
 Die Studierenden haben oft umfangreiche praktische Erfahrungen, jedoch unterschiedliche theoretische Grundlagen. Der Unterricht muss daher Theorie und Praxis eng verknüpfen, um die Brücke zwischen Baustelle und Schulzimmer zu schlagen.
 Die Motivation ist sowohl intrinsisch als auch extrinsisch geprägt. Zusätzlich sind viele Studierende nicht mehr gewohnt, längere Zeit in einem schulischen Umfeld zu arbeiten. Dies macht es notwendig, den Unterricht abwechslungsreich und praxisnah zu gestalten und gleichzeitig die Selbstorganisation der Studierenden zu fördern.
-Der Unterricht bereitet auf die eidgenössische Prüfung zum Bauführer vor. Eine klare Ausrichtung auf die Kompetenzziele ist daher unerlässlich. 
+Der Unterricht bereitet auf die eidgenössische Prüfung zum Bauführer vor. Eine klare Ausrichtung auf die Kompetenzziele ist daher unerlässlich.
 
 
 %\clearpage
@@ -541,109 +541,109 @@ Die Sachanalyse zum Thema \textbf{Neue Baustoffe und Technologien} im Fach Baust
 \subsection{Definition und Bedeutung neuer Baustoffe}
 \begin{itemize}
     \item Definition neuer Baustoffe:
-    \begin{itemize}
-        \item Materialien mit verbesserten Eigenschaften (langlebiger, schneller befahrbar) oder neuen Anwendungsmöglichkeiten im Hoch- oder Tiefbau.
-        \item Kombination von traditionellen und innovativen Materialien (z.B. Bei der Sanierung)
-    \end{itemize}
+          \begin{itemize}
+              \item Materialien mit verbesserten Eigenschaften (langlebiger, schneller befahrbar) oder neuen Anwendungsmöglichkeiten im Hoch- oder Tiefbau.
+              \item Kombination von traditionellen und innovativen Materialien (z.B. Bei der Sanierung)
+          \end{itemize}
     \item Bedeutung für die Bauindustrie:
-    \begin{itemize}
-        \item Beitrag zur Nachhaltigkeit und Energieeffizienz.
-        \item Anpassung an neue Bauweisen und technologische Anforderungen.
-        \item Erfüllung von Kundenanforderungen und aktuellen Trends (z.B. ökologische Bauweise)
-    \end{itemize}
+          \begin{itemize}
+              \item Beitrag zur Nachhaltigkeit und Energieeffizienz.
+              \item Anpassung an neue Bauweisen und technologische Anforderungen.
+              \item Erfüllung von Kundenanforderungen und aktuellen Trends (z.B. ökologische Bauweise)
+          \end{itemize}
 \end{itemize}
 
 \subsection{Eigenschaften und Kategorien neuer Baustoffe}
 \begin{itemize}
     \item \textbf{Verbesserte Eigenschaften:}
-    \begin{itemize}
-        \item Höhere Festigkeit und Stabilität durch unterschiedliche strukturen auf unterschiedlichen Grössenskalen.
-        \item Geringeres Gewicht bei gleicher Tragfähigkeit.
-        \item Verbesserte Isolations- und Dämmeigenschaften.
-    \end{itemize}
+          \begin{itemize}
+              \item Höhere Festigkeit und Stabilität durch unterschiedliche strukturen auf unterschiedlichen Grössenskalen.
+              \item Geringeres Gewicht bei gleicher Tragfähigkeit.
+              \item Verbesserte Isolations- und Dämmeigenschaften.
+          \end{itemize}
     \item \textbf{Kategorien:}
-    \begin{itemize}
-        \item Hochleistungsbeton (z. B. UHPC - Ultra High Performance Concrete).
-        \item Selbstheilender Beton.
-        \item Nanomaterialien (z. B. Nanobeschichtungen, Nanopartikel in Beton).
-        \item Recycling-Baustoffe (z. B. Sekundärrohstoffe aus Abbruchmaterialien).
-        \item Neuartige Baustoffe (z. B. Carbonbeton, usw.).
-    \end{itemize}
+          \begin{itemize}
+              \item Hochleistungsbeton (z. B. UHPC - Ultra High Performance Concrete).
+              \item Selbstheilender Beton.
+              \item Nanomaterialien (z. B. Nanobeschichtungen, Nanopartikel in Beton).
+              \item Recycling-Baustoffe (z. B. Sekundärrohstoffe aus Abbruchmaterialien).
+              \item Neuartige Baustoffe (z. B. Carbonbeton, usw.).
+          \end{itemize}
 \end{itemize}
 
 \subsection{Technologien zur Herstellung und Verarbeitung}
 \begin{itemize}
     \item Additive Fertigung:
-    \begin{itemize}
-        \item 3D-Druck von Beton und anderen Baustoffen.
-    \end{itemize}
+          \begin{itemize}
+              \item 3D-Druck von Beton und anderen Baustoffen.
+          \end{itemize}
     \item Digitalisierung im Bauwesen:
-    \begin{itemize}
-        \item Building Information Modeling (BIM) zur Optimierung der Materialauswahl.
-        \item Einsatz von Drohnen zur Baustoffüberwachung oder des Baufortschrittes
-        \item Softwarelösungen zur Materialplanung und -kontrolle.
-    \end{itemize}
+          \begin{itemize}
+              \item Building Information Modeling (BIM) zur Optimierung der Materialauswahl.
+              \item Einsatz von Drohnen zur Baustoffüberwachung oder des Baufortschrittes
+              \item Softwarelösungen zur Materialplanung und -kontrolle.
+          \end{itemize}
     \item Modulares Bauen:
-    \begin{itemize}
-        \item Baustoffe für vorgefertigte Bauelemente.
-        \item Effizienzsteigerung durch modulare Konstruktion.
-    \end{itemize}
+          \begin{itemize}
+              \item Baustoffe für vorgefertigte Bauelemente.
+              \item Effizienzsteigerung durch modulare Konstruktion.
+          \end{itemize}
 \end{itemize}
 
 \subsection{Nachhaltigkeit und Umweltverträglichkeit}
 \begin{itemize}
     \item Reduktion des ökologischen Fussabdrucks:
-    \begin{itemize}
-        \item Nutzung von Recyclingmaterialien in Projekten.
-        \item Energieeffiziente Produktionsverfahren oder Baumaschinen.
-    \end{itemize}
+          \begin{itemize}
+              \item Nutzung von Recyclingmaterialien in Projekten.
+              \item Energieeffiziente Produktionsverfahren oder Baumaschinen.
+          \end{itemize}
     \item Lebenszyklusanalyse:
-    \begin{itemize}
-        \item Bewertung der Umweltbelastung über die gesamte Lebensdauer.
-    \end{itemize}
+          \begin{itemize}
+              \item Bewertung der Umweltbelastung über die gesamte Lebensdauer.
+          \end{itemize}
     \item Kreislaufwirtschaft im Bauwesen:
-    \begin{itemize}
-        \item Wiederverwendbare und recycelbare Baustoffe.
-        \item Reduktion von Abfall durch geschlossene Materialkreisläufe.
-    \end{itemize}
+          \begin{itemize}
+              \item Wiederverwendbare und recycelbare Baustoffe.
+              \item Reduktion von Abfall durch geschlossene Materialkreisläufe.
+          \end{itemize}
     \item Nachhaltigkeitszertifikate:
-    \begin{itemize}
-        \item Green Building Labels (z. B. LEED, Minergie).
-        \item Bewertung durch Ökobilanzen (z. B. graue Energie, CO2-Fussabdruck).
-        \item Einhaltung von Umweltstandards und -richtlinien.
-        \item Minergie, Minergie-P, Minergie-A, Minergie-Eco, Minergie-Modul, Minergie-ECO-P, Minergie-ECO-A, Minergie-ECO-Modul, Minergie-ECO-Modul-P, Minergie-ECO-Modul-A Standards
-    \end{itemize}
+          \begin{itemize}
+              \item Green Building Labels (z. B. LEED, Minergie).
+              \item Bewertung durch Ökobilanzen (z. B. graue Energie, CO2-Fussabdruck).
+              \item Einhaltung von Umweltstandards und -richtlinien.
+              \item Minergie, Minergie-P, Minergie-A, Minergie-Eco, Minergie-Modul, Minergie-ECO-P, Minergie-ECO-A, Minergie-ECO-Modul, Minergie-ECO-Modul-P, Minergie-ECO-Modul-A Standards
+          \end{itemize}
 \end{itemize}
 
 \subsection{Herausforderungen und Potenziale}
 \begin{itemize}
     \item Herausforderungen:
-    \begin{itemize}
-        \item Hohe Kosten und aufwendige Produktionsverfahren.
-        \item Akzeptanz bei Bauunternehmen und Bauherren.
-        \item Anforderungen an die Lagerung und Logistik (z. B. Feuchtigkeitsschutz).
-    \end{itemize}
+          \begin{itemize}
+              \item Hohe Kosten und aufwendige Produktionsverfahren.
+              \item Akzeptanz bei Bauunternehmen und Bauherren.
+              \item Anforderungen an die Lagerung und Logistik (z. B. Feuchtigkeitsschutz).
+          \end{itemize}
     \item Potenziale:
-    \begin{itemize}
-        \item Verbesserung der Bauqualität und -geschwindigkeit.
-        \item Beitrag zu nachhaltigem und energieeffizientem Bauen.
-        \item Langlebigkeit und Wartungsfreundlichkeit der Baustoffe resp. der Bauwerke
-    \end{itemize}
+          \begin{itemize}
+              \item Verbesserung der Bauqualität und -geschwindigkeit.
+              \item Beitrag zu nachhaltigem und energieeffizientem Bauen.
+              \item Langlebigkeit und Wartungsfreundlichkeit der Baustoffe resp. der Bauwerke
+          \end{itemize}
 \end{itemize}
 
 \subsection{Schadensfälle im Bauwesen und deren Vermeidung}
 \begin{itemize}
     \item Häufige Schadensfälle durch ungeeignete oder fehlerhafte Baustoffe:
-    \begin{itemize}
-        \item Korrosion von Stahl  (chlorid- oder carbonatisierungbedingt) in Beton.
-        \item Frostschäden bei Beton.
-    \end{itemize}
+          \begin{itemize}
+              \item Korrosion von Stahl  (chlorid- oder carbonatisierungbedingt) in Beton.
+              \item Frostschäden bei Beton.
+          \end{itemize}
     \item Massnahmen zur Vermeidung:
-    \begin{itemize}
-        \item Auswahl geeigneter Baustoffe für spezifische Umweltbedingungen.
-        \item Regelmässige Materialprüfungen und Qualitätskontrollen.
-        \item Schulung von Mitarbeitenden im Umgang mit neuen Materialien.
-    \end{itemize}
+          \begin{itemize}
+              \item Auswahl geeigneter Baustoffe für spezifische Umweltbedingungen.
+              \item Regelmässige Materialprüfungen und Qualitätskontrollen.
+              \item Schulung von Mitarbeitenden im Umgang mit neuen Materialien.
+          \end{itemize}
 \end{itemize}
 
 \subsection{Anwendungsbeispiele}
@@ -669,32 +669,32 @@ Das Lehrkonzept umfasst die neue Technologien und Baustoffe und umfasst rund 8 L
 
 
 \subsection{Übergeordnete Lernziele}
-Die übergeordnete Lernziele für diese Unterrichtseinheit sind: 
+Die übergeordnete Lernziele für diese Unterrichtseinheit sind:
 \begin{itemize}
     \item Bauführer und Bauführerinnen informieren sich über neue Methoden und Technologien und den Einsatz von
-    multifunktionalen und intelligenten Baustoffen in ihrem Arbeitsbereich.
-    \begin{itemize}
-        \item Sie informieren sich aus Fachpresse und Messen über Innovationen. (K2)
-        \item Sie betreiben ein firmeninternes Wissensmanagement zukunftsorientiert. (K4)
-        \item Sie erarbeiten Dokumentationen zur Einführung von kreislauffähigen Materialien und Baumethoden
-        in ihrem Bereich. (K4)
-    \end{itemize}
+          multifunktionalen und intelligenten Baustoffen in ihrem Arbeitsbereich.
+          \begin{itemize}
+              \item Sie informieren sich aus Fachpresse und Messen über Innovationen. (K2)
+              \item Sie betreiben ein firmeninternes Wissensmanagement zukunftsorientiert. (K4)
+              \item Sie erarbeiten Dokumentationen zur Einführung von kreislauffähigen Materialien und Baumethoden
+                    in ihrem Bereich. (K4)
+          \end{itemize}
     \item Bauführer und Bauführerinnen leiten den fachgerechten und vorschriftsmässigen Einsatz neuer Methoden,
-    Technologien und Baustoffe.
-    \begin{itemize}
-        \item Sie wenden neue Methoden, Technologien und Baustoffe bei Bauarbeiten an. (K3)
-        \item Sie instruieren die Mitarbeitenden in neuen Bauabläufen. (K3)
-        \item Sie führen Evaluationen zum Einsatz von neuen Baustoffen durch. (K4)
-    \end{itemize}
+          Technologien und Baustoffe.
+          \begin{itemize}
+              \item Sie wenden neue Methoden, Technologien und Baustoffe bei Bauarbeiten an. (K3)
+              \item Sie instruieren die Mitarbeitenden in neuen Bauabläufen. (K3)
+              \item Sie führen Evaluationen zum Einsatz von neuen Baustoffen durch. (K4)
+          \end{itemize}
 \end{itemize}
 
 \subsection{Inhalt}
-Die 8 Lektionen teilen sich auf in 4 Blöcke zu je 2 Lektionen auf. 
+Die 8 Lektionen teilen sich auf in 4 Blöcke zu je 2 Lektionen auf.
 Diese Doppellektionen werden über das Jahr verteilt.
 Um den unterschiedlichen Vorkenntnissen der Studierenden gerecht zu werden, muss nicht sämtliche Inhalte in der Tiefe behandelt werden (vgl. \Cref{sec:Zielgruppenanalyse}).
 
 
-Pro Doppellektion soll ein Schwerpunkt vorhanden sein. 
+Pro Doppellektion soll ein Schwerpunkt vorhanden sein.
 Mögliche Schwerpunkte sind:
 \begin{itemize}
     \item Digitalsierung im Bauwesen
@@ -721,16 +721,16 @@ Der Prozess der Informationsbeschaffung für Fachartikel ist aufgeteilt in mehre
     \item Recherche in der Bibliothek mit Zugang zu Fachartikeln mit unterschiedlichen Suchwörtern zu den einzelnen Schwerpunkten
     \item Sammeln der Fachartikel im PDF-Format, gegliedert nach Schwerpunkt
     \item Erstellen einer Übersicht der Fachartikel pro Schwerpunkt anhand folgender Kriterien: Länge des Artikels, Schwierigkeitsgrad, Aktualität, Relevanz für die Bauführer und Bauführerinnen
-    \item Selektieren von 4 bis 6 Fachartikeln pro Schwerpunkt zur Bearbeitung durch die Studierende 
+    \item Selektieren von 4 bis 6 Fachartikeln pro Schwerpunkt zur Bearbeitung durch die Studierende
 \end{enumerate}
 
-Je nach Schwerpunkt kann ergänzend zu den Fachartikeln ebenfalls Radio- oder Fernsehbeiträge, Podcasts oder Videos gesucht werden. 
+Je nach Schwerpunkt kann ergänzend zu den Fachartikeln ebenfalls Radio- oder Fernsehbeiträge, Podcasts oder Videos gesucht werden.
 Die Videos können auf der Plattform MS Teams geteilt werden.
 Diese Informationsquellen werden ebenfalls nach den Schwerpunkt sortiertet und anhand ähnlicher Kriterien wie die Fachartikel bewertet und struktuiert.
 
 Die Leistungsüberprüfung findet in Form einer Online-Prüfung statt.
 Die Prüfung umfasst Multiple-Choice-Fragen, offene Fragen und Anwendungsbeispiele zu den Schwerpunkten.
-Die Studierenden sollen mit der Onlineprüfung ihre Kompetenzen am Computer unter Beweis stellen.  
+Die Studierenden sollen mit der Onlineprüfung ihre Kompetenzen am Computer unter Beweis stellen.
 Die Prüfung wird in der Regel am Ende eines Themenblocks durchgeführt, mit einem zweiwöchigen Vorlauf zur individuellen Vorbereitung der Studierenden.
 Die Prüfung ist so konzipiert, dass die Studierenden die Kompetenzen der Kognitiven Taxonomiestufen K2 bis K6 nach Bloom erbringen müssen \cite{bloom1956taxonomy}.
 Fragen der Taxonomiestufe K2 können durch Multiple-Choice-Fragen abgefragt oder Zuordnungsfragen werden, während Fragen der Taxonomiestufen K3 bis K6 offene Fragen und Anwendungsbeispiele erfordern.
@@ -739,21 +739,21 @@ Fragen der Taxonomiestufe K2 können durch Multiple-Choice-Fragen abgefragt oder
 Die Methode des RITA-Modells wird angewendet \cite{BerufspädagogischesKonzept_BauschuleAarau}.
 Die Studierenden werden mit konkreten Aufgaben aus der Praxis konfrontiert und ihr Vorwissen, Erfahrungen, Haltungen zum Thema oder gar erste Problemlösungen werden aktiviert.
 
-Die Studierenden sollen die Möglichkeit haben nach Bedarf die Dokumente auf dem Laptop oder Tablet zu lesen resp. diese nach Bedarf auszudrucken. 
+Die Studierenden sollen die Möglichkeit haben nach Bedarf die Dokumente auf dem Laptop oder Tablet zu lesen resp. diese nach Bedarf auszudrucken.
 Videos können ebenfalls über diese Geräte, vorzugsweise mit Kopfhörern, angeschaut werden.
 Das Teilen der Lerninhalte erfolgt nur digital über den entsprechenden Teams-Kanals der Bauschule Aarau.
 
-Für jeden Text werden situativ passende Aufgabenstellungen formuliert, die die Studierenden zur Auseinandersetzung mit dem Text anregen und das Verständnis vertiefen. 
+Für jeden Text werden situativ passende Aufgabenstellungen formuliert, die die Studierenden zur Auseinandersetzung mit dem Text anregen und das Verständnis vertiefen.
 Als Aufgabenstellungen kommen beispielsweise folgende in Frage (siehe auch \cite{unikoelnMethodenpool}):
 \begin{itemize}
     \item Erstellen einer Mindmap zu den wichtigsten Inhalten des Textes.
     \item Beantworten von Verständnisfragen zum Text.
     \item Diskussion im Plenum zu den Inhalten des Textes.
     \item Erstellen einer Präsentation zu einem ausgewählten Thema des Textes.
-    \item Möglichkeiten zur Integration im eigenen Betrieb erarbeiten. 
+    \item Möglichkeiten zur Integration im eigenen Betrieb erarbeiten.
 \end{itemize}
 Je nach Aufgabenstellung sind die summativen Nachweise als erfüllt oder nicht erfüllt ausgestaltet.
-Die Aufgaben werden über sogenannte Teams-Aufgaben eingefordert und erlaubt das Überwachen des Lernfortschritts der Studierenden. 
+Die Aufgaben werden über sogenannte Teams-Aufgaben eingefordert und erlaubt das Überwachen des Lernfortschritts der Studierenden.
 Dies soll auch helfen um in Zukunft die Länge der Lektionen besser zu planen resp. zu optimieren.
 
 
@@ -770,31 +770,31 @@ Die Dokumente werden struktuiert in Teams abgelegt (siehe \Cref{fig:Gliederung})
         folder
         [Baustoffe
             [Digitalisierung im Bauwesen
-                [Dokument 1, document]
-                [Dokument 2, document]
-                [Auftrag.pdf, document]
+                    [Dokument 1, document]
+                    [Dokument 2, document]
+                    [Auftrag.pdf, document]
             ]
             [Kreislaufwirtschaft im Bauwesen
-                [Dokument 1, document]
-                [Dokument 2, document]
-                [Auftrag.pdf, document]
+                    [Dokument 1, document]
+                    [Dokument 2, document]
+                    [Auftrag.pdf, document]
             ]
             [Neuartige Baustoffe
-                [Dokument 1, document]
-                [Dokument 2, document]
-                [Film, document]
-                [Auftrag.pdf, document]
+                    [Dokument 1, document]
+                    [Dokument 2, document]
+                    [Film, document]
+                    [Auftrag.pdf, document]
             ]
             [Schadensfälle im Bauwesen  \\ und deren Vermeidung
-                [Dokument 1, document]
-                [Dokument 2, document]
-                [Audioaufnahme, document]
-                [Auftrag.pdf, document]
+                    [Dokument 1, document]
+                    [Dokument 2, document]
+                    [Audioaufnahme, document]
+                    [Auftrag.pdf, document]
             ]
         ]
-        \end{forest}
-        \caption{Gliederung der Dokumente für die Studierenden.}
-        \label{fig:Gliederung}
+    \end{forest}
+    \caption{Gliederung der Dokumente für die Studierenden.}
+    \label{fig:Gliederung}
 \end{figure}
 
 \subsection{Zeitliche Umsetzung}
@@ -837,20 +837,20 @@ Die methodische Umsetzung folgt dem RITA-Modell, wobei Fachtexte eine zentrale R
     \item \textbf{Ziel:} Vorwissen und Interesse der Studierenden aktivieren.
     \item \textbf{Dauer:} 15 Minuten.
     \item \textbf{Methode:}
-    \begin{itemize}
-        \item Einstiegsfrage: Die Lehrperson stellt die Frage „Warum ist Recycling in der Bauindustrie wichtig?“
-        \begin{itemize}
-            \item Kurze Diskussion in Kleingruppen (2–3 Personen).
-            \item Ergebnisse werden auf Haftnotizen oder digital in MS Teams gesammelt.
-        \end{itemize}
-        \item Einführung: Präsentation eines Praxisbeispiels (z. B. ein Bild oder Video über ein Bauprojekt mit Recyclingbaustoffen) durch die Lehrperson.
-        \item Ziel ist, zentrale Herausforderungen und Nutzen der Kreislaufwirtschaft im Bauwesen aufzuzeigen.
-    \end{itemize}
+          \begin{itemize}
+              \item Einstiegsfrage: Die Lehrperson stellt die Frage „Warum ist Recycling in der Bauindustrie wichtig?“
+                    \begin{itemize}
+                        \item Kurze Diskussion in Kleingruppen (2–3 Personen).
+                        \item Ergebnisse werden auf Haftnotizen oder digital in MS Teams gesammelt.
+                    \end{itemize}
+              \item Einführung: Präsentation eines Praxisbeispiels (z. B. ein Bild oder Video über ein Bauprojekt mit Recyclingbaustoffen) durch die Lehrperson.
+              \item Ziel ist, zentrale Herausforderungen und Nutzen der Kreislaufwirtschaft im Bauwesen aufzuzeigen.
+          \end{itemize}
     \item \textbf{Material:}
-    \begin{itemize}
-        \item Haftnotizen oder digitale Tools wie MS Teams/Padlet.
-        \item Fachtexte (z. B. kurze Artikel aus Fachzeitschriften über Kreislaufwirtschaft im Bauwesen).
-    \end{itemize}
+          \begin{itemize}
+              \item Haftnotizen oder digitale Tools wie MS Teams/Padlet.
+              \item Fachtexte (z. B. kurze Artikel aus Fachzeitschriften über Kreislaufwirtschaft im Bauwesen).
+          \end{itemize}
 \end{itemize}
 
 \paragraph{Phase I: Informationen verarbeiten}
@@ -858,29 +858,29 @@ Die methodische Umsetzung folgt dem RITA-Modell, wobei Fachtexte eine zentrale R
     \item \textbf{Ziel:} Grundlagen und Fachwissen zur Kreislaufwirtschaft erarbeiten.
     \item \textbf{Dauer:} 50 Minuten.
     \item \textbf{Methode:}
-    \begin{itemize}
-        \item Vortrag: Die Lehrperson erläutert die Prinzipien der Kreislaufwirtschaft anhand einer Präsentation.
-        \begin{itemize}
-            \item Inhalte: Begriffe (Recycling, Wiederverwendung), Materialströme, gesetzliche Vorgaben.
-        \end{itemize}
-        \item Gruppenarbeit: 
-        \begin{itemize}
-            \item Studierende bearbeiten Fachtexte (z. B. Artikel über Lebenszyklusanalyse oder geschlossene Materialkreisläufe).
-            \item Aufgaben:
-            \begin{itemize}
-                \item Wichtige Begriffe identifizieren und erklären.
-                \item Vorteile der Kreislaufwirtschaft in Stichpunkten zusammenfassen.
-                \item Herausforderungen und Lösungsansätze herausarbeiten.
-            \end{itemize}
-            \item Ergebnisse werden auf Flipcharts oder digital in MS Teams dokumentiert.
-        \end{itemize}
-    \end{itemize}
+          \begin{itemize}
+              \item Vortrag: Die Lehrperson erläutert die Prinzipien der Kreislaufwirtschaft anhand einer Präsentation.
+                    \begin{itemize}
+                        \item Inhalte: Begriffe (Recycling, Wiederverwendung), Materialströme, gesetzliche Vorgaben.
+                    \end{itemize}
+              \item Gruppenarbeit:
+                    \begin{itemize}
+                        \item Studierende bearbeiten Fachtexte (z. B. Artikel über Lebenszyklusanalyse oder geschlossene Materialkreisläufe).
+                        \item Aufgaben:
+                              \begin{itemize}
+                                  \item Wichtige Begriffe identifizieren und erklären.
+                                  \item Vorteile der Kreislaufwirtschaft in Stichpunkten zusammenfassen.
+                                  \item Herausforderungen und Lösungsansätze herausarbeiten.
+                              \end{itemize}
+                        \item Ergebnisse werden auf Flipcharts oder digital in MS Teams dokumentiert.
+                    \end{itemize}
+          \end{itemize}
     \item \textbf{Material:}
-    \begin{itemize}
-        \item Fachtexte (z. B. Artikel aus *Baublatt* oder *Bautechnik*).
-        \item PowerPoint-Präsentation.
-        \item Flipcharts und Stifte oder digitale Whiteboards.
-    \end{itemize}
+          \begin{itemize}
+              \item Fachtexte (z. B. Artikel aus *Baublatt* oder *Bautechnik*).
+              \item PowerPoint-Präsentation.
+              \item Flipcharts und Stifte oder digitale Whiteboards.
+          \end{itemize}
 \end{itemize}
 
 \paragraph{Phase T: Transfer anbahnen}
@@ -888,23 +888,23 @@ Die methodische Umsetzung folgt dem RITA-Modell, wobei Fachtexte eine zentrale R
     \item \textbf{Ziel:} Das Gelernte auf eine praktische Situation anwenden.
     \item \textbf{Dauer:} 25 Minuten.
     \item \textbf{Methode:}
-    \begin{itemize}
-        \item Gruppenaufgabe:
-        \begin{itemize}
-            \item Fiktives Bauprojekt (z. B. Neubau eines Bürogebäudes).
-            \item Aufgabe:
-            \begin{itemize}
-                \item Analysieren, welche Materialien recycelt oder wiederverwendet werden können.
-                \item Erstellung eines kurzen Plans zur Umsetzung von Kreislaufwirtschaft im Projekt.
-            \end{itemize}
-        \end{itemize}
-        \item Präsentation: Jede Gruppe stellt ihre Vorschläge in 3 Minuten vor.
-    \end{itemize}
+          \begin{itemize}
+              \item Gruppenaufgabe:
+                    \begin{itemize}
+                        \item Fiktives Bauprojekt (z. B. Neubau eines Bürogebäudes).
+                        \item Aufgabe:
+                              \begin{itemize}
+                                  \item Analysieren, welche Materialien recycelt oder wiederverwendet werden können.
+                                  \item Erstellung eines kurzen Plans zur Umsetzung von Kreislaufwirtschaft im Projekt.
+                              \end{itemize}
+                    \end{itemize}
+              \item Präsentation: Jede Gruppe stellt ihre Vorschläge in 3 Minuten vor.
+          \end{itemize}
     \item \textbf{Material:}
-    \begin{itemize}
-        \item Szenario-Dokument des Bauprojekts (1 Seite).
-        \item Arbeitsblätter oder Templates zur Planung von Massnahmen.
-    \end{itemize}
+          \begin{itemize}
+              \item Szenario-Dokument des Bauprojekts (1 Seite).
+              \item Arbeitsblätter oder Templates zur Planung von Massnahmen.
+          \end{itemize}
 \end{itemize}
 
 \paragraph{Phase A: Auswerten}
@@ -912,66 +912,66 @@ Die methodische Umsetzung folgt dem RITA-Modell, wobei Fachtexte eine zentrale R
     \item \textbf{Ziel:} Reflexion des Gelernten und Feedback.
     \item \textbf{Dauer:} 15 Minuten.
     \item \textbf{Methode:}
-    \begin{itemize}
-        \item Plenumsdiskussion:
-        \begin{itemize}
-            \item Moderierte Diskussion durch die Lehrperson:
-            \begin{itemize}
-                \item „Welche Massnahmen sind am effektivsten?“
-                \item „Welche Herausforderungen bleiben bestehen?“
-            \end{itemize}
-            \item Fokus auf den Transfer ins eigene Arbeitsumfeld.
-        \end{itemize}
-        \item Kurzfeedback:
-        \begin{itemize}
-            \item Reflexionsblatt ausfüllen:
-            \begin{itemize}
-                \item „Was habe ich heute gelernt?“
-                \item „Wie kann ich das Wissen anwenden?“
-            \end{itemize}
-        \end{itemize}
-    \end{itemize}
+          \begin{itemize}
+              \item Plenumsdiskussion:
+                    \begin{itemize}
+                        \item Moderierte Diskussion durch die Lehrperson:
+                              \begin{itemize}
+                                  \item „Welche Massnahmen sind am effektivsten?“
+                                  \item „Welche Herausforderungen bleiben bestehen?“
+                              \end{itemize}
+                        \item Fokus auf den Transfer ins eigene Arbeitsumfeld.
+                    \end{itemize}
+              \item Kurzfeedback:
+                    \begin{itemize}
+                        \item Reflexionsblatt ausfüllen:
+                              \begin{itemize}
+                                  \item „Was habe ich heute gelernt?“
+                                  \item „Wie kann ich das Wissen anwenden?“
+                              \end{itemize}
+                    \end{itemize}
+          \end{itemize}
     \item \textbf{Material:}
-    \begin{itemize}
-        \item Reflexionsblatt (digital oder ausgedruckt).
-        \item Feedback-Abfrage über MS Forms oder andere Tools.
-    \end{itemize}
+          \begin{itemize}
+              \item Reflexionsblatt (digital oder ausgedruckt).
+              \item Feedback-Abfrage über MS Forms oder andere Tools.
+          \end{itemize}
 \end{itemize}
 \subsubsection{Leistungsnachweise}
 
 
 Die Leistungsnachweise für die Lektion 3 und 4 zur Kreislaufwirtschaft im Bauwesen bestehen aus formativem und summativem Feedback, wobei praxisnahe Aufgaben die Verknüpfung von Theorie und Praxis fördern.
 
-\paragraph{Formative Leistungsnachweise (im Unterricht)}  
+\paragraph{Formative Leistungsnachweise (im Unterricht)}
 \begin{itemize}
-    \item \textbf{Gruppenarbeit:}  
-    Analyse eines fiktiven Bauprojekts, bei dem Materialien und Prozesse im Sinne der Kreislaufwirtschaft optimiert werden sollen.  
-    \begin{itemize}
-        \item Aufgabe: Die Gruppen erstellen einen Materialkreislaufplan und präsentieren ihre Ergebnisse in 3 Minuten.  
-        \item Kriterien: Vollständigkeit, Nachvollziehbarkeit der Argumentation, Realisierbarkeit der Vorschläge.  
-    \end{itemize}
-    \item \textbf{Diskussion im Plenum:}  
-    Reflexion über die Wirksamkeit der vorgeschlagenen Massnahmen und deren praktische Umsetzung im Arbeitsalltag.  
+    \item \textbf{Gruppenarbeit:}
+          Analyse eines fiktiven Bauprojekts, bei dem Materialien und Prozesse im Sinne der Kreislaufwirtschaft optimiert werden sollen.
+          \begin{itemize}
+              \item Aufgabe: Die Gruppen erstellen einen Materialkreislaufplan und präsentieren ihre Ergebnisse in 3 Minuten.
+              \item Kriterien: Vollständigkeit, Nachvollziehbarkeit der Argumentation, Realisierbarkeit der Vorschläge.
+          \end{itemize}
+    \item \textbf{Diskussion im Plenum:}
+          Reflexion über die Wirksamkeit der vorgeschlagenen Massnahmen und deren praktische Umsetzung im Arbeitsalltag.
 \end{itemize}
 
-\paragraph{Summative Leistungsnachweise (nach der Lektion)}  
+\paragraph{Summative Leistungsnachweise (nach der Lektion)}
 \begin{itemize}
-    \item \textbf{Online-Prüfung (Classtime):}  
-    Die Prüfung überprüft die kognitiven Taxonomiestufen K2 bis K6 nach Bloom und umfasst verschiedene Aufgabenformate.  
-    \begin{itemize}
-        \item \textbf{Multiple-Choice-Fragen (K2):}  
-        Definitionen und Grundlagen der Kreislaufwirtschaft.
-        \item \textbf{Kurzantwortfragen (K3):}  
-        Anwendung der Prinzipien der Kreislaufwirtschaft auf praktische Beispiele.  
-        \item \textbf{Fallstudie (K4–K6):}  
-        Analyse eines fiktiven oder realen Bauprojekts. Die Studierenden bewerten Massnahmen zur Kreislaufwirtschaft, entwickeln eigene Vorschläge und begründen deren Umsetzbarkeit aus Sicht des Bauführers.  
-    \end{itemize}
-    \item \textbf{Bewertungskriterien:}  
-    \begin{itemize}
-        \item Fachliche Richtigkeit der Antworten.  
-        \item Detaillierungsgrad der Analyse.  
-        \item Innovationsgrad und Plausibilität der vorgeschlagenen Massnahmen.  
-    \end{itemize}
+    \item \textbf{Online-Prüfung (Classtime):}
+          Die Prüfung überprüft die kognitiven Taxonomiestufen K2 bis K6 nach Bloom und umfasst verschiedene Aufgabenformate.
+          \begin{itemize}
+              \item \textbf{Multiple-Choice-Fragen (K2):}
+                    Definitionen und Grundlagen der Kreislaufwirtschaft.
+              \item \textbf{Kurzantwortfragen (K3):}
+                    Anwendung der Prinzipien der Kreislaufwirtschaft auf praktische Beispiele.
+              \item \textbf{Fallstudie (K4–K6):}
+                    Analyse eines fiktiven oder realen Bauprojekts. Die Studierenden bewerten Massnahmen zur Kreislaufwirtschaft, entwickeln eigene Vorschläge und begründen deren Umsetzbarkeit aus Sicht des Bauführers.
+          \end{itemize}
+    \item \textbf{Bewertungskriterien:}
+          \begin{itemize}
+              \item Fachliche Richtigkeit der Antworten.
+              \item Detaillierungsgrad der Analyse.
+              \item Innovationsgrad und Plausibilität der vorgeschlagenen Massnahmen.
+          \end{itemize}
 \end{itemize}
 
 
