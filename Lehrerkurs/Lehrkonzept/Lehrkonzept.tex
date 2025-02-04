@@ -191,19 +191,6 @@ arrows=pgf-filled,
 
 \pagestyle{scrheadings}
 
-% Commands
-\newcommand{\myNmm}[1]
-{
-    \sisetup{per-mode=symbol}
-    \SI{#1}{\newton\per\mm\squared}
-}
-
-
-\newcommand{\kommzerielleProdukte}[1]
-{
-    \textcolor{Brown}{Kommerzielle Produkte:}  #1
-}
-
 
 
 
@@ -211,35 +198,7 @@ arrows=pgf-filled,
 %\setkomafont{captionlabel}{\itshape \fontsize{10pt}{2pt}}
 %\setkomafont{caption}{\sffamily} 
 
-\newtcolorbox{Definition}[1]{
-    colback=green!5!white,
-    colframe=green!75!black,fonttitle=\bfseries,
-    title=#1}
 
-
-\newtcolorbox{Merke}{
-    enhanced,
-    boxrule=0pt,frame hidden,
-    borderline west={4pt}{0pt}{red!75!black},
-    colback=white,
-    sharp corners
-}
-
-\newtcolorbox{Masseinheit}[1]{
-    enhanced,
-    boxrule=1pt,colframe=blue,
-    colback=white,
-    sharp corners,
-    colframe=blue!75!black,
-    title = #1,
-    after title={\hfill\colorbox{ NavyBlue}{Masseinheit}}
-}
-
-\newtcbox{\ExampleSimple}[1][gray]{on line,
-    arc=0pt,outer arc=0pt,colback=#1!10!white,%colframe=#1!50!black,
-    frame hidden,
-    boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,
-    boxrule=0pt,bottomrule=1pt,toprule=1pt}
 
 %\maketitle
 {\color{blau_bauschule}\fontsize{40pt}{21pt}\selectfont \textbf{Lehrkonzept: Einsatz von neuen Baustoffen und Technologien}}
