@@ -1,38 +1,4 @@
-// // LuaLaTeX + BibTeX
-// {
-//     "latex-workshop.latex.tools": [
-//         {
-//             "name": "lualatex",
-//             "command": "lualatex",
-//             "args": [
-//                 "--synctex=1",
-//                 "--interaction=nonstopmode",
-//                 "--shell-escape",
-//                 "%DOC%"
-//             ]
-//         },
-//         {
-//             "name": "bibtex",
-//             "command": "bibtex",
-//             "args": [
-//                 "%DOCFILE%"
-//             ]
-//         }
-//     ],
-//     "latex-workshop.latex.recipes": [
-//         {
-//             "name": "lualatex -> bibtex -> lualatex*2",
-//             "tools": [
-//                 "lualatex",
-//                 "bibtex",
-//                 "lualatex",
-//                 "lualatex"
-//             ]
-//         }
-//     ],
-//     "latex-workshop.latex.recipe.default": "lualatex -> bibtex -> lualatex*2"
-// }
-
+// LuaLaTeX + BibTeX
 {
     "latex-workshop.latex.tools": [
         {
@@ -44,30 +10,64 @@
                 "--shell-escape",
                 "%DOC%"
             ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "lualatex",
+            "name": "lualatex -> bibtex -> lualatex*2",
             "tools": [
+                "lualatex",
+                "bibtex",
+                "lualatex",
                 "lualatex"
             ]
         }
     ],
-    "latex-workshop.latex.recipe.default": "lualatex"
-
-    "files.exclude": {
-        "**/*.aux": true,
-        "**/*.log": true,
-        "**/*.fls": true,
-        "**/*.fdb_latexmk": true,
-        "**/*.synctex.gz": true,
-        "**/*.toc": true,
-        "**/*.out": true,
-        "**/*.bbl": true,
-        "**/*.snm": true,
-        "**/*.nav": true,
-    }
+    "latex-workshop.latex.recipe.default": "lualatex -> bibtex -> lualatex*2"
 }
+
+// {
+//     "latex-workshop.latex.tools": [
+//         {
+//             "name": "lualatex",
+//             "command": "lualatex",
+//             "args": [
+//                 "--synctex=1",
+//                 "--interaction=nonstopmode",
+//                 "--shell-escape",
+//                 "%DOC%"
+//             ]
+//         }
+//     ],
+//     "latex-workshop.latex.recipes": [
+//         {
+//             "name": "lualatex",
+//             "tools": [
+//                 "lualatex"
+//             ]
+//         }
+//     ],
+//     "latex-workshop.latex.recipe.default": "lualatex"
+
+//     "files.exclude": {
+//         "**/*.aux": true,
+//         "**/*.log": true,
+//         "**/*.fls": true,
+//         "**/*.fdb_latexmk": true,
+//         "**/*.synctex.gz": true,
+//         "**/*.toc": true,
+//         "**/*.out": true,
+//         "**/*.bbl": true,
+//         "**/*.snm": true,
+//         "**/*.nav": true,
+//     }
+// }
 
 
