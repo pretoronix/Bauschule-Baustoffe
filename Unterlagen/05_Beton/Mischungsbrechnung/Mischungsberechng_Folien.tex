@@ -1,0 +1,455 @@
+%!TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/05_Beton/Mischungsbrechnung/Mischungsberechng_Folien.tex
+%!TEX program = lualatex
+\def\customoptions{aspectratio=169} % Exclude handout
+\input{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/beamer_BS.tex}
+% Set the title, author, and date
+\title{\textbf{Beispiel Stoffraumberechnung}}
+\author{Patrick Pfändler}
+\date{{}}
+
+
+\begin{document}
+\frame{\titlepage}
+
+\section{Theorie}
+\BlueSectionSlide
+
+\begin{frame}{Theoretische Grundlagen}
+    \begin{Definition_BS}{Stoffraumrechnung}
+        Die Stoffraumrechnung dient zur Ermittelung der Raumanteile der einzelnen Ausgangsstoffe an einem Kubikmeter verdichtem Frischbeton.
+    \end{Definition_BS}
+    
+
+\end{frame}
+
+
+\begin{frame}{Zusammensetzung eines  Betons}
+
+    \begin{equation*}
+        \text{Beton} = \text{Zement} + \text{Wasser} + \text{Gesteinskörnung} + \text{Luftporen} + \text{Zusatzstoffe}
+    \end{equation*}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Theoretische Grundlagen: Stoffraumrechnung}
+    \begin{equation*}
+        1 m^3 = \frac{z}{\rho_z} + \frac{w}{\rho_w} + \frac{g}{\rho_g} + \frac{f}{\rho_f} + p
+    \end{equation*}
+    , wobei 
+    
+    \begin{description}[leftmargin=!,labelwidth=\widthof{Abstand  },font=\normalfont]
+        \item[$z, \rho_z$] Masse  bzw. Dichte des Zements 
+        \item[$w, \rho_w$] Masse  bzw. Dichte des Wasssers 
+        \item[$g, \rho_g$] Masse  bzw. Rohdichte der Gesteinskörnung
+        \item[$f, \rho_f$] Masse  bzw. Dichte des Zussatzstoffes oder Zusatzmittels
+        %\item[$f, \rho_f$] Masse  bzw. Dichte des Zussatzmittel
+        \item[$p$] Porenvolumen (Lufgehalt)
+    \end{description}
+
+\end{frame}
+
+
+\begin{frame}{Theoretische Grundlagen}
+
+    \begin{equation*}
+        V_\text{total} = V_{\text{Wasser}} + V_{\text{Zement}} + V_{\text{Luftporen}} + V_{\text{Gesteinskörnung}} = \SI{1}{m^3}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}{Warum Stoffraumrechnung?}
+    \begin{itemize}
+        \item Ermittlung der Mischungsverhältnisse
+        \item Ermittlung der Masseanteile
+        \item Ermittlung der Volumenanteile
+    \end{itemize}
+    \pause
+    \vspace{1cm}
+    Massen lasssen sich einfacher messen als Volumen.
+
+\end{frame}
+
+
+
+
+
+
+
+\section{Aufgabe}
+\BlueSectionSlide
+
+\begin{frame}{Aufgabe}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrr}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    {}          \\
+        Gesamtwasser                     & 157                      & 1.0                       & {}            \\
+        Luftporen (2.0\%)                & -                        & -                         & {}              \\
+        Zementleimvolumen                &                          &                           &                           \\
+        trockene Gesteinskörnung 0–32 mm & {}                     & 2.7                       & {}             \\
+        \textbf{total}                   & {}           &                           & {}             \\
+        \bottomrule
+        \end{tabular}
+        \label{tab:Stoffraumberechnung}
+        \end{table}
+
+\end{frame}
+
+\section{Lösung}
+\BlueSectionSlide
+
+\begin{frame}{Dichte}
+    Falls die Angaben zur Dichte fehlen.
+    \begin{itemize}
+        \item Die Dichten sind jeweils angegeben oder stehen im Skript. (z.B. Gesteinskörnung)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Stoffraum von Zement (i)}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrc}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    \textcolor{red}{???}          \\
+        Gesamtwasser                     & 157                      & 1.0                       & {}            \\
+        Luftporen (2.0\%)                & -                        & -                         & {}              \\
+        Zementleimvolumen                &                          &                           &                           \\
+        trockene Gesteinskörnung 0–32 mm & {}                    & 2.7                       & {}             \\
+        \textbf{total}                   & {}            &                           & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+\end{frame}
+
+\begin{frame}{Stoffraum von Zement (ii)}
+
+    \begin{equation*}
+        \rho = \dfrac{m}{V}
+    \end{equation*}
+    \pause
+
+
+
+    \begin{equation*}
+        V_{\text{Zement}} = \dfrac{m_{\text{Zement}}}{\rho_{\text{Zement}}}
+    \end{equation*}
+
+    \pause
+    \vspace{0.5cm}
+    \begin{equation*}
+        V_{\text{Zement}} = \dfrac{320}{3.1} = 103.23 \, \text{l/m³}
+    \end{equation*}
+\end{frame}
+
+
+
+\begin{frame}{Stoffraum von Zement (i)}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrc}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &   103.23 \, \text{l/m³}\\
+        Gesamtwasser                     & 157                      & 1.0                       & {}            \\
+        Luftporen (2.0\%)                & -                        & -                         & {}              \\
+        Zementleimvolumen                &                          &                           &                           \\
+        trockene Gesteinskörnung 0–32 mm & {}                     & 2.7                       & {}             \\
+        \textbf{total}                   & {}           &                           & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+\end{frame}
+
+\begin{frame}{Wasseranteil}
+    \begin{equation*}
+        V_{\text{Wasser}} = \dfrac{m_{\text{Wasser}}}{\rho_{\text{Wasser}}}
+    \end{equation*}
+
+    \pause
+    \vspace{0.5cm}
+    \begin{equation*}
+        V_{\text{Wasser}} = \dfrac{157}{1} = 157 \, \text{l/m³}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}{Wasser-Zement-Wert (i)}
+    \begin{equation*}
+        w/z = \dfrac{V_{\text{Wasser}}}{V_{\text{Zement}}}
+    \end{equation*}
+
+    \pause
+    \vspace{0.5cm}
+    \begin{equation*}
+        w/z = \dfrac{157}{320} = 0.49
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}{Stoffraum der Luftporen (i)}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrc}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    103.23 \, \text{l/m³}          \\
+        Gesamtwasser                     & 157                      & 1.0                       &  157 \, \text{l/m³}           \\
+        Luftporen (2.0\%)                & -                        & -                         & \textcolor{red}{???}              \\
+        Zementleimvolumen                &                          &                           &                           \\
+        trockene Gesteinskörnung 0–32 mm & 1944                     & 2.7                       & {}             \\
+        \textbf{total}                   & {}           &                           & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Luftporengehalt}
+    2\% Luftporengehalt
+    \vspace{1cm}
+    \pause
+    \begin{equation*}
+        p = 2\%
+    \end{equation*}
+    \pause
+    \begin{equation*}
+        V_{\text{Luftporen}} = 0.02 \cdot 1000 = 20 \, \text{l/m³}
+    \end{equation*}
+    
+\end{frame}
+
+\begin{frame}{Zemeintleimvolumen (i)}
+
+    \begin{equation*}
+        V_{\text{Zemeintleimvolumen}} = V_{\text{Wasser}} + V_{\text{Zement}} + V_{\text{Luftporen}}
+    \end{equation*}
+    \pause
+    
+    \begin{equation*}
+        V_{\text{Zemeintleimvolumen}} = 157 + 103.23 + 20 = 280.23 \, \text{l/m³}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}{Zemeintleimvolumen (ii)}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrc}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    103.23          \\
+        Gesamtwasser                     & 157                      & 1.0                       &  157            \\
+        Luftporen (2.0\%)                & -                        & -                         & 20              \\
+        Zementleimvolumen                &                          &                           & 280.23                          \\
+        trockene Gesteinskörnung 0–32 mm & {}                     & 2.7                       & {}           \\
+        \textbf{total}                   & {}           &                           & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+\end{frame}
+
+\begin{frame}{Gesteinskörnung (i)}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrc}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    103.23          \\
+        Gesamtwasser                     & 157                      & 1.0                       &  157            \\
+        Luftporen (2.0\%)                & -                        & -                         & 20              \\
+        Zementleimvolumen                &                          &                           & 280.23                          \\
+        trockene Gesteinskörnung 0–32 mm & {}                     & 2.7                       & \textcolor{red}{???}              \\
+        \textbf{total}                   & {}         &                           & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+\end{frame}
+
+
+\begin{frame}{Gesteinskörnung (ii)}
+
+    \begin{equation*}
+        V_\text{total} = V_{\text{Wasser}} + V_{\text{Zement}} + V_{\text{Luftporen}} + V_{\text{Gesteinskörnung}}
+    \end{equation*}
+
+    \pause
+    \vspace{1cm}
+    Einsetzen der bekannten Werte:
+    \begin{equation*}
+        \SI{1000}{\liter} = \SI{157}{\liter} + \SI{103.23}{\l} + \SI{20}{\liter} + V_{\text{Gesteinskörnung}}
+    \end{equation*}
+    \pause
+    \vspace{1cm}
+    Auflösen nach $V_{\text{Gesteinskörnung}}$:
+    \begin{equation*}
+        V_{\text{Gesteinskörnung}} = 1000 - 157 - 103.23 - 20 = 719.77 \, \text{l/m³}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}{Gehalt der Gesteinskörnung (iii)}
+
+    \begin{equation*}
+        m_{\text{Gesteinskörnung}} = \rho_{\text{Gesteinskörnung}} \cdot V_{\text{Gesteinskörnung}}
+    \end{equation*}
+
+    \pause
+    \vspace{1cm}
+    \begin{equation*}
+        m_{\text{Gesteinskörnung}} = 2.7 \cdot 719.77 = 1944 \, \text{kg/m³}
+    \end{equation*}
+
+\end{frame}
+
+
+\begin{frame}{Gesteinskörnung (iv)}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrc}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    103.23          \\
+        Gesamtwasser                     & 157                      & 1.0                       &  157            \\
+        Luftporen (2.0\%)                & -                        & -                         & 20              \\
+        Zementleimvolumen                &                          &                           & 280.23                          \\
+        trockene Gesteinskörnung 0–32 mm & 1944                     & 2.7                       & 720              \\
+        \textbf{total}                   & {}        &                           & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+\end{frame}
+\begin{frame}{Dichte der Betonmischung (i)}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrc}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    103.23          \\
+        Gesamtwasser                     & 157                      & 1.0                       &  157            \\
+        Luftporen (2.0\%)                & -                        & -                         & 20              \\
+        Zementleimvolumen                &                          &                           & 280.23                          \\
+        trockene Gesteinskörnung 0–32 mm & 1944                     & 2.7                       & 720              \\
+        \textbf{total}                   & \textcolor{red}{???}         &                           & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+\end{frame}
+
+\begin{frame}{Dichte der Betonmischung (ii)}
+
+    \begin{eqnarray*}
+        M_{\text{total}} &=& m_{\text{Zement}} + m_{\text{Wasser}} + m_{\text{Gesteinskörnung}} \\
+    \end{eqnarray*}
+    \pause
+    \begin{eqnarray*}
+        M_{\text{total}} &=& 320 + 157 + 1944 = 2421 \, \text{kg/m³}
+    \end{eqnarray*}
+    \pause
+    \textit{Hinweis:} Masse der Luftporen wird hier nicht berücksichtigt.
+
+
+\end{frame}
+
+\begin{frame}{Lösung}
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \begin{tabular}{lrrc}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    103.23          \\
+        Gesamtwasser                     & 157                      & 1.0                       &  157            \\
+        Luftporen (2.0\%)                & -                        & -                         & 20              \\
+        Zementleimvolumen                &                          &                           & 280.23                          \\
+        trockene Gesteinskörnung 0–32 mm & 1944                     & 2.7                       & 720              \\
+        \textbf{total}                   & 2421         &                           & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+\end{frame}
+
+\begin{frame}{Kontrolle}
+    \begin{equation*}
+    V_\text{total} = V_{\text{Wasser}} + V_{\text{Zement}} + V_{\text{Luftporen}} + V_{\text{Gesteinskörnung}}
+    \end{equation*}
+    \pause
+    \vspace{1cm}
+    \begin{equation*}
+        157 + 103 + 20 + 720 = 1000 \, \text{l/m³}
+    \end{equation*}
+    \pause
+    Kontrolle: i.O.
+
+
+\end{frame}
+
+\begin{frame}{Fragen?}
+
+\end{frame}
+
+\begin{frame}{Auftrag}
+\begin{itemize}
+    \item Lösen Sie Aufgabe 2 selbständig.
+    \item Zeit: ca. 10 Minuten
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+\end{document}

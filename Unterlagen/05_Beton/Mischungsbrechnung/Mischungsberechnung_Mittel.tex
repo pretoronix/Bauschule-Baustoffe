@@ -1,0 +1,125 @@
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/05_Beton/Mischungsbrechnung/Mischungsberechnung_Mittel.tex
+
+\input{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/BauschuleBS.tex}
+
+
+\newcommand{\blattname}{Beton: Einfache Mischungsberechnung}
+
+
+
+%% header and footer
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+
+%\printanswers
+
+
+
+\begin{document}
+
+
+{\fontsize{22pt}{2pt}\selectfont \textbf{\blattname}}
+
+\begin{questions}
+    \question
+    Die Anforderungen an die Mischung sind: 
+\begin{itemize}[noitemsep]
+    \item \SI{120}{\l} Mischung
+    %\item Druckfestigkeitsklasse C20/25 
+    \item Grösstkorn der Gesteinskörnung $D_{max}= \SI{32}{\mm}$
+    \item $\dfrac{w}{z} \leqslant 0.5$
+    %\item Konsistenzklasse F3
+    \item $\rho_{\text{Zement}} = 3050 kg/m^3$ mit Mindestzementgehalt von 300 kg/m$^3$.
+    \item \textbf{Materialien:} feine Gesteinskörnung 0/2, feine Gesteinskörnung 0/4, grobe Gesteinskörnung  4/8, grobe Gesteinskörnung 8/16 und grobe Gesteinskörnung 16/32 mit einer Rohdichte von je $ 2680 kg/m^3$.
+\end{itemize}
+\vspace{0.5cm}
+Berechnen Sie die fehlenden Angaben in der Aufgabenstellung.
+
+\question Dosieren Sie Pneumatit für die Mischung. Der Pneumatitgehalt beträgt \SI{125}{\ml} pro Kubikmeter Beton.
+\end{questions}
+
+
+
+
+
+\begin{solution}
+\begin{enumerate}
+    \item Der Mindestzementgehalt in diesem Fall beträgt $Z_{min} = 300 kg/m^3$.
+    \item Herauslesen des maximalen Wasser-Zement-Wertes. Der maximale Wasser-Zement-Wert beträgt 0.50.
+    \item Erkennen, dass \SI{120}{\l} Beton gewünscht sind.
+    \item Berechnen der Zementmenge:
+    \begin{equation*}
+        m_{Zement} = \SI{0.120}{\m^3} \cdot \SI{300}{\kg\per\m^3} = \FinRes{\SI{36}{\kg}}
+    \end{equation*}
+    
+    \item Berechnen der Wassermenge für \SI{120}{\l} Mischung
+    
+    \begin{equation*}
+        m_{Wasser} = 0.5 \cdot m_{Zement} = 0.5 \cdot \SI{36}{\kg}  = \FinRes{\SI{18}{\kg}}
+    \end{equation*}
+    
+    \item Herauslesen des Luftporengehaltes. Annahme: 1.0\%. Ergibt 10 l Luft pro Kubikmeter Beton.
+    \begin{equation*}
+        \SI{0.120}{\m^3} \cdot \SI{10}{\l\per\m^3} = \SI{1.2}{\l}
+    \end{equation*}
+    \item Bestimmen des Volumes der Gesteinskörnung [$1 m^3 = 1000 l $]:
+    \begin{equation*}
+        \SI{120}{\l} - \dfrac{\SI{36}{\kg}}{\SI{3.05}{\kg\per\dm^3}} - \dfrac{\SI{18}{\kg}}{\SI{1.0}{\kg\per\dm^3}}-\SI{1.2}{\l} = \FinRes{\SI{89}{\l}}
+    \end{equation*}
+    
+    \item Umrechnen des Volumens in Kilogramm
+    \begin{equation*}
+        m_{\text{Gesteinskörnung}} = \SI{89}{\l} \cdot \SI{2.68}{\kg\per\dm^3} = \FinRes{\SI{238.51}{\kg}}
+    \end{equation*}
+    
+    
+    \item Bestimmen der Massen der Gesteinskörnung aus der Grafik. (Hinweis: Kurve mit der gewünschten Korngrösse verwenden.)
+    
+    \begin{equation*}
+        \text{für 0/2: }   12\% \cdot \SI{238.51}{\kg}  = \SI{28.6213}{\kg}
+    \end{equation*}
+    
+    \begin{equation*}
+        \text{für 0/4: }   24\% \cdot \SI{238.51}{\kg}  = \SI{57.243}{\kg}
+    \end{equation*}
+    
+    \begin{equation*}
+        \text{für 4/8: }   8\% \cdot \SI{238.51}{\kg}  = \SI{19.08}{\kg}
+    \end{equation*}
+    
+    \begin{equation*}
+        \text{für 8/16: }   24\% \cdot \SI{238.51}{\kg}  = \SI{57.24}{\kg}
+    \end{equation*}
+
+    \begin{equation*}
+        \text{für 16/32: }   32\% \cdot \SI{238.51}{\kg}  = \SI{76.32}{\kg}
+    \end{equation*}
+    
+
+    
+    \item Die Rohdichte des Frischbetons berechnen: 
+    
+    \begin{eqnarray*}
+        \text{Rohdichte}=(m_{Zement} + m_{Wasser} + m_{\text{Gesteinskörnung}} + m_{Visco})/ \SI{0.120}{\m^3} \\
+        = (18+36+238.51 +0.144 \si{\kg})/( \SI{0.120}{\m^3})  \\
+        = \FinRes{\SI{2438.8}{\kg\per\m^3}}
+    \end{eqnarray*}
+    
+    \item Pneumatit (\SI{125}{\ml} für \SI{1}{m^3} Beton)
+    
+    \begin{equation*}
+        \text{für 120 l Beton:  } 0.120 \cdot \SI{125}{\ml} = \FinRes{\SI{15}{\ml}}
+    \end{equation*}
+    
+    
+    
+\end{enumerate}
+\end{solution}
+
+
+\end{document}

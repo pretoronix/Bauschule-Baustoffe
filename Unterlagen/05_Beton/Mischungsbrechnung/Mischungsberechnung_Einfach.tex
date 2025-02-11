@@ -1,0 +1,94 @@
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/05_Beton/Mischungsbrechnung/Mischungsberechnung_Einfach.tex
+
+\input{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/BauschuleBS.tex}
+
+
+\newcommand{\blattname}{Beton: Einfache Mischungsberechnung}
+
+
+
+%% header and footer
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+
+%\printanswers
+
+
+
+\begin{document}
+
+{\fontsize{22pt}{2pt}\selectfont \textbf{\blattname}}
+\vspace{0.3cm}
+\section*{Theoretische Grundlagen}
+
+\begin{equation*}
+    1 m^3 = \frac{z}{\rho_z} + \frac{w}{\rho_w} + \frac{g}{\rho_g} + \frac{f}{\rho_f} + p
+\end{equation*}
+, wobei 
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{Abstand  },font=\normalfont]
+    \item[$z, \rho_z$] Masse  bzw. Dichte des Zements 
+    \item[$w, \rho_w$] Masse  bzw. Dichte des Wasssers 
+    \item[$g, \rho_g$] Masse  bzw. Rohdichte der Gesteinskörnung
+    \item[$f, \rho_f$] Masse  bzw. Dichte des Zussatzstoffes oder Zusatzmittels
+    %\item[$f, \rho_f$] Masse  bzw. Dichte des Zussatzmittel
+    \item[$p$] Porenvolumen (Lufgehalt)
+\end{description}
+
+
+\section*{Aufgaben}
+\begin{questions}
+    \question Berechnen Sie die fehlenden Teile in der untenstehenden Tabelle.
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \begin{tabular}{lrrr}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & 320                      & 3.1                       &    {}          \\
+        Gesamtwasser                     & 157                      & 1.0                       & {}            \\
+        Luftporen (2,0\%)                & -                        & -                         & {}              \\
+        Zementleimvolumen                &                          &                           &                           \\
+        trockene Gesteinskörnung 0–32 mm & {}                     & 2,7                       & {}             \\
+        \textbf{total}                   & {}           &            {}               & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+
+        \question Berechnen Sie die fehlenden Teile in der untenstehenden Tabelle.
+
+        Nehmen Sie dabei an, dass Sie mindenstens \SI{300}{\kg} Zement und einen Wasserzementwert von 0.5 haben möchten.
+
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \begin{tabular}{lrrr}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & {}                      & 3.15                       &    {}          \\
+        Gesamtwasser                     & {}                      & {}                       & {}            \\
+        Luftporen (2,0\%)                & -                        & -                         & {}              \\
+        Zementleimvolumen                &                          &                           &                           \\
+        trockene Gesteinskörnung 0–32 mm & {}                     & 2.65                       & {}             \\
+        \textbf{total}                   & {}           &            {}               & {}             \\
+        \bottomrule
+        \label{tab:Stoffraumberechnung}
+        \end{tabular}
+        \end{table}
+
+\end{questions}
+
+
+
+
+
+\end{document}
