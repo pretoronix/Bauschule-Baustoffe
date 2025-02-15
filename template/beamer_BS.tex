@@ -1,21 +1,28 @@
 % !TEX program = lualatex
+
+
 \ifdefined\customoptions
     \documentclass[\customoptions]{beamer}
 \else
     \documentclass[aspectratio=169,handout,12pt]{beamer}
 \fi
 
+\usepackage{ifpdf} % This checks if we are in pdfTeX
 
 \PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
 
-%\usepackage[utf8]{inputenc}
-%\usepackage[ngerman]{babel} % Schweizer Rechtschreibung
+\usepackage{iftex}
 
-\usepackage{polyglossia}
-\setdefaultlanguage[variant = swiss]{german}
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
-\setsansfont{Arial}
+\ifpdftex
+    \usepackage[utf8]{inputenc}
+    \usepackage[ngerman]{babel}
+\else
+    \usepackage{polyglossia}
+    \setdefaultlanguage[variant=swiss]{german}
+    \usepackage{fontspec}
+    \setmainfont{Times New Roman}
+    \setsansfont{Arial}
+\fi
 
 
 \usepackage{amsmath}
@@ -70,7 +77,6 @@
         {\includegraphics[height=0.4cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}; % Grösse nach Bedarf anpassen
     \end{tikzpicture}
 }
-
 
 \newcommand{\myNmm}[1]
 {

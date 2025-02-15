@@ -1,10 +1,19 @@
 \input{../../template/beamer_BS.tex}
 % Root document for the presentation
 
+% Ensure compatibility with pdfTeX
+\usepackage{ifpdf}
+\ifpdf
+    \input{../../template/beamer_BS.tex}
+\else
+    \input{../../template/beamer_BS.tex}
+\fi
+
+
 % Set the title, author, and date
 \title{\textbf{Lektionsprogramm HTa-26}}
 \author{Patrick Pfändler}
-\date{28. Oktober 2024}
+\date{28. Oktober 2025}
 
 
 \begin{document}

@@ -1,0 +1,82 @@
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/05_Beton/01_SchmutzigerBeton/FA_Mischungsberechnung/Aufgabe.tex
+
+\input{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/BauschuleBS.tex}
+%\usepackage{pageslts}
+
+\newcommand{\blattname}{Beton: Mischungsberechnung aus Fach\-ab\-schluss}
+
+
+
+%% header and footer
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+
+%\printanswers
+
+
+
+\begin{document}
+
+{\fontsize{22pt}{2pt}\selectfont \textbf{\blattname}}
+\vspace{0.3cm}
+
+\begin{questions}
+    \question[4 \half] Berechnen Sie die fehlenden Angaben in der \Cref{tab:Stoffraumberechnung}. Für einen Mindestzementgehalt von 300 kg/m\textsuperscript{3}. Wählen Sie den Wasser-Zement-Wert so, dass der Beton die Expositionsklasse XF4 erfüllen könnte.
+
+    \begin{table}[h]
+        \centering
+        \caption{Aufgabe zur Stoffraumberechnung}
+        \small
+        \label{tab:Stoffraumberechnung}
+        \begin{tabular}{lrrr}
+        \toprule
+        \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/m³]} & \textbf{Stoffraum [l/m³]} \\ 
+        \midrule
+        Zement                           & {}                      & 3100                       &    {}          \\
+        Gesamtwasser                     & {}                      & 1000                       & {}            \\
+        Luftporen (2.0\%)                & -                        & -                         & {}              \\
+        Zementleimvolumen                &                          &                           &                           \\
+        trockene Gesteinskörnung 0–32 mm & {}                     & 2700                       & {}             \\
+        \midrule
+        \textbf{Dichte von Beton}                   & {}           &                           & {}             \\
+        \bottomrule
+        \end{tabular}
+        \end{table}
+
+        \begin{solution}
+            \Cref{tab:Stoffraumberechnung-loesung} zeigt die Lösung zur Stoffraumberechnung.
+
+            \begin{table}[H]
+                \centering
+                \caption{Lösung zur Stoffraumberechnung}
+                \small
+                \label{tab:Stoffraumberechnung-loesung}
+                \begin{tabular}{lrrr}
+                \toprule
+                \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/m³]} & \textbf{Stoffraum [l/m³]} \\ 
+                \midrule
+                Zement                           & 300                      & 3100                       & 96.8          \\
+                Gesamtwasser                     & 135                      & 1000                        & 135          \\
+                Luftporen (2.0\%)                & -                        & -                          & 20.0           \\
+                Zementleimvolumen                &                          &                            & 251.8         \\
+                trockene Gesteinskörnung 0–32 mm & 2020.4                     & 2700                       & 748.2       \\
+                \midrule
+                \textbf{Dichte von Beton}        & 2455.4                     &            -                 & 1000          \\
+                \bottomrule
+                \end{tabular}
+            \end{table}
+
+        \textcolor{blue}{\textit{Bemerkung:} XF4 würde  340 kg/m³ Zement benötigen.}
+        \end{solution}
+
+    
+\end{questions}
+
+\end{document}
+
+

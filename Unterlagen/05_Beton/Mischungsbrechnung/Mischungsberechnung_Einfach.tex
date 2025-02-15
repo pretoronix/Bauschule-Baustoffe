@@ -43,7 +43,7 @@
 
 \section*{Aufgaben}
 \begin{questions}
-    \question Berechnen Sie die fehlenden Teile in der untenstehenden Tabelle.
+    \question Berechnen Sie die fehlenden Teile in der untenstehenden \Cref{tab:Stoffraumberechnung1}.
     \begin{table}[h]
         \centering
         \caption{Aufgabe zur Stoffraumberechnung}
@@ -55,15 +55,40 @@
         Gesamtwasser                     & 157                      & 1.0                       & {}            \\
         Luftporen (2,0\%)                & -                        & -                         & {}              \\
         Zementleimvolumen                &                          &                           &                           \\
-        trockene Gesteinskörnung 0–32 mm & {}                     & 2,7                       & {}             \\
+        trockene Gesteinskörnung 0–32 mm & {}                     & 2.7                       & {}             \\
         \textbf{total}                   & {}           &            {}               & {}             \\
         \bottomrule
-        \label{tab:Stoffraumberechnung}
-        \end{tabular}
+    \end{tabular}
+    \label{tab:Stoffraumberechnung1}
         \end{table}
 
+    \begin{solution}
 
-        \question Berechnen Sie die fehlenden Teile in der untenstehenden Tabelle.
+        \begin{table}[H]
+            \centering
+        
+            \caption{Aufgabe zur Stoffraumberechnung}
+            \begin{tabularx}{\textwidth}{Xccc}
+            \toprule
+            \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+            \midrule
+            Zement                           & 320                      & 3.1                       &    103          \\
+            Gesamtwasser                     & 157                      & 1.0                       & 157            \\
+            Luftporen (2,0\%)                & -                        & -                         & 20              \\
+            Zementleimvolumen                &                          &                           &  280                         \\
+            trockene Gesteinskörnung 0–32 mm & 1944                    & 2.7                       & 720            \\
+            \textbf{total}                   & 2421           &            {}               & {}             \\
+            \bottomrule
+        \end{tabularx}
+        \label{tab:Stoffraumberechnung1sol}
+            \end{table}
+        
+    \end{solution}
+
+
+
+
+        \question Berechnen Sie die fehlenden Teile in der untenstehenden \Cref{tab:Stoffraumberechnung2}.
 
         Nehmen Sie dabei an, dass Sie mindenstens \SI{300}{\kg} Zement und einen Wasserzementwert von 0.5 haben möchten.
 
@@ -76,14 +101,40 @@
         \midrule
         Zement                           & {}                      & 3.15                       &    {}          \\
         Gesamtwasser                     & {}                      & {}                       & {}            \\
-        Luftporen (2,0\%)                & -                        & -                         & {}              \\
+        Luftporen (2.0\%)                & -                        & -                         & {}              \\
         Zementleimvolumen                &                          &                           &                           \\
         trockene Gesteinskörnung 0–32 mm & {}                     & 2.65                       & {}             \\
         \textbf{total}                   & {}           &            {}               & {}             \\
         \bottomrule
-        \label{tab:Stoffraumberechnung}
-        \end{tabular}
+    \end{tabular}
+    \label{tab:Stoffraumberechnung2sol}
         \end{table}
+
+
+
+
+        \begin{solution}
+
+            \begin{table}[H]
+                \centering
+            
+                \caption{Aufgabe zur Stoffraumberechnung}
+                \begin{tabularx}{\textwidth}{Xccc}
+                \toprule
+                \textbf{Betonkomponenten}       & \textbf{Gehalt [kg/m³]} & \textbf{Dichte [kg/dm³]} & \textbf{Stoffraum [l/m³]} \\ 
+                \midrule
+                Zement                           & 300                      & 3.15                       &    103          \\
+                Gesamtwasser                     & 150                      & 1.0                       & 150            \\
+                Luftporen (2.0\%)                & -                        & -                         & 20              \\
+                Zementleimvolumen                &                          &                           &  273                         \\
+                trockene Gesteinskörnung 0–32 mm & 1962.9                    & 2.7                       & 727            \\
+                \textbf{total}                   & 2412.9           &            {}               & {}             \\
+                \bottomrule
+            \end{tabularx}
+            \label{tab:Stoffraumberechnung2}
+                \end{table}
+            
+        \end{solution}
 
 \end{questions}
 
