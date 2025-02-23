@@ -47,6 +47,7 @@ arrows=pgf-filled,
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 
+
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{xspace}
@@ -60,6 +61,7 @@ arrows=pgf-filled,
 \usepackage{amssymb,amsmath}
 
  \usepackage{titletoc}
+ \usepackage{longtable} 
 
 % order of hyperref, cleverref is important
 \usepackage[hidelinks]{hyperref}
@@ -114,54 +116,92 @@ arrows=pgf-filled,
 
 \begin{document}
 
-\section*{Programm Baustoffe}
-
-Klasse: \klasse
-
-Zeit: 15:15 bis 17:00 Uhr (105 Minuten) im Raum 214
-
-Schüler: 14
-
+\section*{Programm Baustoffe: \klasse}
+\begin{itemize}
+    \item Zeit: 15:15 bis 17:00 Uhr (105 Minuten) im Raum 214
+    \item Schüler: 14
+    \item Stand: \today
+\end{itemize}
 
 
-Stand: \today
+
+
+
+
+
 
 \vspace{1cm}
 
+\newcounter{lecture}
+\setcounter{lecture}{0}
+\newcommand{\nr}{\stepcounter{lecture}\thelecture} % Makro für Nummerierung
 
+\begin{longtable}{lll p{8cm} p{4cm}}
+    %\caption{Programm Baustoffe} \\ % Optional caption
+    \toprule
+    \textbf{Datum} & \textbf{KW} & \textbf{Nr} & \textbf{Inhalt} & \textbf{Bemerkung}  \\
+    \midrule
+    \endfirsthead
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{llp{8cm}p{4cm}}
-        \toprule
-        \textbf{Datum} & \textbf{KW} & \textbf{Inhalt}                                          & \textbf{Bemerkung}  \\
-        \midrule
-        22.10.2024     & 43          & Einführung                                               & {}                  \\
-        28.10.2024     & 44          & Physik                                                   & Wärmeausdehnung     \\
-        04.11.2024     & 45          & Physik                                                   & {}                  \\
-        11.11.2024     & 46          & Physik                                                   & {}                  \\
-        18.11.2024     & 47          & Physik und Chemie                                        & Chemie F 9          \\
-        25.11.2024     & 48          & Chemie                                                   & Chemie fertig       \\
-        02.12.2024     & 49          & Bindemittel                                              & {}                  \\
-        09.12.2024     & 50          & Bindemittel und Mörtel                                   & Musterprüfung lösen \\
-        16.12.2024     & 51          & Mörtel und \red{Prüfung: Physik, Chemie und Bindemittel} & Nur Prüfung         \\
-        \midrule
-        23.12.2024     & 52          & \textcolor{blue}{Ferien}                                                       \\
-        \midrule
-        06.01.2025     & 2           & Nachbesprechung Prüfung, Bindemittel                     & {}                  \\
-        13.01.2025     & 3           & Mörtel                                                   & {}                  \\
-        20.01.2025     & 4           & Mörtel                                                    & {}                  \\
-        \midrule
-        27.01.2025     & 5           & \textcolor{blue}{Ferien}                                 & {}                  \\
-        \midrule
-        03.02.2025     & 6           & Beton                                                    & Besuch N. Raeber (Didaktikkurs)                  \\
-        10.02.2025     & 7           & Beton                                                    & {}                  \\
-        17.02.2025     & 8           & Beton                                                    & {}                  \\
-        24.02.2025     & 9           & \red{Prüfung: Mörtel, Beton}                             &                     \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+    % Header repeated on new pages
+    \toprule
+    \textbf{Datum} & \textbf{KW} & \textbf{Nr} & \textbf{Inhalt} & \textbf{Bemerkung}  \\
+    \midrule
+    \endhead
 
+    % Footer on last page (optional, else remove)
+    \midrule
+    \multicolumn{5}{r}{\textit{Fortsetzung auf der nächsten Seite...}} \\
+    \midrule
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    % ---- Table Content ----
+    22.10.2024     & 43  & \nr  & Einführung                                               & {}                  \\
+    28.10.2024     & 44  & \nr  & Physik                                                   & Wärmeausdehnung     \\
+    04.11.2024     & 45  & \nr  & Physik                                                   & {}                  \\
+    11.11.2024     & 46  & \nr  & Physik                                                   & {}                  \\
+    18.11.2024     & 47  & \nr  & Physik und Chemie                                        & Chemie F 9          \\
+    25.11.2024     & 48  & \nr  & Chemie                                                   & Chemie fertig       \\
+    02.12.2024     & 49  & \nr  & Bindemittel                                              & {}                  \\
+    09.12.2024     & 50  & \nr  & Bindemittel und Mörtel                                   & Musterprüfung lösen \\
+    16.12.2024     & 51  & \nr  & Mörtel und \red{Prüfung: Physik, Chemie und Bindemittel} & Nur Prüfung         \\
+    \midrule
+    23.12.2024     & 52  & {}  & \textcolor{blue}{Ferien}                                                       \\
+    \midrule
+    06.01.2025     & 2   & \nr  & Nachbesprechung Prüfung, Bindemittel                     & {}                  \\
+    13.01.2025     & 3   & \nr  & Mörtel                                                   & {}                  \\
+    20.01.2025     & 4   & \nr  & Mörtel                                                   & {}                  \\
+    \midrule
+    27.01.2025     & 5   & {}  & \textcolor{blue}{Ferien}                                 & {}                  \\
+    \midrule
+    03.02.2025     & 6   & \nr  & Beton                                                    & Besuch N. Raeber (Didaktikkurs)                  \\
+    10.02.2025     & 7   & \nr  & Beton                                                    & {}                  \\
+    17.02.2025     & 8   & \nr  & Beton                                                    & {}                  \\
+    24.02.2025     & 9   & \nr  & \red{Prüfung: Mörtel, Beton}                             &                     \\
+    \midrule
+    {}            & {}  & {}  & \textcolor{blue}{Frühlingsferien}                         &                     \\
+    \midrule
+    28.04.2025     & 18   & \nr  & Nachbesprechung Prüfung und Beton                            &                     \\
+    05.05.2025     & 19   & \nr  & Beton                            &                     \\
+    12.05.2025     & 20   & \nr  & Beton                            &                     \\
+    19.05.2025     & 21   & \nr  & Mit Bindemittel gefestigt                            &                     \\
+    26.05.2025     & 22   & \nr  & \red{Prüfung: Beton Teil 2}                              &                     \\
+    02.06.2025     & 23   & \nr  & Nachbesprechung Prüfung und Kunststoffe                            &                     \\
+    09.06.2025     & 24   & \nr  & Abdichtungen                            &                     \\
+    16.06.2025     & 25   & \nr  & Abdichtungen und WDS                            &                     \\
+    23.06.2025     & 26   & \nr  & Innovationsblock?                            &                     \\
+    30.06.2025     & 27   & \nr  & \red{Prüfung: Abdichtungen, Bindemittel gefestigt, Kunststoffe} &                     \\
+    \midrule
+    {}            & {}  & {}  & \textcolor{blue}{Sommerferien}                              &                     \\
+    \midrule
+    11.08.2025     & 33   & \nr  & Nachbesprechung Prüfung und Metalle                            &                     \\
+    18.08.2025     & 34   & \nr  & Metalle                            &                     \\
+    25.08.2025     & 35   & \nr  & Metalle                            &                     \\
+    01.09.2025     & 35   & \nr  & Metalle                            &                     \\
+\end{longtable}
 
 
 \end{document}
