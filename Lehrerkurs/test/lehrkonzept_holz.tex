@@ -1,0 +1,537 @@
+\documentclass[12pt, a4paper]{article}
+
+% Deutsche Spracheinstellungen und Silbentrennung
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern} % Verwende Latin Modern Schriftart für bessere Darstellung
+
+% Seitenlayout
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=3cm]{geometry} % Mehr Platz unten für Fußzeile
+
+% Für Listen und Aufzählungen
+\usepackage{enumitem}
+\setlist{nosep} % Reduziert den Abstand in Listen
+
+% Für Tabellen (Lektionsablauf)
+\usepackage{longtable}
+\usepackage{tabularx} % Für Tabellen mit automatischer Breitenanpassung
+\usepackage{array} % Für bessere Spaltendefinitionen in Tabellen
+
+% Für Kopf- und Fußzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{Lehrkonzept: Holz im Bauwesen für Bauführer}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\headheight}{15pt}
+
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+
+% Hyperlinks (optional)
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Lehrkonzept: Holz im Bauwesen für Bauführer},
+    pdfauthor={AI Assistant}
+}
+
+% Grafiken (optional, falls benötigt)
+% \usepackage{graphicx}
+
+% Silbentrennung verbessern
+\usepackage{microtype}
+
+% Titel
+\title{Lehrkonzept: Holz im Bauwesen \\ Ein praxisorientierter Kurs über 8 Lektionen für Bauführer}
+\author{Erstellt von AI Assistant \\ Adaptiert für Bauführer}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % Keine Kopf-/Fußzeile auf Titelseite
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Einleitung und Überblick}
+
+Dieses Lehrkonzept skizziert eine Unterrichtseinheit zum Thema Holz, die speziell auf die Bedürfnisse und den Arbeitskontext von \textbf{Bauführern und Bauleiterinnen} zugeschnitten ist. Über ca. 8 Lektionen (z.B. à 90 Minuten) wird ein praxisorientiertes Verständnis des Baustoffs Holz vermittelt – von den relevanten Materialeigenschaften über die Qualitätskontrolle bis hin zu Aspekten der Verarbeitung, des Holzschutzes und der Nachhaltigkeit im Bauwesen.
+
+\textbf{Zielgruppe und Fokus:} Das Konzept richtet sich an Bauführer/innen im Hoch- und Tiefbau, die in ihrem Alltag mit Holz als Baustoff konfrontiert sind. Der Fokus liegt klar auf der \textbf{Anwendung in der Baupraxis}, der \textbf{Qualitätssicherung}, dem Verständnis relevanter \textbf{Normen und Kennwerte} (z.B. SIA, DIN – als Prinzipien, nicht im Detail aller Normen) und der Fähigkeit, fundierte Entscheidungen auf der Baustelle zu treffen und die Ausführung zu überwachen. Es geht weniger um die handwerkliche Ausführung selbst, sondern um das Management und die Kontrolle.
+
+\textbf{Didaktischer Ansatz:} Der Aufbau folgt dem RITA-Prinzip (siehe nächster Abschnitt), um die Relevanz für den Berufsalltag sicherzustellen, praxisnahe Informationen zu liefern, durch anwendungsorientierte Übungen (Training) den Transfer in die Praxis (Anwendung) zu fördern. Es werden vielfältige Methoden eingesetzt, darunter Fallstudien, Diskussionen, Analyse von Baustellensituationen (Bilder, Berichte), Arbeit mit Checklisten und Normenauszügen (exemplarisch) sowie die Untersuchung von Bauholzmustern.
+
+Die Kompetenzstufen nach Bloom (K1-K6) werden berücksichtigt, mit einem Schwerpunkt auf:
+\begin{itemize}
+    \item \textbf{K2 (Verstehen):} Zusammenhänge (Eigenschaft $\rightarrow$ Auswirkung auf Baustelle).
+    \item \textbf{K3 (Anwenden):} Normen/Regeln interpretieren, Checklisten nutzen, Messungen durchführen/interpretieren.
+    \item \textbf{K4 (Analysieren):} Fehler/Mängel erkennen, Ursachen ermitteln, Materialwahl vergleichen.
+    \item \textbf{K5 (Beurteilen):} Qualität bewerten, Entscheidungen treffen (Annahme/Ablehnung), Risiken einschätzen.
+\end{itemize}
+
+\textbf{Rahmenbedingungen:} Die Lektionen sind modular aufgebaut. Zeit, Material (insb. relevante Bauholzproben, Normenauszüge, Fallbeispiele) und Vorkenntnisse müssen bei der Planung berücksichtigt werden. Der Zugang zu typischen Messgeräten (Holzfeuchtemesser) ist wünschenswert.
+
+\newpage
+
+\section{Didaktischer Ansatz nach RITA für Bauführer}
+
+Dieses Lehrkonzept wurde nach dem RITA-Prinzip strukturiert und angepasst, um den spezifischen Bedürfnissen von Bauführern gerecht zu werden:
+
+\subsection{Relevanz (R)}
+Die Relevanz wird sichergestellt, indem:
+\begin{itemize}
+    \item Jede Lektion mit Fragen oder Problemstellungen beginnt, die direkt aus dem Baustellenalltag von Bauführern stammen (z.B. Qualitätsmängel, Feuchteprobleme, Materialwahl).
+    \item Der Fokus konsequent auf \textbf{baupraktischen Anwendungen}, Normenbezug (SIA/DIN als Beispiele) und den Konsequenzen von Materialeigenschaften und Verarbeitung für das Bauwerk liegt.
+    \item Der Nutzen des Gelernten für die tägliche Arbeit (Qualitätssicherung, Fehlervermeidung, Koordination, Bauherrenkommunikation) klar herausgestellt wird.
+\end{itemize}
+
+\subsection{Information (I)}
+Die Informationsvermittlung konzentriert sich auf:
+\begin{itemize}
+    \item \textbf{Praxisrelevante Daten und Fakten:} Eigenschaften, die das Verhalten am Bau beeinflussen (Feuchte, Quellen/Schwinden, Festigkeit, Dauerhaftigkeit), Kennwerte und deren Bedeutung (z.B. Sortierklassen, Gebrauchsklassen).
+    \item \textbf{Normen und Regelwerke:} Vermittlung der Existenz, des Zwecks und der grundlegenden Prinzipien relevanter Normen (z.B. für Sortierung, Holzschutz, Holzwerkstoffe) und deren Anwendung bei der Qualitätskontrolle.
+    \item \textbf{Visuelle und haptische Informationen:} Einsatz von realen Bauholzproben (mit typischen Merkmalen und Fehlern), Holzwerkstoffmustern, Fotos von Baustellensituationen und Schadensfällen.
+    \item \textbf{Klarheit und Struktur:} Logischer Aufbau von den Grundlagen zu spezifischen Anwendungen, verständliche Sprache unter Verwendung korrekter Fachtermini.
+\end{itemize}
+
+\subsection{Training (T)}
+Aktives Lernen und Üben werden gefördert durch:
+\begin{itemize}
+    \item \textbf{Anwendungsorientierte Aufgaben:} Fallstudien zur Materialwahl oder Schadensanalyse, Übungen zur visuellen Beurteilung von Holzqualität anhand von Normkriterien (vereinfacht), Interpretation von Messwerten (z.B. Holzfeuchte).
+    \item \textbf{Interaktive Methoden:} Diskussionen im Plenum und in Gruppen, Bearbeitung von Checklisten für die Warenannahme oder Ausführungskontrolle, Analyse von Bauplänen oder Leistungsverzeichnissen (Auszüge).
+    \item \textbf{Praktische Demonstrationen:} Korrekte Anwendung eines Holzfeuchtemessgeräts, Erkennen typischer Holzfehler an Mustern.
+    \item \textbf{Fokus auf Beurteilungskompetenz:} Übungen zielen auf das Erkennen, Analysieren und Bewerten von Situationen ab, wie sie Bauführer auf der Baustelle antreffen.
+\end{itemize}
+
+\subsection{Anwendung (A)}
+Der Transfer des Gelernten in den Berufsalltag wird unterstützt durch:
+\begin{itemize}
+    \item \textbf{Konkrete Handlungsanleitungen:} Entwicklung von Checklisten oder Prüfpunkten für die Baustelle.
+    \item \textbf{Reflexion und Transferaufgaben:} Diskussionen, wie das Gelernte im eigenen Arbeitsumfeld umgesetzt werden kann, welche Kommunikationswege zu Handwerkern/Planern wichtig sind.
+    \item \textbf{Problembasiertes Lernen:} Ausgangspunkt sind oft reale Probleme, für die im Laufe der Lektionen Lösungen oder Beurteilungsansätze erarbeitet werden.
+    \item \textbf{Abschlussperspektive:} Die letzte Lektion fokussiert auf moderne Entwicklungen (Holzbauweisen, Nachhaltigkeit) und deren Relevanz für zukünftige Projekte und die Rolle des Bauführers.
+\end{itemize}
+
+\newpage
+
+% --- Lektion 1 --- Angepasst ---
+\section{Lektion 1: Holz im Bau – Relevanz, Grundtypen und erste Qualitätsaspekte}
+\subsection{Lernziele (Fokus Bauführer)}
+Die Lernenden können...
+\begin{itemize}
+    \item ...die Bedeutung von Holz als Baustoff im Hoch- und Tiefbau anhand von Beispielen erläutern (K2).
+    \item ...die grundsätzlichen Unterschiede zwischen Laub- und Nadelholz nennen und deren typische Einsatzbereiche im Bauwesen grob zuordnen (K1, K2).
+    \item ...erste relevante Qualitätsmerkmale von Bauholz ansprechen (z.B. Geradheit, Feuchte, Äste) und die Notwendigkeit der Qualitätskontrolle begründen (K2, K4).
+    \item ...die Wichtigkeit der korrekten Materialwahl für den jeweiligen Einsatzzweck diskutieren (K2, K5).
+\end{itemize}
+
+\subsection{Benötigte Materialien}
+\begin{itemize}
+    \item Präsentationsmedium (Beamer, Whiteboard)
+    \item Bilder von vielfältigen Holzanwendungen im Bauwesen (Tragwerke, Fassaden, Innenausbau, Brücken, Schalungen etc.)
+    \item Bilder von typischen Baustellensituationen/Problemen mit Holz
+    \item Erste Bauholzproben (z.B. Kantholz Fichte, Brett Eiche)
+    \item Arbeitsblatt "Holz am Bau – Erste Einschätzung"
+\end{itemize}
+
+\subsection{Lektionsablauf (ca. 90 Min.)}
+\begin{longtable}{|p{0.15\textwidth}|p{0.1\textwidth}|>{\raggedright\arraybackslash}p{0.4\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+    \hline
+    \textbf{Phase} & \textbf{Zeit} & \textbf{Aktivität / Inhalt} & \textbf{Sozialform / Methode} & \textbf{K-Level} \\
+    \hline
+    \endhead % Kopfzeile für Folgeseiten
+
+    Einstieg \& Relevanz & 20 Min & Einstiegsfrage: "Wo begegnet Ihnen Holz auf Ihren Baustellen? Welche positiven/negativen Erfahrungen haben Sie gemacht?" Sammlung von Beispielen und Herausforderungen. Bilder von Holzbauten/Holzanwendungen zeigen und diskutieren. Betonung der Verantwortung des Bauführers. & Plenum, Brainstorming, LSG, Bildimpuls & K2, K4 \\
+    \hline
+    Information 1 & 25 Min & Kurzer Input: Holz als Baustoff – Warum? (Eigenschaften grob, Verfügbarkeit, Ökologie). Hauptunterschied Nadel-/Laubholz mit Fokus auf \textbf{typische Bauhölzer} (z.B. Fichte/Tanne vs. Eiche/Buche). Typische Einsatzbereiche im Bauwesen aufzeigen. & Lehrervortrag mit Präsentation, LSG & K1, K2 \\
+    \hline
+    Training / Information 2 & 25 Min & Diskussion: Was macht "gutes" Bauholz aus? Sammlung erster Qualitätskriterien durch TN. Input: Vorstellung erster wichtiger Merkmale (Geradheit, grobe Ästigkeit, Risse, Feuchte - als Problembewusstsein). Notwendigkeit der Wareneingangskontrolle. Untersuchung einfacher Bauholzproben auf sichtbare Merkmale. & Diskussion, Lehrervortrag, Demonstration an Proben, PA & K2, K4 \\
+    \hline
+    Anwendung / Abschluss & 20 Min & Arbeitsblatt: Zuordnung von Holzanwendungen im Bau, erste Einschätzung von (fiktiven) Lieferscheinen/Holzbildern. Diskussion: Warum ist die Wahl des richtigen Holzes (Art, Qualität) so wichtig? Ausblick auf spezifische Eigenschaften und Normen. & EA, Plenum, Diskussion & K2, K3, K5 \\
+    \hline
+    \caption{Lektionsablauf - Lektion 1: Holz im Bau – Relevanz \& Qualität} \\
+    \label{tab:lektion1-bf}
+\end{longtable}
+
+\subsection{Hinweise / Differenzierung}
+\begin{itemize}
+    \item Stärker auf spezifische Erfahrungen der Teilnehmenden eingehen.
+    \item Lokale/regionale Bedeutung bestimmter Holzarten/Bauweisen berücksichtigen.
+\end{itemize}
+
+\newpage
+
+% --- Lektion 2 --- Angepasst ---
+\section{Lektion 2: Vom Stamm zum Bauholz – Relevante Strukturen und Verarbeitung}
+\subsection{Lernziele (Fokus Bauführer)}
+Die Lernenden können...
+\begin{itemize}
+    \item ...die Bedeutung von Kern- und Splintholz für Dauerhaftigkeit und Behandelbarkeit von Bauholz erklären (K2).
+    \item ...den Einfluss der Jahrringstruktur auf Verformung und das Auftreten von Rissen (Schwindrisse) grob erläutern (K2, K4).
+    \item ...den grundsätzlichen Einfluss des Einschnitts (z.B. stehende/liegende Jahrringe) auf die Eigenschaften von Brettern/Bohlen beschreiben (K2).
+    \item ...den Begriff "Reaktionsholz" (Druck-/Zugholz) nennen und dessen negative Auswirkung auf die Qualität von Bauholz erkennen (K1, K2, K4).
+\end{itemize}
+
+\subsection{Benötigte Materialien}
+\begin{itemize}
+    \item Präsentationsmedium
+    \item Aussagekräftige Querschnitte von \textbf{Bauholz} (Kantholz, Bohle) mit sichtbarem Kern-/Splintholz, Jahrringen, evtl. Markröhre, evtl. Reaktionsholz-Merkmalen.
+    \item Bilder/Grafiken von Stammquerschnitten zur Veranschaulichung von Kern/Splint/Jahrringen.
+    \item Bilder von typischen Rissbildungen oder Verformungen an Bauholz.
+    \item Lupe (optional)
+\end{itemize}
+
+\subsection{Lektionsablauf (ca. 90 Min.)}
+\begin{longtable}{|p{0.15\textwidth}|p{0.1\textwidth}|>{\raggedright\arraybackslash}p{0.4\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+    \hline
+    \textbf{Phase} & \textbf{Zeit} & \textbf{Aktivität / Inhalt} & \textbf{Sozialform / Methode} & \textbf{K-Level} \\
+    \hline
+    \endhead
+
+    Einstieg & 10 Min & Wiederholung: Qualitätsmerkmale. Frage: "Warum hält Eichenholz draussen länger als Fichte?" "Warum verzieht sich dieses Brett?". Bezug zu inneren Strukturen herstellen. Zeigen eines Bauholz-Querschnitts. & LSG, Demonstration & K2 \\
+    \hline
+    Information 1 & 30 Min & Input: Kernholz vs. Splintholz – Unterschiede in Farbe, Dauerhaftigkeit, Tränkbarkeit. Bedeutung für den Einsatz (innen/aussen, mit/ohne Schutz). Demonstration an Proben. Jahrringe: Entstehung kurz, Fokus auf Dichteunterschied Früh-/Spätholz und Auswirkung auf Rissbildung/Verformung bei Feuchteänderung. & Lehrervortrag, Demonstration an Proben, LSG & K1, K2 \\
+    \hline
+    Information 2 & 25 Min & Input: Einfluss des Einschnitts: Lage der Jahrringe (stehend/liegend) bei Brettern/Bohlen und Auswirkung auf Verformung ("Schüsseln") und Abnutzung (bei Böden). Reaktionsholz (Druck-/Zugholz): Erkennungsmerkmale (Exzentrizität, Jahrringbreite) und starke negative Auswirkung auf Längsschwindung/Verzug/Festigkeit $\rightarrow$ mindert Qualität erheblich! & Lehrervortrag, Grafiken, Demonstration, LSG & K2, K4 \\
+    \hline
+    Training / Anwendung & 20 Min & Untersuchung von Bauholzproben in Kleingruppen: Kern-/Splintholz unterscheiden, Lage der Jahrringe beurteilen, nach Anzeichen für Reaktionsholz suchen. Diskussion: Welche Konsequenzen haben diese Merkmale für die Baustelle? & GA / PA, Praktische Übung (visuell) & K2, K3, K4 \\
+    \hline
+    Abschluss & 5 Min & Zusammenfassung: Innere Struktur beeinflusst maßgeblich die Qualität und das Verhalten von Bauholz. Ausblick auf physikalische Eigenschaften (Feuchte!). & LSG, Zusammenfassung & K2 \\
+    \hline
+    \caption{Lektionsablauf - Lektion 2: Relevante Holzstrukturen} \\
+    \label{tab:lektion2-bf}
+\end{longtable}
+
+\subsection{Hinweise / Differenzierung}
+\begin{itemize}
+    \item Biologische Details minimieren, Fokus auf Auswirkungen.
+    \item Wenn möglich, Proben mit eindeutigen Merkmalen (auch Fehlern) verwenden.
+\end{itemize}
+
+\newpage
+
+% --- Lektion 3 --- Angepasst ---
+\section{Lektion 3: Physikalische Eigenschaften – Fokus Feuchte und Formänderung}
+\subsection{Lernziele (Fokus Bauführer)}
+Die Lernenden können...
+\begin{itemize}
+    \item ...die zentrale Bedeutung der Holzfeuchte für die Baupraxis erklären (Verarbeitung, Formstabilität, Pilzgefahr) (K2).
+    \item ...den Vorgang des Schwindens und Quellens beschreiben und die Anisotropie (unterschiedliches Verhalten längs/radial/tangential) erklären und deren Konsequenzen für die Konstruktion nennen (Dehnungsfugen etc.) (K2, K3).
+    \item ...den Begriff Holzfeuchte (u) definieren und die Prinzipien der Feuchtemessung (elektrisch) verstehen sowie Messwerte kritisch interpretieren (K1, K2, K4).
+    \item ...die ungefähren Ziel-Holzfeuchten für verschiedene Anwendungen im Bau (innen/aussen, Rohbau/Ausbau) nennen und die Wichtigkeit der Einhaltung begründen (K1, K2, K5).
+    \item ...den Einfluss der Dichte auf Transport, Handling und Befestigungsmittelwahl grob abschätzen (K2).
+\end{itemize}
+
+\subsection{Benötigte Materialien}
+\begin{itemize}
+    \item Präsentationsmedium
+    \item Bauholzproben
+    \item Holzfeuchtemessgerät (elektrisch, Widerstand oder kapazitiv) zur Demonstration
+    \item Bilder/Fallbeispiele von Schäden durch falsche Holzfeuchte oder unbeachtetes Quellen/Schwinden (Risse, Verformungen, offene Fugen)
+    \item Arbeitsblatt "Holzfeuchte und ihre Folgen" / Checkliste Feuchtemessung
+\end{itemize}
+
+\subsection{Lektionsablauf (ca. 90 Min.)}
+\begin{longtable}{|p{0.15\textwidth}|p{0.1\textwidth}|>{\raggedright\arraybackslash}p{0.4\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+    \hline
+    \textbf{Phase} & \textbf{Zeit} & \textbf{Aktivität / Inhalt} & \textbf{Sozialform / Methode} & \textbf{K-Level} \\
+    \hline
+    \endhead
+
+    Einstieg & 15 Min & Fallbeispiel: "Parkettboden wirft sich auf", "Fensterrahmen klemmt nach Regen", "Holzfassade hat breite Fugen". Ursachen diskutieren $\rightarrow$ Holzfeuchte als zentrales Thema identifizieren. & Fallstudie (kurz), LSG, Diskussion & K2, K4 \\
+    \hline
+    Information 1 & 25 Min & Input: Holz und Wasser – Holzfeuchte (u) definieren. Quellen und Schwinden erklären, Fokus auf Anisotropie (tangential > radial > längs). Praktische Konsequenzen: Notwendigkeit von Fugen, richtige Befestigung, Verformungsrisiko. & Lehrervortrag, Grafiken, LSG & K1, K2 \\
+    \hline
+    Training 1 & 20 Min & Input & Demonstration: Holzfeuchtemessung – Prinzipien elektrischer Messgeräte (Widerstand/kapazitiv), korrekte Anwendung (Einstichtiefe, Temperaturkorrektur, Einfluss von Inhaltsstoffen/Behandlung). Kritische Interpretation von Messwerten. Übung: Feuchtemessung an Proben durchführen/beobachten. & Lehrervortrag, Demonstration, Praktische Übung (beob./durchf.) & K2, K3, K4 \\
+    \hline
+    Information 2 / Anwendung & 20 Min & Input: Ziel-Holzfeuchten für typische Anwendungen (z.B. Fensterholz, KVH, Parkett, Aussenverschalung - Richtwerte!). Folgen bei Nichteinhaltung (Risiken). Dichte kurz ansprechen (Gewicht, Handling). Diskussion: Wie stellt man die richtige Feuchte auf der Baustelle sicher? (Lieferkontrolle, Lagerung, Schutz). & Lehrervortrag, Diskussion, Fallbeispiele & K1, K2, K5 \\
+    \hline
+    Abschluss & 10 Min & Arbeitsblatt/Checkliste: Wichtige Punkte zur Holzfeuchte und Messung zusammenfassen. Klärung offener Fragen. Ausblick: Mechanische Eigenschaften / Festigkeit. & EA / Plenum, Zusammenfassung & K2, K3 \\
+    \hline
+    \caption{Lektionsablauf - Lektion 3: Holzfeuchte in der Praxis} \\
+    \label{tab:lektion3-bf}
+\end{longtable}
+
+\subsection{Hinweise / Differenzierung}
+\begin{itemize}
+    \item Konkrete Feuchtewerte gemäß lokalen Normen/Gepflogenheiten (z.B. SIA) nennen.
+    \item Fallbeispiele aus der Region oder von Teilnehmern einbeziehen.
+\end{itemize}
+
+\newpage
+
+% --- Lektion 4 --- Angepasst ---
+\section{Lektion 4: Mechanische Eigenschaften \& Qualitätskontrolle von Bauholz}
+\subsection{Lernziele (Fokus Bauführer)}
+Die Lernenden können...
+\begin{itemize}
+    \item ...die wichtigsten mechanischen Eigenschaften (Festigkeit: Druck, Zug, Biegung; Steifigkeit/E-Modul) benennen und ihre Relevanz für tragende Bauteile erklären (K1, K2).
+    \item ...den Einfluss der Faserrichtung (Anisotropie) auf die Festigkeit beschreiben und Konsequenzen für die Bauteilorientierung ableiten (K2, K3).
+    \item ...die wichtigsten \textbf{festigkeitsmindernden Holzmerkmale} (Äste, Risse, Faserneigung, Reaktionsholz) gemäß gängiger Sortiernormen (Prinzipien nach z.B. DIN 4074 / SIA 265/1 Anhang) visuell erkennen und grob bewerten (K2, K4).
+    \item ...die Bedeutung von \textbf{Sortierklassen} (z.B. C24, S10/S13) verstehen und die Wichtigkeit der Überprüfung bei der Warenannahme begründen (K1, K2, K5).
+    \item ...die Notwendigkeit der korrekten Lagerung von Bauholz zur Vermeidung von Qualitätseinbußen erklären (K2).
+\end{itemize}
+
+\subsection{Benötigte Materialien}
+\begin{itemize}
+    \item Präsentationsmedium
+    \item \textbf{Bauholzproben} (Kanthölzer, Bretter) mit \textbf{typischen Fehlern} in unterschiedlicher Ausprägung (gesunde Äste, schwarze Äste, Randäste, Risse, Faserabweichung, evtl. Bläue).
+    \item Auszüge/Grafiken aus Sortiernormen (z.B. DIN 4074, SIA-Merkblätter) zur Veranschaulichung der Bewertungskriterien (vereinfacht).
+    \item Bilder von Bauteilversagen aufgrund von Materialfehlern oder falscher Belastungsrichtung.
+    \item Checkliste "Visuelle Sortierung / Warenannahme Bauholz" (vereinfacht).
+\end{itemize}
+
+\subsection{Lektionsablauf (ca. 90 Min.)}
+\begin{longtable}{|p{0.15\textwidth}|p{0.1\textwidth}|>{\raggedright\arraybackslash}p{0.4\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+    \hline
+    \textbf{Phase} & \textbf{Zeit} & \textbf{Aktivität / Inhalt} & \textbf{Sozialform / Methode} & \textbf{K-Level} \\
+    \hline
+    \endhead
+
+    Einstieg & 10 Min & Bild: Eingestürztes Holzdach oder gebrochener Balken. Frage: "Was könnte hier passiert sein?" Bezug zu Materialfestigkeit und Fehlern herstellen. & Bildimpuls, LSG & K2, K4 \\
+    \hline
+    Information 1 & 20 Min & Input: Mechanische Eigenschaften kurz erklärt (Druck-, Zug-, Biegefestigkeit, Steifigkeit). Anisotropie: Warum ist Holz längs der Faser viel fester? Bedeutung für tragende Bauteile (Balkenlage etc.). & Lehrervortrag, Grafiken, LSG & K1, K2, K3 \\
+    \hline
+    Information 2 & 25 Min & Input: Festigkeitsmindernde Merkmale: Äste (Größe, Art, Lage), Risse (Tiefe, Länge), Faserneigung, Reaktionsholz. Vorstellung der Prinzipien der visuellen Sortierung nach Norm (Zweck: Sicherstellung einer Mindestfestigkeit). Einführung Begriff Sortierklassen (z.B. C18, C24, C30 nach EN 338; S7/S10/S13 nach CH-Norm). & Lehrervortrag, Bilder, Normenauszüge (vereinfacht) & K1, K2, K4 \\
+    \hline
+    Training / Anwendung & 30 Min & \textbf{Praktische Übung}: Visuelle Beurteilung von Bauholzproben in Kleingruppen anhand einer vereinfachten Checkliste (basierend auf Normkriterien). Aufgabe: "Würden Sie dieses Holz für einen tragenden Balken akzeptieren? Begründen Sie!" Diskussion der Ergebnisse. & GA / PA, Praktische Übung (visuell), Checkliste & K2, K3, K4, K5 \\
+    \hline
+    Abschluss & 5 Min & Zusammenfassung: Qualitätssicherung ist entscheidend! Bedeutung der korrekten Bestellung (Sortierklasse!), Warenannahme und Lagerung. Ausblick: Bauübliche Holzarten. & LSG, Zusammenfassung & K2, K5 \\
+    \hline
+    \caption{Lektionsablauf - Lektion 4: Festigkeit \& Qualitätskontrolle} \\
+    \label{tab:lektion4-bf}
+\end{longtable}
+
+\subsection{Hinweise / Differenzierung}
+\begin{itemize}
+    \item Fokus auf die in der Region/Branche gängigen Sortierklassen und Normen legen.
+    \item Checkliste so gestalten, dass sie die wichtigsten K.O.-Kriterien abbildet. Komplexität der Norm nicht überfrachten.
+\end{itemize}
+
+\newpage
+
+% --- Lektion 5 --- Angepasst ---
+\section{Lektion 5: Bauübliche Holzarten und Holzwerkstoffe erkennen und einordnen}
+\subsection{Lernziele (Fokus Bauführer)}
+Die Lernenden können...
+\begin{itemize}
+    \item ...die wichtigsten heimischen \textbf{Bauholzarten} (insb. Fichte, Tanne, Kiefer, Lärche; ggf. Douglasie, Eiche, Buche) anhand typischer Merkmale am \textbf{gesägten Holz} grob unterscheiden (K2, K3).
+    \item ...die wichtigsten \textbf{Holzwerkstoffe} im Bauwesen (KVH, BSH/GL, Furnierschichtholz/LVL, Sperrholz, OSB, Spanplatte, Brettsperrholz/CLT) erkennen und deren Hauptanwendungsgebiete nennen (K1, K2).
+    \item ...die typischen Eigenschaften (Festigkeit grob, Dauerhaftigkeit, Bearbeitbarkeit, Preisniveau relativ) und Haupteinsatzgebiete der behandelten Hölzer und Holzwerkstoffe im Bauwesen zuordnen (K2, K3).
+    \item ...die Informationen auf Lieferscheinen oder in Leistungsverzeichnissen (Holzart, Werkstofftyp, Sortierklasse) mit dem gelieferten Material abgleichen (K3, K4).
+\end{itemize}
+
+\subsection{Benötigte Materialien}
+\begin{itemize}
+    \item Präsentationsmedium
+    \item Gut erkennbare Proben der relevanten \textbf{Bauholzarten} (ideal: sägerau und gehobelt)
+    \item Proben der wichtigsten \textbf{Holzwerkstoffe} (KVH, BSH, LVL, Sperrholz, OSB, Spanplatte, CLT)
+    \item Lupen
+    \item Infokarten/Steckbriefe zu den Materialien mit Fokus auf Baurelevanz (Eigenschaften, Verwendung, Erkennungsmerkmale am Bauholz/Werkstoff)
+    \item Beispiel-Lieferscheine oder LV-Auszüge
+    \item Arbeitsblatt "Materialidentifikation am Bau"
+\end{itemize}
+
+\subsection{Lektionsablauf (ca. 90 Min.)}
+\begin{longtable}{|p{0.15\textwidth}|p{0.1\textwidth}|>{\raggedright\arraybackslash}p{0.4\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+    \hline
+    \textbf{Phase} & \textbf{Zeit} & \textbf{Aktivität / Inhalt} & \textbf{Sozialform / Methode} & \textbf{K-Level} \\
+    \hline
+    \endhead
+
+    Einstieg & 10 Min & Frage: "Auf dem Lieferschein steht 'KVH Fichte Si S10'. Was genau erwarten Sie auf der Baustelle?" Oder: Zeigen verschiedener Holzwerkstoffproben - "Was ist das und wofür wird es verwendet?" & LSG, Quiz/Ratespiel & K1, K2 \\
+    \hline
+    Information 1: Bauholzarten & 25 Min & Vorstellung der wichtigsten Bau-Nadelhölzer (Fi/Ta, Ki, Lä, Dgl) und Laubhölzer (Ei, Bu) anhand von Proben. Fokus auf Erkennungsmerkmale am \textbf{Schnittholz} (Farbe, Maserung, Harzkanäle, Astbild, Härte grob). Typische Verwendung im Bauwesen. & Lehrervortrag mit Demonstration, Infokarten & K1, K2 \\
+    \hline
+    Information 2: Holzwerkstoffe & 25 Min & Vorstellung gängiger Holzwerkstoffe (KVH, BSH, LVL, Sperrholz, OSB, Spanplatte, CLT): Kurze Erklärung des Aufbaus, wichtigste Eigenschaften (z.B. Formstabilität, definierte Festigkeit, große Formate) und Hauptanwendungen im Bau. Zeigen von Proben. & Lehrervortrag mit Demonstration, Infokarten & K1, K2 \\
+    \hline
+    Training / Anwendung & 25 Min & \textbf{Stationenlernen}: An verschiedenen Stationen liegen Materialproben (Hölzer/Werkstoffe) und evtl. zugehörige (fiktive) Lieferscheine/LV-Positionen. Aufgabe: Material identifizieren, Merkmale notieren, Abgleich mit Beschreibung. Arbeitsblatt ausfüllen. & Stationenlernen (GA/PA), Praktische Übung (Identifikation) & K2, K3, K4 \\
+    \hline
+    Abschluss & 5 Min & Besprechung der Ergebnisse/Unsicherheiten. Betonung: Korrekte Materialidentifikation ist Teil der Qualitätskontrolle! Ausblick: Verarbeitung und Schutz. & Plenum, Zusammenfassung & K2, K3 \\
+    \hline
+    \caption{Lektionsablauf - Lektion 5: Bauübliche Hölzer \& Werkstoffe} \\
+    \label{tab:lektion5-bf}
+\end{longtable}
+
+\subsection{Hinweise / Differenzierung}
+\begin{itemize}
+    \item Materialauswahl an regionale Gegebenheiten anpassen.
+    \item Komplexität der Werkstoffe je nach Vorkenntnissen variieren. Ggf. Fokus auf die 5-6 wichtigsten.
+\end{itemize}
+
+\newpage
+
+% --- Lektion 6 --- Angepasst ---
+\section{Lektion 6: Holztrocknung, Holzschutz und Lagerung auf der Baustelle}
+\subsection{Lernziele (Fokus Bauführer)}
+Die Lernenden können...
+\begin{itemize}
+    \item ...die Notwendigkeit der technischen Holztrocknung für maßhaltiges und dauerhaftes Bauholz begründen (K2).
+    \item ...die Bedeutung der \textbf{Gebrauchsklassen (GK / Exposure Classes)} nach Norm (z.B. EN 335) für die Wahl von Holzart und Holzschutzmaßnahmen erklären (K2, K3).
+    \item ...die Prinzipien des \textbf{konstruktiven Holzschutzes} erläutern und dessen Vorrang vor chemischem Schutz begründen (K2, K5).
+    \item ...die wichtigsten Arten des chemischen Holzschutzes (Methoden, Wirkstoffe grob) nennen und deren Anwendungsbereiche kritisch einordnen (K1, K2, K4).
+    \item ...die Anforderungen an die fachgerechte \textbf{Lagerung von Bauholz} auf der Baustelle beschreiben, um Qualitätsverluste zu vermeiden (K2, K3).
+\end{itemize}
+
+\subsection{Benötigte Materialien}
+\begin{itemize}
+    \item Präsentationsmedium
+    \item Grafiken/Bilder zur Holztrocknung (Prinzip Kammer), Gebrauchsklassen (GK 0-5), konstruktivem Holzschutz (Beispiele: Dachüberstand, Abstand zum Boden, Wasserableitung).
+    \item Bilder von Schäden durch mangelnden Holzschutz oder falsche Lagerung (Pilze, Insekten, Verformung, Verschmutzung).
+    \item Beispiele für (ungefährliche) Holzschutzmittel-Verpackungen oder Datenblätter (optional).
+    \item Checkliste "Lagerung von Bauholz".
+\end{itemize}
+
+\subsection{Lektionsablauf (ca. 90 Min.)}
+\begin{longtable}{|p{0.15\textwidth}|p{0.1\textwidth}|>{\raggedright\arraybackslash}p{0.4\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+    \hline
+    \textbf{Phase} & \textbf{Zeit} & \textbf{Aktivität / Inhalt} & \textbf{Sozialform / Methode} & \textbf{K-Level} \\
+    \hline
+    \endhead
+
+    Einstieg & 10 Min & Bilder von verwitterter Holzfassade vs. gut erhaltener; oder verschimmeltem Holz auf Baustelle. Frage: "Warum sieht das eine Holz gut aus, das andere nicht? Was hätte man anders machen müssen?" & Bildimpuls, LSG & K2, K4 \\
+    \hline
+    Information 1: Trocknung & 15 Min & Input: Warum technische Trocknung? (Maßhaltigkeit, weniger Risse/Verzug, weniger Pilz-/Insektenrisiko). Kurzer Überblick über Methoden (Luft vs. Kammer). Bedeutung für KVH, BSH etc. Erinnerung: Ziel-Holzfeuchten! & Lehrervortrag, LSG & K2 \\
+    \hline
+    Information 2: Holzschutz & 30 Min & Input: Gebrauchsklassen (GK 0-5) als Basis der Risikobewertung. Konstruktiver Holzschutz: Prinzipien und Beispiele (wichtigstes Mittel!). Chemischer Holzschutz: Nur wenn nötig! Arten (Kesseldruckimprägnierung, Streichen), Wirkstoffgruppen grob. Gesundheits-/Umweltaspekte kurz ansprechen. & Lehrervortrag, Grafiken, Beispiele, Diskussion & K1, K2, K3, K5 \\
+    \hline
+    Information 3 / Training: Lagerung & 20 Min & Input: Anforderungen an Lagerung auf Baustelle (Unterlüftung, Schutz vor Niederschlag/Sonne/Bodenfeuchte/Verschmutzung). Folgen falscher Lagerung. Diskussion: Wie organisieren Sie das auf Ihren Baustellen? Herausforderungen? Checkliste durchgehen. & Lehrervortrag, Bilder (neg./pos.), Diskussion, Checkliste & K2, K3, K4 \\
+    \hline
+    Anwendung / Abschluss & 15 Min & Kurze Fallbeispiele (als Quiz oder Kleingruppen): "Welche GK liegt hier vor?", "Welcher Holzschutz ist hier sinnvoll?", "Ist diese Lagerung korrekt?". Zusammenfassung der wichtigsten Punkte für die Bauleitung. Ausblick: Verbindungen. & Fallbeispiele (Quiz/GA), Plenum & K2, K3, K5 \\
+    \hline
+    \caption{Lektionsablauf - Lektion 6: Trocknung, Schutz, Lagerung} \\
+    \label{tab:lektion6-bf}
+\end{longtable}
+
+\subsection{Hinweise / Differenzierung}
+\begin{itemize}
+    \item Gebrauchsklassen-Systematik des jeweiligen Landes/Norm verwenden.
+    \item Fokus stark auf konstruktiven Schutz legen. Chemischen Schutz nicht zu detailliert behandeln, außer bei spezifischen Anwendungen (z.B. Bahnschwellen - eher Tiefbau).
+\end{itemize}
+
+\newpage
+
+% --- Lektion 7 --- Angepasst ---
+\section{Lektion 7: Verbindungen und Montage im Holzbau – Grundlagen für die Bauleitung}
+\subsection{Lernziele (Fokus Bauführer)}
+Die Lernenden können...
+\begin{itemize}
+    \item ...die gängigsten \textbf{Verbindungsmittel} im konstruktiven Holzbau (Nägel, Schrauben, Bolzen, Stabdübel, Blechformteile/Verbinder) benennen und deren typische Anwendungsbereiche grob zuordnen (K1, K2).
+    \item ...wichtige Grundsätze für die \textbf{Ausführung von Verbindungen} erklären (z.B. Rand-/Achsabstände, Vorbohren, Anzugsmomente bei Bolzen) und deren Bedeutung für die Tragfähigkeit verstehen (K2, K3).
+    \item ...typische \textbf{Ausführungsfehler bei Verbindungen} erkennen (anhand von Bildern/Beschreibungen) und deren potenzielle Folgen abschätzen (K2, K4, K5).
+    \item ...die Bedeutung von Montageplänen und die Notwendigkeit der \textbf{Kontrolle der Montageausführung} auf der Baustelle begründen (K2, K5).
+    \item ...die Prinzipien der Oberflächenbehandlung für Schutz und Ästhetik bei sichtbaren Holzbauteilen verstehen (K2).
+\end{itemize}
+
+\subsection{Benötigte Materialien}
+\begin{itemize}
+    \item Präsentationsmedium
+    \item Beispiele für gängige Verbindungsmittel (Schrauben für Holzbau, Bolzen, Stabdübel, Balkenschuhe, Winkelverbinder etc.)
+    \item Bilder/Zeichnungen von typischen Holzbauverbindungen (z.B. Balkenanschluss, Stützenfuß, Sparrenbefestigung).
+    \item \textbf{Bilder von korrekt ausgeführten und fehlerhaften Verbindungen} (z.B. aufgespaltenes Holz, zu geringe Abstände, fehlende Unterlegscheiben).
+    \item Auszug aus einem Montageplan (exemplarisch).
+    \item Proben von oberflächenbehandeltem Holz (Öl, Lasur, Lack).
+    \item Checkliste "Kontrolle Holzbauverbindungen" (vereinfacht).
+\end{itemize}
+
+\subsection{Lektionsablauf (ca. 90 Min.)}
+\begin{longtable}{|p{0.15\textwidth}|p{0.1\textwidth}|>{\raggedright\arraybackslash}p{0.4\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+    \hline
+    \textbf{Phase} & \textbf{Zeit} & \textbf{Aktivität / Inhalt} & \textbf{Sozialform / Methode} & \textbf{K-Level} \\
+    \hline
+    \endhead
+
+    Einstieg & 10 Min & Bild eines komplexen Holztragwerks oder einer Holzrahmenbauwand. Frage: "Wie hält das alles zusammen? Worauf muss man bei den Verbindungen achten?" & Bildimpuls, LSG & K2 \\
+    \hline
+    Information 1: Verbindungsmittel & 20 Min & Input: Vorstellung gängiger mechanischer Verbindungsmittel im Holzbau (Nägel, Schrauben, Bolzen, Stabdübel, Blechformteile). Typische Einsatzbereiche. Kurzer Hinweis auf zimmermannsmäßige Verbindungen (werden oft durch Verbinder ersetzt/ergänzt). & Lehrervortrag, Demonstration der Mittel, LSG & K1, K2 \\
+    \hline
+    Information 2: Ausführungsgrundsätze & 20 Min & Input: Wichtige Regeln bei der Ausführung (Warum Mindestabstände? Warum Vorbohren? Bedeutung korrekter Einschraubtiefe/Anzugsmoment). Bezug zu Montageplänen/Herstellervorgaben. & Lehrervortrag, Grafiken, LSG & K2, K3 \\
+    \hline
+    Training / Anwendung & 25 Min & Analyse von Bildern: Korrekte vs. fehlerhafte Verbindungen erkennen und bewerten. Diskussion möglicher Folgen der Fehler. Bearbeitung einer vereinfachten Checkliste zur Kontrolle von Verbindungen. & Bildanalyse (PA/GA), Diskussion, Checkliste & K2, K4, K5 \\
+    \hline
+    Information 3: Oberfläche & 10 Min & Kurzer Input: Oberflächenbehandlung bei sichtbaren Bauteilen (Schutz vor Feuchte/UV, Ästhetik). Arten (Öl, Lasur, Lack) und Wartungsaspekte. & Lehrervortrag, Muster zeigen & K2 \\
+    \hline
+    Abschluss & 5 Min & Zusammenfassung: Verbindungen sind neuralgische Punkte! Sorgfältige Planung, Ausführung UND Kontrolle sind essenziell. Ausblick: Nachhaltigkeit/Moderne Bauweisen. & LSG, Zusammenfassung & K2, K5 \\
+    \hline
+    \caption{Lektionsablauf - Lektion 7: Verbindungen \& Montagekontrolle} \\
+    \label{tab:lektion7-bf}
+\end{longtable}
+
+\subsection{Hinweise / Differenzierung}
+\begin{itemize}
+    \item Fokus auf die im Hochbau häufigsten Verbindungen.
+    \item Bei Interesse Exkurs zu Klebeverbindungen (BSH-Herstellung, Keilzinkung).
+    \item Checkliste praxisnah gestalten.
+\end{itemize}
+
+\newpage
+
+% --- Lektion 8 --- Angepasst ---
+\section{Lektion 8: Nachhaltigkeit, moderne Holzbauweisen und Materialvergleich}
+\subsection{Lernziele (Fokus Bauführer)}
+Die Lernenden können...
+\begin{itemize}
+    \item ...die Argumente für Holz als \textbf{nachhaltigen Baustoff} (nachwachsend, CO2-Speicher) erläutern und die Bedeutung von Zertifikaten (FSC/PEFC) für die \textbf{Beschaffung} erklären (K2, K3).
+    \item ...die Eigenschaften und Einsatzmöglichkeiten moderner Holzbauweisen (z.B. Holzrahmenbau, Massivholzbau/CLT) beschreiben und deren Vor-/Nachteile (z.B. Vorfertigungsgrad, Bauzeit) diskutieren (K2, K4).
+    \item ...Holz im Vergleich zu anderen gängigen Baustoffen (Stahl, Beton, Mauerwerk) unter relevanten Aspekten für die Bauleitung (Kostenindikationen, Bauphysik, Ökologie, Bauablauf) bewerten (K4, K5).
+    \item ...die Rolle des Bauführers bei der Umsetzung nachhaltiger und moderner Holzbauprojekte reflektieren (K5, K6).
+    \item ...Potenziale der Kreislaufwirtschaft im Holzbau ansprechen (K2).
+\end{itemize}
+
+\subsection{Benötigte Materialien}
+\begin{itemize}
+    \item Präsentationsmedium
+    \item Bilder/Videos von modernen Holzbauten (auch mehrgeschossig), Holzrahmenbau, CLT-Baustellen.
+    \item Grafiken zu CO2-Bilanz von Baustoffen, Prinzip der Kaskadennutzung/Kreislaufwirtschaft.
+    \item Logos/Infos zu Nachhaltigkeitszertifikaten (FSC, PEFC, Herkunftszeichen Holz CH etc.).
+    \item Material für Vergleich/Diskussion (z.B. Tabelle, Kriterienkarten).
+\end{itemize}
+
+\subsection{Lektionsablauf (ca. 90 Min.)}
+\begin{longtable}{|p{0.15\textwidth}|p{0.1\textwidth}|>{\raggedright\arraybackslash}p{0.4\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|}
+    \hline
+    \textbf{Phase} & \textbf{Zeit} & \textbf{Aktivität / Inhalt} & \textbf{Sozialform / Methode} & \textbf{K-Level} \\
+    \hline
+    \endhead
+
+    Einstieg & 10 Min & Aktuelle Pressemeldung oder Bild eines innovativen Holz(hoch)hauses. Frage: "Warum wird heute (wieder) so viel mit Holz gebaut? Welche Vorteile sehen Sie als Bauführer?" & Impuls, LSG, Diskussion & K2, K4 \\
+    \hline
+    Information 1: Nachhaltigkeit & 20 Min & Input: Holz als nachhaltiger Rohstoff (Nachwachsend, regional, CO2-Speicher). Bedeutung für Green Building / Zertifizierungen (Minergie, DGNB etc.). Nachweis der Herkunft: FSC, PEFC etc. - Relevanz für Ausschreibung/Beschaffung. Kreislaufwirtschaft/Kaskadennutzung im Holzbau. & Lehrervortrag, Grafiken, Diskussion & K2, K3 \\
+    \hline
+    Information 2: Moderne Holzbauweisen & 20 Min & Input: Überblick über moderne Systeme (Holzrahmenbau, Skelettbau, Massivholzbau mit CLT/MHM): Prinzipien, typische Anwendungen, Vorfertigungspotenzial, Bauablauf. & Lehrervortrag, Bilder/Videos & K1, K2 \\
+    \hline
+    Training / Anwendung & 30 Min & \textbf{Gruppenarbeit / Diskussion}: Vergleich Holz vs. Stahl/Beton/Mauerwerk anhand von Kriterien (z.B. Ökobilanz, Bauzeit, Vorfertigung, Brandverhalten [kurz], Kostenindikationen, spezifische Herausforderungen für Bauleitung). Vorstellung und Diskussion der Ergebnisse. & GA / strukturierte Diskussion, Vergleichstabelle & K4, K5 \\
+    \hline
+    Abschluss & 10 Min & Reflexion: Welche Chancen und Herausforderungen sehen Sie für den Holzbau in Ihrer Praxis? Welche Rolle spielt der Bauführer bei der erfolgreichen Umsetzung? Zusammenfassung der Kurseinheit. Feedbackrunde. & Reflexion im Plenum, Zusammenfassung & K5, K6 \\
+    \hline
+    \caption{Lektionsablauf - Lektion 8: Zukunft Holzbau \& Nachhaltigkeit} \\
+    \label{tab:lektion8-bf}
+\end{longtable}
+
+\subsection{Hinweise / Differenzierung}
+\begin{itemize}
+    \item Aktuelle lokale Projekte oder Trends aufgreifen.
+    \item Diskussion je nach Interesse der Gruppe vertiefen (z.B. Brandschutz im Holzbau, Schallschutz).
+    \item K6 kann durch Aufgabe "Entwickeln Sie QC-Schritte für die Anlieferung von CLT-Elementen" vertieft werden.
+\end{itemize}
+
+\newpage
+
+\section{Schlussbemerkungen}
+
+Dieses adaptierte Lehrkonzept bietet einen praxisorientierten Rahmen für die Weiterbildung von Bauführern im Umgang mit dem Baustoff Holz. Der Fokus liegt klar auf der Anwendung im Baualltag, der Qualitätssicherung und dem Verständnis relevanter Zusammenhänge und Normenprinzipien.
+
+Die konsequente Ausrichtung auf die Zielgruppe durch praxisnahe Beispiele, Fallstudien und Beurteilungsaufgaben soll den Lerntransfer maximieren. Es wird dringend empfohlen, die theoretischen Inhalte stets mit realen Bauholz- und Werkstoffmustern, Fotos von Baustellen sowie – wenn möglich – durch den Austausch mit erfahrenen Praktikern oder Besichtigungen zu ergänzen.
+
+Die Inhalte können und sollen an spezifische regionale Gegebenheiten (Normen, Bauweisen, Holzarten) und die Vorkenntnisse der Teilnehmenden angepasst werden.
+
+\end{document}

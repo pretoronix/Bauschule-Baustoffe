@@ -20,8 +20,8 @@
     \usepackage{polyglossia}
     \setdefaultlanguage[variant=swiss]{german}
     \usepackage{fontspec}
-    \setmainfont{Times New Roman}
-    \setsansfont{Arial}
+    \setmainfont{Aptos}
+    \setsansfont{Aptos}
 \fi
 
 
@@ -125,22 +125,55 @@
 \newcommand{\fachname}{Baustoffe}
 \newcommand{\FinRes}[1]{\underline{\underline{#1}}}
 
+% \setbeamertemplate{footline}{%
+%     \begin{tikzpicture}[remember picture,overlay]
+%         % Dünner Farbverlauf
+%         \shade[left color=blau_bauschule, right color=blau_bauschule]
+%         ([yshift=0cm]current page.south west) rectangle ([yshift=0.5cm]current page.south east);
+%         % Autor linksbündig
+%         \node[anchor=south west, xshift=0.5cm, yshift=0.15cm] at (current page.south west) {%
+%             \textcolor{white}{\insertshortauthor}};
+%         % Titel zentriert
+%         \node[anchor=south, yshift=0.15cm] at (current page.south) {%
+%             \textcolor{white}{\fachname}};
+%         % Foliennummer rechtsbündig
+%         \node[anchor=south east, xshift=-0.5cm, yshift=0.15cm] at (current page.south east) {%
+%             \textcolor{white}{\insertframenumber{} / \inserttotalframenumber}};
+%     \end{tikzpicture}
+% }
 \setbeamertemplate{footline}{%
+    \leavevmode
+    \newcommand{\footerheight}{0.4cm} % 0.15cm Logo + 2×0.02cm Padding
+    \newcommand{\footerpadding}{0.02cm}
     \begin{tikzpicture}[remember picture,overlay]
-        % Dünner Farbverlauf
-        \shade[left color=blau_bauschule, right color=blau_bauschule]
-        ([yshift=0cm]current page.south west) rectangle ([yshift=0.5cm]current page.south east);
-        % Autor linksbündig
-        \node[anchor=south west, xshift=0.5cm, yshift=0.15cm] at (current page.south west) {%
-            \textcolor{white}{\insertshortauthor}};
-        % Titel zentriert
-        \node[anchor=south, yshift=0.15cm] at (current page.south) {%
-            \textcolor{white}{\fachname}};
-        % Foliennummer rechtsbündig
-        \node[anchor=south east, xshift=-0.5cm, yshift=0.15cm] at (current page.south east) {%
-            \textcolor{white}{\insertframenumber{} / \inserttotalframenumber}};
+        % Rahmen nur links, oben, rechts
+        % Obere Linie
+        \draw[blau_bauschule, line width=0.5pt]
+            ([xshift=0.2cm,yshift=\footerheight+\footerpadding]current page.south west) -- 
+            ([xshift=-0.2cm,yshift=\footerheight+\footerpadding]current page.south east);
+        % Linke Linie
+        \draw[blau_bauschule, line width=0.5pt]
+            ([xshift=0.2cm,yshift=\footerpadding]current page.south west) --
+            ([xshift=0.2cm,yshift=\footerheight+\footerpadding]current page.south west);
+        % Rechte Linie
+        \draw[blau_bauschule, line width=0.5pt]
+            ([xshift=-0.2cm,yshift=\footerpadding]current page.south east) --
+            ([xshift=-0.2cm,yshift=\footerheight+\footerpadding]current page.south east);
+        % Logo links, vertikal mittig
+        \node[anchor=west, xshift=0.35cm] 
+            at ([yshift=0.3*\footerheight+\footerpadding]current page.south west) {%
+            \includegraphics[height=0.18cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}};
+        % "Baustoffe" zentriert, vertikal mittig
+        \node[anchor=center] 
+            at ([yshift=0.3*\footerheight+\footerpadding]current page.south) 
+            {\textcolor{blau_bauschule}{\fachname}};
+        % Seitenzahl rechts, vertikal mittig
+        \node[anchor=east, xshift=-0.35cm] 
+            at ([yshift=0.3*\footerheight+\footerpadding]current page.south east) 
+            {\textcolor{blau_bauschule}{\insertframenumber{} / \inserttotalframenumber}};
     \end{tikzpicture}
 }
+
 
 %\setbeamertemplate{footline}{%
 %  \hspace*{0.5cm}\textbf{\fachname}\hfill \insertframenumber / \inserttotalframenumber\hspace*{0.5cm}}
@@ -202,7 +235,8 @@
 
 
 % Colors
-\definecolor{blau_bauschule}{RGB}{22,65,148}
+%\definecolor{blau_bauschule}{RGB}{22,65,148}
+\definecolor{blau_bauschule}{RGB}{20,26,150}
 \setbeamercolor{frametitle}{fg=blau_bauschule}
 \setbeamertemplate{navigation symbols}{} % Remove navigation symbols
 

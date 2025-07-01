@@ -1,0 +1,82 @@
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/05_Beton/03_Berechnung_Verdichtungsmass/Berechnung_Verdichtungsmass.tex
+\input{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/BauschuleBS.tex}
+
+
+\newcommand{\blattname}{Beton: Verdichtungsmass}
+
+
+
+%% header and footer
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont \dozent \\ \blattname}
+\runningheader{\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont \thepage\,/\,\numpages}
+
+%\printanswers
+
+
+
+\begin{document}
+
+{\fontsize{22pt}{2pt}\selectfont \textbf{\blattname}}
+\vspace{0.3cm}
+\section*{Theoretische Grundlagen}
+Das Verdichtungsmass wird als Volumenänderung erfasst und beschreibt quantitativ die Verdichtbarkeit eines Frischbetons, wenn dieser vibriert wird. Die Bestimmung des Verdichtungsmasses nach Walz (c) wird in der Norm SN EN 12350-4 definiert.
+Das Verdichtungsmass wird mit der Formel \cref{eq:Verdichtungsmass} berechnet.
+
+
+
+\begin{equation}
+	c = \dfrac{400}{400-s}
+	\label{eq:Verdichtungsmass}
+\end{equation}
+
+
+\section*{Aufgabe zum Verdichtungsmass}
+
+In der Praxis wird das Verdichtungsmass verwendet, um die Verarbeitbarkeit von Frischbeton zu beurteilen. Bei der Bestimmung nach Walz wird ein standardisierter Behälter mit Frischbeton gefüllt und anschliessend auf einem Rütteltisch verdichtet.
+
+\begin{questions}
+    \question Ein Behälter mit den Innenmassen 200 mm × 200 mm und einer Höhe von 400 mm wird mit Frischbeton gefüllt. Nach der vollständigen Verdichtung auf dem Rütteltisch ist die Oberfläche des Betons im Durschnitt um 65 mm abgesunken.
+    \begin{parts}
+        \part[2] Berechnen Sie das Verdichtungsmass c dieses Frischbetons.
+        \begin{solutionorbox}[5cm]
+            Nach der Formel $c = \dfrac{400}{400-s}$ mit $s = 65$ mm:
+            $c = \dfrac{400}{400-65} = \dfrac{400}{335} \approx 1,19$
+        \end{solutionorbox}
+
+        \part[1] Welcher Konsistenzklasse entspricht dieser Beton gemäss SN EN 206?
+        \begin{solutionorbox}[3cm]
+            Mit einem Verdichtungsmass von c = 1,19 gehört dieser Beton zur Konsistenzklasse C2 (1,10 - 1,25).
+        \end{solutionorbox}
+    \end{parts}
+
+    \pagebreakexam
+    \question Drei Betonmischungen haben folgende Verdichtungsmasse: $c_1$ = 1,08; $c_2$ = 1,30; $c_3$ = 1,45.
+    \begin{parts}
+        \part[2] Welche dieser Betonmischungen ist am steifsten und welche am flüssigsten?
+        \begin{solutionorbox}[5cm]
+            Je grösser das Verdichtungsmass, desto flüssiger der Beton.
+            Am steifsten: Betonmischung 1 mit $c_1$ = 1,08
+            Am flüssigsten: Betonmischung 3 mit $c_3$ = 1,45
+        \end{solutionorbox}
+
+        \part[3] Berechnen Sie für alle drei Betonmischungen den jeweiligen Absenkwert s in mm.
+        \begin{solutionorbox}[5cm]
+            Aus der Formel $c = \dfrac{400}{400-s}$ folgt $s = 400 - \dfrac{400}{c}$
+            
+            Für $c_1$ = 1,08: $s = 400 - \dfrac{400}{1,08} \approx 400 - 370,4 \approx 29,6$ mm
+
+            Für $c_2$ = 1,30: $s = 400 - \dfrac{400}{1,30} \approx 400 - 307,7 \approx 92,3$ mm
+
+            Für $c_3$ = 1,45: $s = 400 - \dfrac{400}{1,45} \approx 400 - 275,9 \approx 124,1$ mm
+        \end{solutionorbox}
+    \end{parts}
+\end{questions}
+
+
+
+\end{document}

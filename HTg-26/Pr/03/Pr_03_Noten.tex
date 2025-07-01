@@ -1,0 +1,69 @@
+% !TEX program = lualatex
+% !TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/HTg-26/Pr/03/Pr_03_Noten.tex
+
+\input{../../../template/beamer_BS.tex}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+
+% Set the title, author, and date
+\title{\textbf{Auswertung Prüfung 3\\HTg-26}}
+\author{Patrick Pfändler}
+\date{}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+\notenverteilung{3.40}{4.88}{5.00}{5.70}{0.70}
+
+
+% Definierte Werte
+\def\Pone{6}   % Punktzahl für Note 1
+\def\None{1}   % Note 1
+\def\Ptwo{42}  % Punktzahl für Note 6
+\def\Ntwo{6}   % Note 6
+\def\Pmax{44.69} % Maximale Punktzahl
+
+
+% Berechnung der Koeffizienten für die lineare Gleichung N(P) = a * P + b
+\pgfmathsetmacro{\a}{(\Ntwo - \None) / (\Ptwo - \Pone)}
+\pgfmathsetmacro{\b}{\None - \a * \Pone}
+\notenformel{\Pone}{\Ptwo}{\Pmax}
+\begin{frame}{Notenvergabe basierend auf Punkten}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=10cm,
+                height=7cm,
+                xlabel={Punkte},
+                ylabel={Note},
+                domain=0:\Pmax,
+                samples=100,
+                grid=major,
+                legend pos=south east
+            ]
+                % Plot der linearen Notenformel
+                \addplot[blue, thick] {\a * x + \b};
+                %\addlegendentry{Notenformel: $N(P) = \a x + \b$}
+
+                % Markierung der gegebenen Punkte
+                \addplot[only marks, red] coordinates {(\Pone, \None) (\Ptwo, \Ntwo)};
+                %\addlegendentry{Gegebene Punkte}
+
+                % Maximale Punktzahl markieren
+                %\addplot[dashed, gray] coordinates {(\Pmax, 0) (\Pmax, 6)};
+                %\addlegendentry{Maximale Punktzahl}
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+% Aufruf der neuen Notenformel-Folie mit den Parametern
+
+
+
+
+
+
+\end{document}

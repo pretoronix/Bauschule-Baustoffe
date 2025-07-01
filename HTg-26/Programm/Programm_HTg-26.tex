@@ -21,9 +21,9 @@ parskip=half-,
 %\usepackage[ngerman]{babel} 
 \usepackage[]{ scrlayer-scrpage }
 \usepackage[ a4paper,
- total={165mm,250mm},
+total={165mm,250mm},
  left=25mm,
- top=25mm,
+ top=20mm,
  headsep=10mm
  %footsep=12mm
  %,showframe
@@ -39,7 +39,7 @@ parskip=half-,
 version=3,
 arrows=pgf-filled,
 ]{mhchem} % für chemische Formeln
-%\usepackage{microtype}
+\usepackage{microtype}
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{multicol}
@@ -117,26 +117,20 @@ arrows=pgf-filled,
 \begin{document}
 
 \section*{Programm Baustoffe: \klasse}
-\begin{itemize}
-    \item Zeit: 15:15 bis 17:00 Uhr (105 Minuten) im Raum 214
-    \item Schüler: 14
+\begin{itemize}[noitemsep]
+    \item Zeit: 15:15 bis 17:00 Uhr (105 Minuten) im Raum 306
+    \item Schüler: 13 (Bruno Durrer ist nicht mehr dabei)
     \item Stand: \today
 \end{itemize}
 
 
-
-
-
-
-
-
-\vspace{1cm}
+\vspace{0.25cm}
 
 \newcounter{lecture}
 \setcounter{lecture}{0}
 \newcommand{\nr}{\stepcounter{lecture}\thelecture} % Makro für Nummerierung
 
-\begin{longtable}{lll p{8cm} p{4cm}}
+\begin{longtable}{lll p{8cm} p{3.5cm}}
     %\caption{Programm Baustoffe} \\ % Optional caption
     \toprule
     \textbf{Datum} & \textbf{KW} & \textbf{Nr} & \textbf{Inhalt} & \textbf{Bemerkung}  \\
@@ -185,23 +179,33 @@ arrows=pgf-filled,
     {}            & {}  & {}  & \textcolor{blue}{Frühlingsferien}                         &                     \\
     \midrule
     28.04.2025     & 18   & \nr  & Nachbesprechung Prüfung und Beton                            &                     \\
-    05.05.2025     & 19   & \nr  & Beton                            &                     \\
-    12.05.2025     & 20   & \nr  & Beton                            &                     \\
-    19.05.2025     & 21   & \nr  & Mit Bindemittel gefestigt                            &                     \\
-    26.05.2025     & 22   & \nr  & \red{Prüfung: Beton Teil 2}                              &                     \\
-    02.06.2025     & 23   & \nr  & Nachbesprechung Prüfung und Kunststoffe                            &                     \\
-    09.06.2025     & 24   & \nr  & Abdichtungen                            &                     \\
-    16.06.2025     & 25   & \nr  & Abdichtungen und WDS                            &                     \\
-    23.06.2025     & 26   & \nr  & Innovationsblock?                            &                     \\
-    30.06.2025     & 27   & \nr  & \red{Prüfung: Abdichtungen, Bindemittel gefestigt, Kunststoffe} &                     \\
+    05.05.2025     & 19   & \nr  & Vortrag und Beton                            &                     \\
+    12.05.2025     & 20   & \nr  & Vortrag und Beton                            &                     \\
+    19.05.2025     & 21   & \nr  & Beton                            &      Ronny, Dominic               \\
+    26.05.2025     & 22   & \nr  &    Mit Bindemittel gefestigt    und Prüfungsvorbereitung                            &     Leon, Alexander                   \\
+    02.06.2025     & 23   & \nr  &  \red{Prüfung: Beton Teil 2}                         &                  \\
+    09.06.2025     & 24   & {}  & \textcolor{blue}{Pfingstmontag}                            &                     \\
+    16.06.2025     & 25   & \nr  & Nachbesprechung Prüfung und Kunststoffe                         &       Michael, Marc           \\
+    23.06.2025     & 26   & \nr  & Kunststoffe und Abdichtungen                           &       Yanis              \\
+    30.06.2025     & 27   & \nr  &  Abschluss Kunststoffe  und Innovationsblock I &                     \\
     \midrule
     {}            & {}  & {}  & \textcolor{blue}{Sommerferien}                              &                     \\
     \midrule
-    11.08.2025     & 33   & \nr  & Nachbesprechung Prüfung und Metalle                            &                     \\
-    18.08.2025     & 34   & \nr  & Metalle                            &                     \\
-    25.08.2025     & 35   & \nr  & Metalle                            &                     \\
-    01.09.2025     & 35   & \nr  & Metalle                            &                     \\
+    11.08.2025     & 33   & \nr  &      Abdichtungen und WDS                      &        Emanuel, Cedric             \\
+    18.08.2025     & 34   & \nr  &               WDS und           Metalle &                     \\
+    25.08.2025     & 35   & \nr  &              Metalle                   &                     \\
+    01.09.2025     & 35   & \nr  &                 Korrosion schläft nie                &                     \\
+    08.09.2025     & 36   & \nr  &          \red{Prüfung: Abdichtungen, Bindemittel gefestigt, Kunststoffe}          &                     \\
+    15.09.2025     & 37   & \nr  &         Nachbesprechung Prüfung und Zugversuch                    &                     \\
+    \midrule
+    22.09.2025     & 38   &   &         \textcolor{blue}{Herbstferien}                    &                     \\
+    \midrule
 \end{longtable}
 
+
+Offene Themen:
+\begin{itemize}
+    \item Mit Bindemittel gefestigt
+\end{itemize}
 
 \end{document}
