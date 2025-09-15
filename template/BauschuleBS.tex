@@ -1,18 +1,33 @@
 % !TEX program = lualatex
+% Alternatively compile with: pdflatex
+%
+% This template is compatible with both LuaLaTeX and pdfLaTeX:
+% - LuaLaTeX: Uses Aptos font (Bauschule CI) with polyglossia for German language support
+% - pdfLaTeX: Uses Helvetica as fallback font with babel for German language support
+%
 \documentclass[
     %answers,
     a4paper,ngerman,12pt, addpoints]{exam}
 
-\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
-%\usepackage[ngerman]{babel}
+% Engine detection and conditional package loading
+\usepackage{iftex}
 
-
-\usepackage{polyglossia}
-\setdefaultlanguage[variant = swiss]{german}
-\usepackage{fontspec}
-\setmainfont{Aptos} % Bauschule CI Manual
-\setsansfont{Aptos} % Bauschule CI Manual
+\ifPDFTeX
+    % pdfLaTeX setup
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage[ngerman]{babel}
+    % Use a font that's similar to Aptos for pdfLaTeX
+    \usepackage{helvet} % Helvetica as fallback
+    \renewcommand{\familydefault}{\sfdefault}
+\else
+    % LuaLaTeX/XeLaTeX setup
+    \usepackage{polyglossia}
+    \setdefaultlanguage[variant = swiss]{german}
+    \usepackage{fontspec}
+    \setmainfont{Aptos} % Bauschule CI Manual
+    \setsansfont{Aptos} % Bauschule CI Manual
+\fi
 
 
 \usepackage[ a4paper,
@@ -48,7 +63,9 @@
 \usepackage{subfigure}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
-\usepackage{luacode}
+\ifLuaTeX
+    \usepackage{luacode}
+\fi
 \usepackage{amsmath}
 \usepackage{textcomp}
 

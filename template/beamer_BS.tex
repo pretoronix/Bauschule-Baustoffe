@@ -13,17 +13,16 @@
 
 \usepackage{iftex}
 
-\ifpdftex
-    \usepackage[utf8]{inputenc}
-    \usepackage[ngerman]{babel}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[ngerman]{babel}
 \else
-    \usepackage{polyglossia}
-    \setdefaultlanguage[variant=swiss]{german}
-    \usepackage{fontspec}
-    \setmainfont{Aptos}
-    \setsansfont{Aptos}
+  \usepackage{polyglossia}
+  \setdefaultlanguage[variant=swiss]{german}
+  \usepackage{fontspec}
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
 \fi
-
 
 \usepackage{amsmath}
 \usepackage{siunitx}
@@ -47,8 +46,9 @@
 \usepackage{amsmath}
 \usepackage{fontawesome}
 \usepackage{colortbl}
+\usepackage[dvipsnames,svgnames]{xcolor}
 
-\usepackage{xcolor}          % Für Farben wie green!70!black
+
 \usepackage{fontawesome}     % Für Symbole wie \faCheckSquare
 \usepackage{ifthen}          % Für Bedingungen in Makros
 
@@ -56,7 +56,6 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
 
-\usepackage[dvipsnames]{xcolor}
 
 %\usepackage[scaled]{helvet} % Arial-ähnliche Schriftart (Helvetica)
 %\renewcommand\familydefault{\sfdefault} % Setzt die Standard-Schriftart auf sans-serif

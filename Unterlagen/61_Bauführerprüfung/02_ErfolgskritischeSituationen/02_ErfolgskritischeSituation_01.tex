@@ -1,0 +1,70 @@
+%!TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/61_Bauführerprüfung/02_ErfolgskritischeSituationen/02_ErfolgskritischeSituation_01.tex
+%!TEX program = lualatex
+
+\input{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/BauschuleBS.tex}
+
+
+%% header and footer
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fontsize{9pt}{2pt}\selectfont\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\runningheader{\fontsize{9pt}{2pt}\selectfont\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont\thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont\thepage\,/\,\numpages}
+
+\usepackage{siunitx}
+
+\sisetup{
+  locale = DE,
+  inter-unit-product = \ensuremath{{\cdot}},
+  detect-mode,             % Use the surrounding text font mode
+  detect-family,           % Use the surrounding text font family
+  detect-weight,           % Use the surrounding text font weight
+  mode = text              % Ensure that numbers and units are typeset in text mode
+}
+
+% Setzen des Blattnamens
+\newcommand{\blattname}{Erfolgskritische Situation: Grundbruch}
+
+
+
+%\printanswers
+\begin{document}
+\section*{\blattname}
+\begin{itemize}[noitemsep]
+    \item Zeit: 10 Minuten
+    \item Punkte: 6
+\end{itemize}
+
+\subsection*{Ausgangssituation}
+Auf der Baustelle Brändi in Weinfelden TG soll ein Mehrfamilienhaus errichtet werden. Der Baugrubenaushub ist fast fertig erstellt. 20 Zentimeter oberhalb der Aushubsohle, tritt plötzlich Wasser aus der Böschung. Der Böschungsfuss wird instabil. Nach und nach beginnt die Böschungssohle sich aufzuweichen und der Boden bildet Blasen.
+
+\subsection*{Aufgabe}
+\begin{itemize}
+    \item Beschreiben Sie alle Massnahmen, die Sie in dieser Situation ergreifen.
+    \item Begründen Sie bei jeder Massnahme, warum Sie diese ergreifen.
+\end{itemize}
+
+\subsection*{Weiterführende Fragen}
+\begin{itemize}
+    \item Wie kann so eine Situation entstehen?
+    \item Wie stellen Sie den Baugrubenaushub fertig?
+    \item Was für verschiedene Arten von Wasserhaltung kennen Sie?
+    \item Wo führen Sie das abgepumpte Wasser hin?
+    \item Braucht es für eine Wassereinleitung in ein Gewässer eine Bewilligung?
+\end{itemize}
+
+\subsection*{Beurteilung}
+
+Ihre Leistung wird nach folgenden Leitfragen bewertet:
+
+\begin{itemize}[noitemsep]
+    \item Schildert der/die Kandidat/in ein plausibles Vorgehen in der beschriebenen Situation?
+    \item Geht der/die Kandidat/in auf weiterführende Fragen umfassend ein?
+\end{itemize}
+
+
+
+\end{document}

@@ -1,0 +1,69 @@
+%!TEX root = /Users/patricpf/Documents/repos/Bauschule-Baustoffe/Unterlagen/61_Bauführerprüfung/01_Graben_verschüttet/Graben_verschüttet.tex
+%!TEX program = lualatex
+
+\input{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/BauschuleBS.tex}
+
+
+%% header and footer
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{\fontsize{9pt}{2pt}\selectfont\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\runningheader{\fontsize{9pt}{2pt}\selectfont\fach}{}{\fontsize{9pt}{2pt}\selectfont\dozent \\ \blattname}
+\firstpagefooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont\thepage\,/\,\numpages}
+\runningfooter{\includegraphics[width=2.5cm]{/Users/patricpf/Documents/repos/Bauschule-Baustoffe/template/bauschule-logo-5cm.png}}{}{\fontsize{9pt}{2pt}\selectfont\thepage\,/\,\numpages}
+
+\usepackage{siunitx}
+
+\sisetup{
+  locale = DE,
+  inter-unit-product = \ensuremath{{\cdot}},
+  detect-mode,             % Use the surrounding text font mode
+  detect-family,           % Use the surrounding text font family
+  detect-weight,           % Use the surrounding text font weight
+  mode = text              % Ensure that numbers and units are typeset in text mode
+}
+
+% Setzen des Blattnamens
+\newcommand{\blattname}{Kleine Fallbeschreibung 1 «Graben verschüttet»}
+
+
+
+%\printanswers
+\begin{document}
+\section*{\blattname}
+\begin{itemize}[noitemsep]
+    \item Zeit: 10 Minuten
+    \item Punkte: 6
+\end{itemize}
+
+\subsection*{Ausgangssituation}
+In der Storchelstrasse in Weinfelden TG sollen Sanierungsarbeiten am Kanal durchgeführt werden. Als zuständiger Polier haben Sie Ihr Team daher instruiert, den ersten Abschnitt des Kanals auf einer Länge von 10 Metern freizulegen. Das Aushubmaterial wurde auf Grund der beengten Platzverhältnisse direkt neben dem ausgehobenen Graben deponiert und gesichert. Die Zeit drängt, es ist Freitag kurz vor Feierabend und am Montag soll plangemäss mit den Sanierungsarbeiten begonnen und die neuen Leitungen verlegt werden. Sie selbst haben vor dem Wochenende noch einiges an Dokumentationsarbeit zu erledigen und Ihr Vorarbeiter musste auf Grund eines Arzttermins bereits mittags die Baustelle verlassen. Sie beauftragen daher Ihre Mitarbeitenden alle Abschlussarbeiten wie gewohnt durchzuführen und verlassen dann ebenfalls die Baustelle. Als Sie am Montagmorgen, nach einem sehr verregneten und stürmischen Wochenende auf die Baustelle zurückkehren, finden Sie ein volliges Chaos vor. Die Abdeckung des Aushubmaterials wurde vollständig weggerissen und der bereits ausgehobene Graben und die darin freigelegten Leitungen wurden verschüttet. Zudem erhalten Sie die Information, dass in der angrenzenden Wohngegend zahlreiche Netzwerkausfalle gemeldet wurden.
+
+\subsection*{Aufgabe}
+\begin{itemize}
+    \item Beurteilen Sie die Situation: Wo sind Ihrer Meinung nach Fehler passiert?
+\end{itemize}
+
+\subsection*{Weiterführende Fragen}
+\begin{itemize}
+    \item Welche Massnahmen müssen Sie als Fach- und Führungsperson ergreifen, um eine solche Situation künftig zu verhinder?
+\end{itemize}
+
+\subsection*{Beurteilung}
+
+Ihre Leistung wird nach folgenden Leitfragen bewertet:
+
+\begin{itemize}[noitemsep]
+    \item Erkennt der/die Kandidat/in die zentralen Fehler in der Situation?
+    \item Schildert der/die Kandidat/in geeignete Massnahmen, um die Situation künftig zu vermeiden?
+\end{itemize}
+
+\subsection*{Handlungssimulation}
+Die Handlungssimulation ist eine Prüfungsform, bei der die Kandidat/innen aufgefordert werden, das Vorgehen in beruflichen Routinesituationen entweder in einer simulierten Umgebung konkret auszuführen oder zu beschreiben, wie sie die Handlung ausführen würden. Handlungssimulationen eignen sich zum Prüfen der Umsetzung konkreter, kurzer und in sich abgeschlossener Routinehandlungen.
+\vspace{1em}
+
+$\Rightarrow$ \emph{Zielsetzung}: ausführen können und beschreiben können, wie sie eine Handlung ausführen würde.
+
+\end{document}
