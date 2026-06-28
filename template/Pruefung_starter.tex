@@ -1,0 +1,37 @@
+% !TEX program = lualatex
+%
+% Starter-Vorlage für eine Prüfung / ein Aufgabenblatt (exam-Klasse).
+% Kopieren in den gewünschten Ordner und Pfad zu BauschuleBS.tex anpassen.
+% Zum Erzeugen der Lösungsversion die Zeile \printanswers aktivieren.
+%
+\input{../template/BauschuleBS.tex}
+
+\newcommand{\blattname}{Prüfung X: Thema}
+
+%\printanswers   % einkommentieren für die Lösungsversion
+
+\begin{document}
+\section*{\blattname}
+
+\begin{questions}
+
+\question[5] Beispielaufgabe mit Rechnung.
+
+    Gegeben sei eine Dichte von \mydichte{2400} und eine Festigkeit von \myNmm{30}.
+
+    \begin{solution}
+        Musterlösung mit Schlussresultat \FinRes{\myNmm{30}}.
+    \end{solution}
+
+    \loesungsraum{4}
+
+\question[2] Multiple-Choice-Beispiel.
+    \begin{checkboxes}
+        \choice Falsche Antwort
+        \CorrectChoice Richtige Antwort
+        \choice Falsche Antwort
+    \end{checkboxes}
+
+\end{questions}
+
+\end{document}

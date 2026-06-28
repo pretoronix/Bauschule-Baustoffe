@@ -370,3 +370,61 @@
         \end{itemize}
     \end{frame}
 }
+
+
+%% ============================================================
+%%  Zusätzliche Bauschule-Makros (Ergänzungen)
+%%  Rein additiv – bestehende Dokumente werden nicht verändert.
+%%  Dokumentation siehe CLAUDE.md im Projektstamm.
+%% ============================================================
+
+% Quellenangabe für Bilder/Grafiken (klein, grau, rechtsbündig)
+\newcommand{\quelle}[1]{%
+    \par\vspace{1mm}%
+    {\scriptsize\color{gray}\hfill Quelle: #1}%
+}
+
+% Beispiel-Box (analog zu Merke/Anwendungen)
+\newtcolorbox{Beispiel}{
+    enhanced,
+    boxrule=0pt,frame hidden,
+    borderline west={4pt}{0pt}{blau_bauschule},
+    colback=white,
+    sharp corners,
+    before upper={\textbf{Beispiel:}\quad},
+}
+
+% Achtung-/Warnhinweis-Box
+\newtcolorbox{Achtung}{
+    enhanced,
+    colframe=red!75!black,
+    colback=red!5,
+    coltitle=white,
+    fonttitle=\bfseries,
+    boxrule=1pt,
+    title={\faExclamationTriangle\ Achtung},
+    left=2mm,right=2mm,top=1mm,bottom=1mm,
+}
+
+% Frame mit einem zentrierten Bild und optionaler Quellenangabe.
+% Verwendung: \bildFrame[Quelle]{Titel}{Breite}{Bildpfad}
+%   #1 (optional) Quelle, #2 Titel, #3 Breite (z.B. 0.7\textwidth), #4 Bildpfad
+\newcommand{\bildFrame}[4][]{%
+    \begin{frame}{#2}
+        \begin{center}
+            \includegraphics[width=#3]{#4}
+        \end{center}
+        \ifthenelse{\equal{#1}{}}{}{\quelle{#1}}
+    \end{frame}
+}
+
+% Frame mit zwei gleich breiten Spalten.
+% Verwendung: \zweiSpaltenFrame{Titel}{Inhalt links}{Inhalt rechts}
+\newcommand{\zweiSpaltenFrame}[3]{%
+    \begin{frame}{#1}
+        \begin{columns}[T]
+            \begin{column}{0.48\textwidth}#2\end{column}
+            \begin{column}{0.48\textwidth}#3\end{column}
+        \end{columns}
+    \end{frame}
+}

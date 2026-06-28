@@ -1,0 +1,53 @@
+% !TEX program = lualatex
+%
+% Starter-Vorlage für ein wöchentliches Lektionsprogramm (Beamer).
+% Kopieren nach z.B. HTf-26/KW_XX_Programm.tex und Pfad zu beamer_BS.tex anpassen.
+%
+\def\customoptions{aspectratio=169} % Handout-Modus ausschliessen
+
+\input{../template/beamer_BS.tex}
+
+\title{\textbf{Lektionsprogramm HTf-26}}
+\author{Patrick Pfändler}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Inhalt der Lektion}
+    \tableofcontents
+\end{frame}
+
+% Standard-Einstiegsfolie "Fragen zur letzten Lektion"
+\folieFragen
+
+% Hinweis auf die nächste Prüfung: \naechstePruefung{Datum}{Thema}
+% \naechstePruefung{KW XX}{Thema der Prüfung}
+
+\section{Thema der Lektion}
+\BlueSectionSlide
+
+\begin{frame}{Lernziele}
+    \begin{myLernziele}
+        \begin{itemize}
+            \item[\textbullet] Lernziel 1
+            \item[\textbullet] Lernziel 2
+        \end{itemize}
+    \end{myLernziele}
+\end{frame}
+
+\begin{frame}{Inhalt}
+    \begin{itemize}
+        \item[\textbullet] Punkt 1
+    \end{itemize}
+
+    \begin{Merke}
+        Wichtige Kernaussage der Lektion.
+    \end{Merke}
+\end{frame}
+
+% Beispiel für einen Bild-Frame mit Quellenangabe:
+% \bildFrame[Bauschule]{Titel}{0.7\textwidth}{Bilder/beispiel.png}
+
+\end{document}

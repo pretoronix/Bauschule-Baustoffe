@@ -173,3 +173,25 @@
 % Adjust the font size for the footer
 \firstpagefooter{\includegraphics[width=2.5cm]{bauschule-logo-5cm.png}}{}{\fontsize{9}{11}\selectfont\thepage\,/\,\pageref{LastPage}}
 \runningfooter{\includegraphics[width=2.5cm]{bauschule-logo-5cm.png}}{}{\fontsize{9}{11}\selectfont\thepage\,/\,\pageref{LastPage}}
+
+
+%% ============================================================
+%%  Zusätzliche Bauschule-Makros (Ergänzungen)
+%%  Rein additiv – bestehende Prüfungen werden nicht verändert.
+%%  Dokumentation siehe CLAUDE.md im Projektstamm.
+%% ============================================================
+
+% Lösungsraum mit Linien – nur in der Aufgabenversion sichtbar,
+% in der Lösungsversion (\printanswers) ausgeblendet.
+% Verwendung: \loesungsraum{5}  (5 Linien)
+\newcommand{\loesungsraum}[1]{%
+    \ifprintanswers\else\fillwithlines{#1\baselineskip}\fi
+}
+
+% Weitere Einheiten-Kurzbefehle (analog zu \myNmm)
+\newcommand{\mydichte}[1]{\SI{#1}{\kilogram\per\cubic\metre}}     % Dichte kg/m^3
+\newcommand{\mygradC}[1]{\SI{#1}{\celsius}}                       % Temperatur in °C
+\newcommand{\mylambda}[1]{\SI{#1}{\watt\per\metre\per\kelvin}}    % Wärmeleitfähigkeit W/(m·K)
+
+% Hervorhebung wichtiger Begriffe in der Bauschule-Farbe
+\newcommand{\bsHervorheb}[1]{\textbf{\color{blau_bauschule}#1}}
