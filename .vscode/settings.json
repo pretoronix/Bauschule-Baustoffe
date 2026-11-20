@@ -1,60 +1,38 @@
-// // LuaLaTeX + BibTeX
-// {
-//     "latex-workshop.latex.tools": [
-//         {
-//             "name": "lualatex",
-//             "command": "lualatex",
-//             "args": [
-//                 "--synctex=1",
-//                 "--interaction=nonstopmode",
-//                 "--shell-escape",
-//                 "%DOC%"
-//             ]
-//         },
-//         {
-//             "name": "bibtex",
-//             "command": "bibtex",
-//             "args": [
-//                 "%DOCFILE%"
-//             ]
-//         }
-//     ],
-//     "latex-workshop.latex.recipes": [
-//         {
-//             "name": "lualatex -> bibtex -> lualatex*2",
-//             "tools": [
-//                 "lualatex",
-//                 "bibtex",
-//                 "lualatex",
-//                 "lualatex"
-//             ]
-//         }
-//     ],
-//     "latex-workshop.latex.recipe.default": "lualatex -> bibtex -> lualatex*2"
-// }
-
 {
+    // Default: latexmk with the shared repo config (latexmkrc in the repo root).
+    // It runs LuaLaTeX as often as needed (incl. BibTeX/Biber) and makes
+    // template/ and the repo root searchable, so documents need no paths.
     "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-r",
+                "%WORKSPACE_FOLDER%/latexmkrc",
+                "%DOC%"
+            ]
+        },
         {
             "name": "lualatex",
             "command": "lualatex",
             "args": [
                 "--synctex=1",
                 "--interaction=nonstopmode",
-                "--shell-escape",
                 "%DOC%"
             ]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "lualatex",
-            "tools": [
-                "lualatex"
-            ]
+            "name": "latexmk (LuaLaTeX, Repo-Config)",
+            "tools": ["latexmk"]
+        },
+        {
+            "name": "lualatex (einmal, ohne Repo-Config)",
+            "tools": ["lualatex"]
         }
     ],
-    "latex-workshop.latex.recipe.default": "lualatex"
+    "latex-workshop.latex.recipe.default": "first",
 
     "files.exclude": {
         "**/*.aux": true,
@@ -66,8 +44,6 @@
         "**/*.out": true,
         "**/*.bbl": true,
         "**/*.snm": true,
-        "**/*.nav": true,
+        "**/*.nav": true
     }
 }
-
-
